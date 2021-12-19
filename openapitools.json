@@ -1,0 +1,32 @@
+{
+    "$schema": "node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+    "spaces": 2,
+    "generator-cli": {
+        "version": "5.2.1",
+        "generators": {
+            "javascript": {
+                "generatorName": "javascript",
+                "httpUserAgent": "MDMC-JS-SDK",
+                "gitHost": "github.com",
+                "gitRepoId": "javascript-sdk",
+                "gitUserId": "mydatamyconsent",
+                "inputSpec": "https://api.mydatamyconsent.com/swagger/v1/swagger.json",
+                "removeOperationIdPrefix": true,
+                "additionalProperties": {
+                    "packageName": "mydatamyconsent",
+                    "developerEmail": "developers@mydatamyconsent.com",
+                    "developerName": "Balamurali Pandranki",
+                    "developerOrganization": "DataConsent, Inc.",
+                    "developerOrganizationUrl": "https://mydatamyconsent.com",
+                    "artifactDescription": "My Data My Consent JS Rest API SDK",
+                    "artifactUrl": "https://github.com/mydatamyconsent/javascript-sdk",
+                    "artifactVersion": "v1",
+                    "licenseUrl": "https://mydatamyconsent.com/en-us/legal/terms-of-service",
+                    "licenseName": "DataConsent, Inc. ToS",
+                    "scmUrl": "https://github.com/mydatamyconsent/javascript-sdk",
+                    "scmDeveloperConnection": "scm:git:git@github.com:mydatamyconsent/javascript-sdk.git"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+name: Generate & Update SDK
+
+on: workflow_dispatch
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Use Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
+
+            - name: Set up JDK
+              uses: actions/setup-java@v2
+              with:
+                  java-version: '15'
+                  distribution: 'adopt'
+
+            - name: Install OpenAPI Tools
+              run: |
+                  npm install @openapitools/openapi-generator-cli -g
+
+            - name: Generate SDK's
+              run: |
+                  npx @openapitools/openapi-generator-cli generate
+
+            - name: Repository update
+              uses: EndBug/add-and-commit@v7
+              with:
+                  author_name: Balamurali Pandranki
+                  author_email: balamurali@live.com
+                  default_author: github_actor
+                  message: 'Regenerate API SDKs'
+                  push: true
