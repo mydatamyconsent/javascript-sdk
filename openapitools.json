@@ -4,8 +4,8 @@
     "generator-cli": {
         "version": "5.2.1",
         "generators": {
-            "javascript": {
-                "generatorName": "javascript",
+            "typescript": {
+                "generatorName": "typescript",
                 "httpUserAgent": "MDMC-JS-SDK",
                 "gitHost": "github.com",
                 "gitRepoId": "javascript-sdk",
