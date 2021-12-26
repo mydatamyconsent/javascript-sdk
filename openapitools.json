@@ -4,18 +4,24 @@
     "generator-cli": {
         "version": "5.2.1",
         "generators": {
-            "typescript": {
-                "generatorName": "typescript",
+            "typescript-axios": {
+                "generatorName": "typescript-axios",
                 "httpUserAgent": "MDMC-JS-SDK",
                 "gitHost": "github.com",
                 "gitRepoId": "javascript-sdk",
                 "gitUserId": "mydatamyconsent",
                 "inputSpec": "https://api.mydatamyconsent.com/swagger/v1/swagger.json",
                 "removeOperationIdPrefix": true,
+                "enablePostProcessFile": true,
                 "additionalProperties": {
+                    "npmName": "mydatamyconsent/mydatamyconsent",
                     "packageName": "mydatamyconsent",
+                    "apiPackage": "api",
+                    "modelPackage": "models",
+                    "projectName": "mydatamyconsent",
                     "developerEmail": "developers@mydatamyconsent.com",
                     "developerName": "Balamurali Pandranki",
+                    "withSeparateModelsAndApi": "true",
                     "developerOrganization": "DataConsent, Inc.",
                     "developerOrganizationUrl": "https://mydatamyconsent.com",
                     "artifactDescription": "My Data My Consent JS Rest API SDK",

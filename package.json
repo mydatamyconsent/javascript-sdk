@@ -1,27 +1,27 @@
 {
-  "name": "",
-  "version": "",
-  "description": "OpenAPI client for ",
+  "name": "mydatamyconsent/mydatamyconsent",
+  "version": "v1",
+  "description": "OpenAPI client for mydatamyconsent/mydatamyconsent",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
-    "fetch",
+    "axios",
     "typescript",
     "openapi-client",
-    "openapi-generator"
+    "openapi-generator",
+    "mydatamyconsent/mydatamyconsent"
   ],
   "license": "Unlicense",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
+    "build": "tsc --outDir dist/",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "whatwg-fetch": "^3.0.0",
-    "es6-promise": "^4.2.4",
-    "url-parse": "^1.4.3"
+    "axios": "^0.21.1"
   },
   "devDependencies": {
-    "typescript": "^3.9.3"
+    "@types/node": "^12.11.5",
+    "typescript": "^3.6.4"
   }
 }
