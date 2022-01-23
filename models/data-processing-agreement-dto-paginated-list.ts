@@ -13,38 +13,44 @@
  */
 
 
-import { Receiver } from './receiver';
+import { DataProcessingAgreementDto } from './data-processing-agreement-dto';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @interface DataProcessingAgreementDtoPaginatedList
  */
-export interface DataConsentRequestModel {
+export interface DataProcessingAgreementDtoPaginatedList {
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
+     * @type {number}
+     * @memberof DataProcessingAgreementDtoPaginatedList
      */
-    consentTemplateId?: string;
+    pageIndex?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
+     * @type {number}
+     * @memberof DataProcessingAgreementDtoPaginatedList
      */
-    startDateTime?: string;
+    pageSize?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
+     * @type {number}
+     * @memberof DataProcessingAgreementDtoPaginatedList
      */
-    expiryDateTime?: string;
+    totalPages?: number;
     /**
      * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
+     * @type {number}
+     * @memberof DataProcessingAgreementDtoPaginatedList
      */
-    receiver: Receiver;
+    totalItems?: number;
+    /**
+     * 
+     * @type {Array<DataProcessingAgreementDto>}
+     * @memberof DataProcessingAgreementDtoPaginatedList
+     */
+    items?: Array<DataProcessingAgreementDto> | null;
 }
 
 

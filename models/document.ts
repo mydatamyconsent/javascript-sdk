@@ -13,38 +13,38 @@
  */
 
 
-import { Receiver } from './receiver';
+import { DocumentsRequired } from './documents-required';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @interface Document
  */
-export interface DataConsentRequestModel {
+export interface Document {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof Document
      */
-    consentTemplateId?: string;
+    documentField?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof Document
      */
-    startDateTime?: string;
+    customKey?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
+     * @type {Array<string>}
+     * @memberof Document
      */
-    expiryDateTime?: string;
+    drn?: Array<string> | null;
     /**
      * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
+     * @type {DocumentsRequired}
+     * @memberof Document
      */
-    receiver: Receiver;
+    requirement?: DocumentsRequired;
 }
 
 

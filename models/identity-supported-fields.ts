@@ -13,38 +13,43 @@
  */
 
 
-import { Receiver } from './receiver';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @interface IdentitySupportedFields
  */
-export interface DataConsentRequestModel {
+export interface IdentitySupportedFields {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof IdentitySupportedFields
      */
-    consentTemplateId?: string;
+    icon?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof IdentitySupportedFields
      */
-    startDateTime?: string;
+    title?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof IdentitySupportedFields
      */
-    expiryDateTime?: string;
+    description?: string | null;
     /**
      * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
+     * @type {string}
+     * @memberof IdentitySupportedFields
      */
-    receiver: Receiver;
+    key?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof IdentitySupportedFields
+     */
+    dataType?: string | null;
 }
 
 

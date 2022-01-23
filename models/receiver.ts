@@ -13,38 +13,34 @@
  */
 
 
-import { Receiver } from './receiver';
+import { IdentificationStrategy } from './identification-strategy';
+import { IdentifierStringKeyValuePair } from './identifier-string-key-value-pair';
+import { ReceiverType } from './receiver-type';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @interface Receiver
  */
-export interface DataConsentRequestModel {
+export interface Receiver {
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
+     * @type {ReceiverType}
+     * @memberof Receiver
      */
-    consentTemplateId?: string;
+    type?: ReceiverType;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
+     * @type {Array<IdentifierStringKeyValuePair>}
+     * @memberof Receiver
      */
-    startDateTime?: string;
+    identifiers?: Array<IdentifierStringKeyValuePair> | null;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
+     * @type {IdentificationStrategy}
+     * @memberof Receiver
      */
-    expiryDateTime?: string;
-    /**
-     * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
-     */
-    receiver: Receiver;
+    identificationStrategy?: IdentificationStrategy;
 }
 
 

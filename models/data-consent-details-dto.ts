@@ -13,15 +13,9 @@
  */
 
 
-import { DataConsentRequestedAccountDto } from './data-consent-requested-account-dto';
-import { DataConsentRequestedDocument } from './data-consent-requested-document';
-import { DataConsentRequestedDocumentDto } from './data-consent-requested-document-dto';
 import { DataConsentRequesterDto } from './data-consent-requester-dto';
 import { DataConsentStatus } from './data-consent-status';
-import { DataFetchFrequencyUnit } from './data-fetch-frequency-unit';
-import { DataFetchType } from './data-fetch-type';
-import { DataLifeUnit } from './data-life-unit';
-import { JsonSchema } from './json-schema';
+import { GetConsentTemplateDetailsDto } from './get-consent-template-details-dto';
 
 /**
  * 
@@ -35,102 +29,6 @@ export interface DataConsentDetailsDto {
      * @memberof DataConsentDetailsDto
      */
     id?: string;
-    /**
-     * 
-     * @type {DataConsentRequesterDto}
-     * @memberof DataConsentDetailsDto
-     */
-    requester?: DataConsentRequesterDto;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    location?: string | null;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof DataConsentDetailsDto
-     */
-    personalInfoRequested?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof DataConsentDetailsDto
-     */
-    documents?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof DataConsentDetailsDto
-     */
-    financialAccounts?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    transactionId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    ipAddress?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    description?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    purposeCode?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    purposeLink?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    agreementId?: string | null;
-    /**
-     * 
-     * @type {DataLifeUnit}
-     * @memberof DataConsentDetailsDto
-     */
-    dataLifeUnit?: DataLifeUnit;
-    /**
-     * 
-     * @type {number}
-     * @memberof DataConsentDetailsDto
-     */
-    dataLifeValue?: number;
-    /**
-     * 
-     * @type {DataFetchFrequencyUnit}
-     * @memberof DataConsentDetailsDto
-     */
-    dataFetchFrequencyUnit?: DataFetchFrequencyUnit;
-    /**
-     * 
-     * @type {number}
-     * @memberof DataConsentDetailsDto
-     */
-    dataFetchFrequencyUnitValue?: number;
-    /**
-     * 
-     * @type {DataFetchType}
-     * @memberof DataConsentDetailsDto
-     */
-    dataFetchType?: DataFetchType;
     /**
      * 
      * @type {DataConsentStatus}
@@ -163,28 +61,16 @@ export interface DataConsentDetailsDto {
     requestedAtUtc?: string;
     /**
      * 
-     * @type {Array<DataConsentRequestedAccountDto>}
+     * @type {DataConsentRequesterDto}
      * @memberof DataConsentDetailsDto
      */
-    requestedFinancialAccounts?: Array<DataConsentRequestedAccountDto> | null;
+    requester?: DataConsentRequesterDto;
     /**
      * 
-     * @type {Array<DataConsentRequestedDocumentDto>}
+     * @type {GetConsentTemplateDetailsDto}
      * @memberof DataConsentDetailsDto
      */
-    requestedDocuments?: Array<DataConsentRequestedDocumentDto> | null;
-    /**
-     * 
-     * @type {Array<DataConsentRequestedDocument>}
-     * @memberof DataConsentDetailsDto
-     */
-    requestedHealthData?: Array<DataConsentRequestedDocument> | null;
-    /**
-     * 
-     * @type {JsonSchema}
-     * @memberof DataConsentDetailsDto
-     */
-    requestedIdentityDetails?: JsonSchema;
+    consentDetails?: GetConsentTemplateDetailsDto;
 }
 
 

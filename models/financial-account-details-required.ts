@@ -13,38 +13,17 @@
  */
 
 
-import { Receiver } from './receiver';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @enum {string}
  */
-export interface DataConsentRequestModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
-     */
-    consentTemplateId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
-     */
-    startDateTime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
-     */
-    expiryDateTime?: string;
-    /**
-     * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
-     */
-    receiver: Receiver;
+
+export enum FinancialAccountDetailsRequired {
+    AccountSummary = 'AccountSummary',
+    TransactionDetails = 'TransactionDetails'
 }
+
 
 

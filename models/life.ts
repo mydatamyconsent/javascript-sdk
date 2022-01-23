@@ -13,38 +13,25 @@
  */
 
 
-import { Receiver } from './receiver';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @interface Life
  */
-export interface DataConsentRequestModel {
+export interface Life {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof Life
      */
-    consentTemplateId?: string;
+    unit?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof Life
      */
-    startDateTime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
-     */
-    expiryDateTime?: string;
-    /**
-     * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
-     */
-    receiver: Receiver;
+    value?: string | null;
 }
 
 

@@ -13,38 +13,31 @@
  */
 
 
-import { Receiver } from './receiver';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @interface UpdateDataProcessingAgreementRequestModel
  */
-export interface DataConsentRequestModel {
+export interface UpdateDataProcessingAgreementRequestModel {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof UpdateDataProcessingAgreementRequestModel
      */
-    consentTemplateId?: string;
+    version: string;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof UpdateDataProcessingAgreementRequestModel
      */
-    startDateTime?: string;
+    body: string;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof UpdateDataProcessingAgreementRequestModel
      */
-    expiryDateTime?: string;
-    /**
-     * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
-     */
-    receiver: Receiver;
+    attachmentUrl: string;
 }
 
 

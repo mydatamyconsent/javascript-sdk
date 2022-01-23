@@ -21,11 +21,15 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { DataProcessingAgreement } from '../models';
+import { CreateDataProcessingAgreementRequestModel } from '../models';
 // @ts-ignore
-import { DataProcessingAgreementPaginatedList } from '../models';
+import { DataProcessingAgreementDto } from '../models';
+// @ts-ignore
+import { DataProcessingAgreementDtoPaginatedList } from '../models';
 // @ts-ignore
 import { ProblemDetails } from '../models';
+// @ts-ignore
+import { UpdateDataProcessingAgreementRequestModel } from '../models';
 /**
  * DataProcessingAgreementsApi - axios parameter creator
  * @export
@@ -144,11 +148,11 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
          * 
          * @summary Update a data processing agreement.
          * @param {string} id 
-         * @param {DataProcessingAgreement} [dataProcessingAgreement] 
+         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsIdPut: async (id: string, dataProcessingAgreement?: DataProcessingAgreement, options: any = {}): Promise<RequestArgs> => {
+        v1DataAgreementsIdPut: async (id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
             assertParamExists('v1DataAgreementsIdPut', 'id', id)
             const localVarPath = `/v1/data-agreements/{id}`
@@ -171,7 +175,7 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
             setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(dataProcessingAgreement, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(updateDataProcessingAgreementRequestModel, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -215,11 +219,11 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
         /**
          * 
          * @summary Create a data processing agreement.
-         * @param {DataProcessingAgreement} [dataProcessingAgreement] 
+         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsPost: async (dataProcessingAgreement?: DataProcessingAgreement, options: any = {}): Promise<RequestArgs> => {
+        v1DataAgreementsPost: async (createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/data-agreements`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -239,7 +243,7 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
             setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(dataProcessingAgreement, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(createDataProcessingAgreementRequestModel, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -264,7 +268,7 @@ export const DataProcessingAgreementsApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DataAgreementsGet(pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementPaginatedList>> {
+        async v1DataAgreementsGet(pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDtoPaginatedList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsGet(pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -286,7 +290,7 @@ export const DataProcessingAgreementsApiFp = function(configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DataAgreementsIdGet(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreement>> {
+        async v1DataAgreementsIdGet(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsIdGet(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -294,12 +298,12 @@ export const DataProcessingAgreementsApiFp = function(configuration?: Configurat
          * 
          * @summary Update a data processing agreement.
          * @param {string} id 
-         * @param {DataProcessingAgreement} [dataProcessingAgreement] 
+         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DataAgreementsIdPut(id: string, dataProcessingAgreement?: DataProcessingAgreement, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreement>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsIdPut(id, dataProcessingAgreement, options);
+        async v1DataAgreementsIdPut(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -316,12 +320,12 @@ export const DataProcessingAgreementsApiFp = function(configuration?: Configurat
         /**
          * 
          * @summary Create a data processing agreement.
-         * @param {DataProcessingAgreement} [dataProcessingAgreement] 
+         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DataAgreementsPost(dataProcessingAgreement?: DataProcessingAgreement, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreement>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsPost(dataProcessingAgreement, options);
+        async v1DataAgreementsPost(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsPost(createDataProcessingAgreementRequestModel, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -342,7 +346,7 @@ export const DataProcessingAgreementsApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsGet(pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DataProcessingAgreementPaginatedList> {
+        v1DataAgreementsGet(pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DataProcessingAgreementDtoPaginatedList> {
             return localVarFp.v1DataAgreementsGet(pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
@@ -362,19 +366,19 @@ export const DataProcessingAgreementsApiFactory = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsIdGet(id: string, options?: any): AxiosPromise<DataProcessingAgreement> {
+        v1DataAgreementsIdGet(id: string, options?: any): AxiosPromise<DataProcessingAgreementDto> {
             return localVarFp.v1DataAgreementsIdGet(id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Update a data processing agreement.
          * @param {string} id 
-         * @param {DataProcessingAgreement} [dataProcessingAgreement] 
+         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsIdPut(id: string, dataProcessingAgreement?: DataProcessingAgreement, options?: any): AxiosPromise<DataProcessingAgreement> {
-            return localVarFp.v1DataAgreementsIdPut(id, dataProcessingAgreement, options).then((request) => request(axios, basePath));
+        v1DataAgreementsIdPut(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any): AxiosPromise<DataProcessingAgreementDto> {
+            return localVarFp.v1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -389,12 +393,12 @@ export const DataProcessingAgreementsApiFactory = function (configuration?: Conf
         /**
          * 
          * @summary Create a data processing agreement.
-         * @param {DataProcessingAgreement} [dataProcessingAgreement] 
+         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsPost(dataProcessingAgreement?: DataProcessingAgreement, options?: any): AxiosPromise<DataProcessingAgreement> {
-            return localVarFp.v1DataAgreementsPost(dataProcessingAgreement, options).then((request) => request(axios, basePath));
+        v1DataAgreementsPost(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any): AxiosPromise<DataProcessingAgreementDto> {
+            return localVarFp.v1DataAgreementsPost(createDataProcessingAgreementRequestModel, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -447,13 +451,13 @@ export class DataProcessingAgreementsApi extends BaseAPI {
      * 
      * @summary Update a data processing agreement.
      * @param {string} id 
-     * @param {DataProcessingAgreement} [dataProcessingAgreement] 
+     * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataProcessingAgreementsApi
      */
-    public v1DataAgreementsIdPut(id: string, dataProcessingAgreement?: DataProcessingAgreement, options?: any) {
-        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsIdPut(id, dataProcessingAgreement, options).then((request) => request(this.axios, this.basePath));
+    public v1DataAgreementsIdPut(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any) {
+        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -471,12 +475,12 @@ export class DataProcessingAgreementsApi extends BaseAPI {
     /**
      * 
      * @summary Create a data processing agreement.
-     * @param {DataProcessingAgreement} [dataProcessingAgreement] 
+     * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataProcessingAgreementsApi
      */
-    public v1DataAgreementsPost(dataProcessingAgreement?: DataProcessingAgreement, options?: any) {
-        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsPost(dataProcessingAgreement, options).then((request) => request(this.axios, this.basePath));
+    public v1DataAgreementsPost(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any) {
+        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsPost(createDataProcessingAgreementRequestModel, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -13,38 +13,39 @@
  */
 
 
-import { Receiver } from './receiver';
+import { DocumentsRequired } from './documents-required';
+import { FinancialAccounts } from './financial-accounts';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @interface Financial
  */
-export interface DataConsentRequestModel {
+export interface Financial {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof Financial
      */
-    consentTemplateId?: string;
+    accountField?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof Financial
      */
-    startDateTime?: string;
+    customKey?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestModel
+     * @type {Array<FinancialAccounts>}
+     * @memberof Financial
      */
-    expiryDateTime?: string;
+    accounts?: Array<FinancialAccounts> | null;
     /**
      * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
+     * @type {DocumentsRequired}
+     * @memberof Financial
      */
-    receiver: Receiver;
+    requirement?: DocumentsRequired;
 }
 
 
