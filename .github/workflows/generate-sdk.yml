@@ -1,6 +1,9 @@
 name: Generate & Update SDK
 
-on: workflow_dispatch
+on: 
+  schedule:
+    - cron: '30 10 * * *'
+  workflow_dispatch:
 
 jobs:
     build:
@@ -23,6 +26,11 @@ jobs:
             - name: Install OpenAPI Tools
               run: |
                   npm install @openapitools/openapi-generator-cli -g
+
+            - name: Cleanup folders
+              run: |
+                rm -rf ./api
+                rm -rf ./models
 
             - name: Generate SDK's
               run: |
