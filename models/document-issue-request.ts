@@ -62,7 +62,7 @@ export interface DocumentIssueRequest {
      * @type {string}
      * @memberof DocumentIssueRequest
      */
-    base64PDFDocument: string;
+    base64PdfDocument: string;
     /**
      * 
      * @type {any}

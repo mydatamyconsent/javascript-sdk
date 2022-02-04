@@ -13,56 +13,62 @@
  */
 
 
-import { SuggestedAccountDto } from './suggested-account-dto';
+import { DataConsentStatus } from './data-consent-status';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestedAccountDto
+ * @interface UserDataConsentInfoDto
  */
-export interface DataConsentRequestedAccountDto {
+export interface UserDataConsentInfoDto {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestedAccountDto
+     * @memberof UserDataConsentInfoDto
      */
-    name?: string | null;
+    consentRequestId?: string;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestedAccountDto
+     * @memberof UserDataConsentInfoDto
      */
-    accountTypeId?: string;
-    /**
-     * 
-     * @type {Array<SuggestedAccountDto>}
-     * @memberof DataConsentRequestedAccountDto
-     */
-    suggestedAccounts?: Array<SuggestedAccountDto> | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof DataConsentRequestedAccountDto
-     */
-    issuer?: Array<string> | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof DataConsentRequestedAccountDto
-     */
-    issuerLogoUrls?: Array<string> | null;
+    userId?: string;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestedAccountDto
+     * @memberof UserDataConsentInfoDto
      */
-    requestedDataType?: string | null;
+    consentTemplateId?: string | null;
     /**
      * 
-     * @type {boolean}
-     * @memberof DataConsentRequestedAccountDto
+     * @type {string}
+     * @memberof UserDataConsentInfoDto
      */
-    optional?: boolean;
+    consentPurpose?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDataConsentInfoDto
+     */
+    consentDescription?: string | null;
+    /**
+     * 
+     * @type {DataConsentStatus}
+     * @memberof UserDataConsentInfoDto
+     */
+    status?: DataConsentStatus;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDataConsentInfoDto
+     */
+    createdAtUtc?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDataConsentInfoDto
+     */
+    consentSentToUser?: string | null;
 }
 
 

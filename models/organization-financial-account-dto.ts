@@ -15,92 +15,91 @@
 
 import { BankAccountType } from './bank-account-type';
 import { FileType } from './file-type';
-import { Organization } from './organization';
 
 /**
  * 
  * @export
- * @interface OrganizationFinancialAccount
+ * @interface OrganizationFinancialAccountDto
  */
-export interface OrganizationFinancialAccount {
+export interface OrganizationFinancialAccountDto {
     /**
      * 
      * @type {string}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     id?: string;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     organizationId?: string;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
+     */
+    organizationName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationFinancialAccountDto
      */
     beneficiaryName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     accountNumber?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     routingNumber?: string | null;
     /**
      * 
-     * @type {Organization}
-     * @memberof OrganizationFinancialAccount
-     */
-    organization?: Organization;
-    /**
-     * 
      * @type {boolean}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     isPrimary?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     isVerified?: boolean;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     logoUrl?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     bankName?: string | null;
     /**
      * 
+     * @type {BankAccountType}
+     * @memberof OrganizationFinancialAccountDto
+     */
+    bankAccountType?: BankAccountType;
+    /**
+     * 
      * @type {string}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     bankAccountProofUrl?: string | null;
     /**
      * 
      * @type {FileType}
-     * @memberof OrganizationFinancialAccount
+     * @memberof OrganizationFinancialAccountDto
      */
     fileType?: FileType;
-    /**
-     * 
-     * @type {BankAccountType}
-     * @memberof OrganizationFinancialAccount
-     */
-    bankAccountType?: BankAccountType;
 }
 
 

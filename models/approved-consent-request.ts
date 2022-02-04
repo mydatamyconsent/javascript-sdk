@@ -17,21 +17,15 @@
 /**
  * 
  * @export
- * @interface JsonSchema
+ * @interface ApprovedConsentRequest
  */
-export interface JsonSchema {
+export interface ApprovedConsentRequest {
     /**
      * 
-     * @type {Array<object>}
-     * @memberof JsonSchema
+     * @type {string}
+     * @memberof ApprovedConsentRequest
      */
-    keywords?: Array<object> | null;
-    /**
-     * 
-     * @type {{ [key: string]: any; }}
-     * @memberof JsonSchema
-     */
-    otherData?: { [key: string]: any; } | null;
+    logoUrl?: string | null;
 }
 
 

@@ -17,27 +17,18 @@
 /**
  * 
  * @export
- * @interface Rejection
+ * @enum {string}
  */
-export interface Rejection {
-    /**
-     * 
-     * @type {string}
-     * @memberof Rejection
-     */
-    reason?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Rejection
-     */
-    rejectedBy?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Rejection
-     */
-    rejectedAtUtc?: string;
+
+export enum DocumentCategoryType {
+    Health = 'Health',
+    Finance = 'Finance',
+    Education = 'Education',
+    Bills = 'Bills',
+    Tax = 'Tax',
+    Certificates = 'Certificates',
+    Invoices = 'Invoices'
 }
+
 
 

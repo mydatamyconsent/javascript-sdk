@@ -17,14 +17,45 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface SharedWith
  */
-
-export enum IdentityClaim {
-    Email = 'Email',
-    FirstName = 'FirstName',
-    LastName = 'LastName'
+export interface SharedWith {
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedWith
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedWith
+     */
+    receiverId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedWith
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedWith
+     */
+    contactNumber?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedWith
+     */
+    profileUrl?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SharedWith
+     */
+    expiresAtUtc?: string | null;
 }
-
 
 

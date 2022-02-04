@@ -17,18 +17,27 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface OrganizationDocumentDownloadDto
  */
-
-export enum Operator {
-    EqualTo = 'EqualTo',
-    NotEqualto = 'NotEqualto',
-    TextContains = 'TextContains',
-    GreaterThan = 'GreaterThan',
-    LessThan = 'LessThan',
-    GreaterThanOrEqualTo = 'GreaterThanOrEqualTo',
-    LessThanOrEqualTo = 'LessThanOrEqualTo'
+export interface OrganizationDocumentDownloadDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDocumentDownloadDto
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDocumentDownloadDto
+     */
+    storageUrl?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDocumentDownloadDto
+     */
+    ownerId?: string;
 }
-
 
 

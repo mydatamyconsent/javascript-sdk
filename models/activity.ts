@@ -17,13 +17,33 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface Activity
  */
-
-export enum OrganizationAddressType {
-    RegisteredAddress = 'RegisteredAddress',
-    OperatingAddress = 'OperatingAddress'
+export interface Activity {
+    /**
+     * 
+     * @type {string}
+     * @memberof Activity
+     */
+    actorName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Activity
+     */
+    description?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Activity
+     */
+    actorProfileUrl?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Activity
+     */
+    dateTimeUtc?: string;
 }
-
 
 

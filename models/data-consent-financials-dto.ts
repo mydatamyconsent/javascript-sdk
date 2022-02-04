@@ -13,17 +13,33 @@
  */
 
 
+import { DataConsentRequestedFinancialAccount } from './data-consent-requested-financial-account';
+import { Financial } from './financial';
 
 /**
  * 
  * @export
- * @enum {string}
+ * @interface DataConsentFinancialsDto
  */
-
-export enum CategoryIconFontFamily {
-    MaterialIcons = 'MaterialIcons',
-    FontAwesomeRegular = 'FontAwesomeRegular'
+export interface DataConsentFinancialsDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentFinancialsDto
+     */
+    id?: string;
+    /**
+     * 
+     * @type {Array<Financial>}
+     * @memberof DataConsentFinancialsDto
+     */
+    financials?: Array<Financial> | null;
+    /**
+     * 
+     * @type {Array<DataConsentRequestedFinancialAccount>}
+     * @memberof DataConsentFinancialsDto
+     */
+    approvedFinancials?: Array<DataConsentRequestedFinancialAccount> | null;
 }
-
 
 

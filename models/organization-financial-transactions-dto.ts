@@ -17,45 +17,57 @@
 /**
  * 
  * @export
- * @interface SuggestedAccountDto
+ * @interface OrganizationFinancialTransactionsDto
  */
-export interface SuggestedAccountDto {
+export interface OrganizationFinancialTransactionsDto {
     /**
      * 
      * @type {string}
-     * @memberof SuggestedAccountDto
+     * @memberof OrganizationFinancialTransactionsDto
      */
-    issuerId?: string;
+    id?: string;
     /**
      * 
      * @type {string}
-     * @memberof SuggestedAccountDto
+     * @memberof OrganizationFinancialTransactionsDto
      */
     accountId?: string;
     /**
      * 
      * @type {string}
-     * @memberof SuggestedAccountDto
+     * @memberof OrganizationFinancialTransactionsDto
      */
-    issuerName?: string | null;
+    name?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof SuggestedAccountDto
+     * @memberof OrganizationFinancialTransactionsDto
      */
-    accountLogoUrl?: string | null;
+    instrumentId?: string;
     /**
      * 
      * @type {string}
-     * @memberof SuggestedAccountDto
+     * @memberof OrganizationFinancialTransactionsDto
      */
-    accountNumber?: string | null;
+    transactionType?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof OrganizationFinancialTransactionsDto
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof OrganizationFinancialTransactionsDto
+     */
+    averagePrice?: number;
     /**
      * 
      * @type {string}
-     * @memberof SuggestedAccountDto
+     * @memberof OrganizationFinancialTransactionsDto
      */
-    accountCategory?: string | null;
+    currency?: string | null;
 }
 
 

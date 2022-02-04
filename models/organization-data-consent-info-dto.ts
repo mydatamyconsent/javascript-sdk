@@ -13,57 +13,68 @@
  */
 
 
-import { DataConsentRfaFilterDto } from './data-consent-rfa-filter-dto';
-import { FinancialAccountTypes } from './financial-account-types';
+import { DataConsentStatus } from './data-consent-status';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestedFaDto
+ * @interface OrganizationDataConsentInfoDto
  */
-export interface DataConsentRequestedFaDto {
+export interface OrganizationDataConsentInfoDto {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestedFaDto
+     * @memberof OrganizationDataConsentInfoDto
      */
-    drn?: string | null;
+    consentRequestId?: string;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestedFaDto
+     * @memberof OrganizationDataConsentInfoDto
      */
-    fromDatetime?: string;
+    userId?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestedFaDto
+     * @memberof OrganizationDataConsentInfoDto
      */
-    toDatetime?: string;
+    consentTemplateId?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestedFaDto
+     * @memberof OrganizationDataConsentInfoDto
      */
-    providerId?: string | null;
-    /**
-     * 
-     * @type {FinancialAccountTypes}
-     * @memberof DataConsentRequestedFaDto
-     */
-    accountType?: FinancialAccountTypes;
+    consentPurpose?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestedFaDto
+     * @memberof OrganizationDataConsentInfoDto
      */
-    accountIdentifier?: string | null;
+    consentDescription?: string | null;
     /**
      * 
-     * @type {Array<DataConsentRfaFilterDto>}
-     * @memberof DataConsentRequestedFaDto
+     * @type {DataConsentStatus}
+     * @memberof OrganizationDataConsentInfoDto
      */
-    filters?: Array<DataConsentRfaFilterDto> | null;
+    status?: DataConsentStatus;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDataConsentInfoDto
+     */
+    createdAtUtc?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDataConsentInfoDto
+     */
+    organizationId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDataConsentInfoDto
+     */
+    consentSentToOrganization?: string | null;
 }
 
 

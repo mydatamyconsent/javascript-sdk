@@ -13,8 +13,6 @@
  */
 
 
-import { DataConsentRfaFilter } from './data-consent-rfa-filter';
-import { FinancialAccountTypes } from './financial-account-types';
 
 /**
  * 
@@ -27,43 +25,25 @@ export interface DataConsentRequestedFinancialAccount {
      * @type {string}
      * @memberof DataConsentRequestedFinancialAccount
      */
+    customKey?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentRequestedFinancialAccount
+     */
     drn?: string | null;
     /**
      * 
      * @type {string}
      * @memberof DataConsentRequestedFinancialAccount
      */
-    fromDatetime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedFinancialAccount
-     */
-    toDatetime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedFinancialAccount
-     */
-    providerId?: string | null;
-    /**
-     * 
-     * @type {FinancialAccountTypes}
-     * @memberof DataConsentRequestedFinancialAccount
-     */
-    accountType?: FinancialAccountTypes;
+    accountTypeId?: string | null;
     /**
      * 
      * @type {string}
      * @memberof DataConsentRequestedFinancialAccount
      */
     accountIdentifier?: string | null;
-    /**
-     * 
-     * @type {Array<DataConsentRfaFilter>}
-     * @memberof DataConsentRequestedFinancialAccount
-     */
-    filters?: Array<DataConsentRfaFilter> | null;
 }
 
 

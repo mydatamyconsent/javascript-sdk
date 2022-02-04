@@ -17,15 +17,51 @@
 /**
  * 
  * @export
- * @interface OrganizationMetaData
+ * @interface DigitalSignature
  */
-export interface OrganizationMetaData {
+export interface DigitalSignature {
     /**
      * 
-     * @type {any}
-     * @memberof OrganizationMetaData
+     * @type {string}
+     * @memberof DigitalSignature
      */
-    digiLockerMetadata?: any | null;
+    signedBy?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DigitalSignature
+     */
+    certIssuedBy?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DigitalSignature
+     */
+    validFrom?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DigitalSignature
+     */
+    validTill?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DigitalSignature
+     */
+    reason?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DigitalSignature
+     */
+    location?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DigitalSignature
+     */
+    sha1Digest?: string | null;
 }
 
 

@@ -13,6 +13,9 @@
  */
 
 
+import { DataConsentIdentifier } from './data-consent-identifier';
+import { DataConsentRequestedDocument } from './data-consent-requested-document';
+import { DataConsentRequestedFinancialAccount } from './data-consent-requested-financial-account';
 import { DataConsentRequesterDto } from './data-consent-requester-dto';
 import { DataConsentStatus } from './data-consent-status';
 import { GetConsentTemplateDetailsDto } from './get-consent-template-details-dto';
@@ -71,6 +74,24 @@ export interface DataConsentDetailsDto {
      * @memberof DataConsentDetailsDto
      */
     consentDetails?: GetConsentTemplateDetailsDto;
+    /**
+     * 
+     * @type {Array<DataConsentIdentifier>}
+     * @memberof DataConsentDetailsDto
+     */
+    identifiers?: Array<DataConsentIdentifier> | null;
+    /**
+     * 
+     * @type {Array<DataConsentRequestedDocument>}
+     * @memberof DataConsentDetailsDto
+     */
+    approvedDocuments?: Array<DataConsentRequestedDocument> | null;
+    /**
+     * 
+     * @type {Array<DataConsentRequestedFinancialAccount>}
+     * @memberof DataConsentDetailsDto
+     */
+    approvedFinancials?: Array<DataConsentRequestedFinancialAccount> | null;
 }
 
 

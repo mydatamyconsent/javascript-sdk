@@ -13,49 +13,44 @@
  */
 
 
+import { UserAccountFinancialTransactionsDto } from './user-account-financial-transactions-dto';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestedDocumentDto
+ * @interface UserAccountFinancialTransactionsDtoPaginatedList
  */
-export interface DataConsentRequestedDocumentDto {
+export interface UserAccountFinancialTransactionsDtoPaginatedList {
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocumentDto
+     * @type {number}
+     * @memberof UserAccountFinancialTransactionsDtoPaginatedList
      */
-    drn?: string | null;
+    pageIndex?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocumentDto
+     * @type {number}
+     * @memberof UserAccountFinancialTransactionsDtoPaginatedList
      */
-    fromDatetime?: string;
+    pageSize?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocumentDto
+     * @type {number}
+     * @memberof UserAccountFinancialTransactionsDtoPaginatedList
      */
-    toDatetime?: string;
+    totalPages?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocumentDto
+     * @type {number}
+     * @memberof UserAccountFinancialTransactionsDtoPaginatedList
      */
-    providerId?: string;
+    totalItems?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocumentDto
+     * @type {Array<UserAccountFinancialTransactionsDto>}
+     * @memberof UserAccountFinancialTransactionsDtoPaginatedList
      */
-    documentTypeId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocumentDto
-     */
-    documentIdentifier?: string | null;
+    items?: Array<UserAccountFinancialTransactionsDto> | null;
 }
 
 

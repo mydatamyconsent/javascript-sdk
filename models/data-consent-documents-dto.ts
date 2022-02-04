@@ -13,34 +13,33 @@
  */
 
 
-import { IdentificationStrategy } from './identification-strategy';
-import { IdentifierStringKeyValuePair } from './identifier-string-key-value-pair';
-import { ReceiverType } from './receiver-type';
+import { DataConsentRequestedDocument } from './data-consent-requested-document';
+import { Document } from './document';
 
 /**
  * 
  * @export
- * @interface Receiver
+ * @interface DataConsentDocumentsDto
  */
-export interface Receiver {
+export interface DataConsentDocumentsDto {
     /**
      * 
-     * @type {ReceiverType}
-     * @memberof Receiver
+     * @type {string}
+     * @memberof DataConsentDocumentsDto
      */
-    type?: ReceiverType;
+    id?: string;
     /**
      * 
-     * @type {Array<IdentifierStringKeyValuePair>}
-     * @memberof Receiver
+     * @type {Array<Document>}
+     * @memberof DataConsentDocumentsDto
      */
-    identifiers?: Array<IdentifierStringKeyValuePair> | null;
+    documents?: Array<Document> | null;
     /**
      * 
-     * @type {IdentificationStrategy}
-     * @memberof Receiver
+     * @type {Array<DataConsentRequestedDocument>}
+     * @memberof DataConsentDocumentsDto
      */
-    identificationStrategy?: IdentificationStrategy;
+    approvedDocuments?: Array<DataConsentRequestedDocument> | null;
 }
 
 

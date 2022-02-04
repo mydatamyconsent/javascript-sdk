@@ -17,15 +17,27 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface UserDocumentDownloadDto
  */
-
-export enum DataLifeUnit {
-    Month = 'Month',
-    Year = 'Year',
-    Day = 'Day',
-    Forever = 'Forever'
+export interface UserDocumentDownloadDto {
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDownloadDto
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDownloadDto
+     */
+    storageUrl?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDownloadDto
+     */
+    ownerId?: string;
 }
-
 
 

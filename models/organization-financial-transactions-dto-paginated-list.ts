@@ -13,44 +13,44 @@
  */
 
 
-import { Country } from './country';
+import { OrganizationFinancialTransactionsDto } from './organization-financial-transactions-dto';
 
 /**
  * 
  * @export
- * @interface OrganizationType
+ * @interface OrganizationFinancialTransactionsDtoPaginatedList
  */
-export interface OrganizationType {
+export interface OrganizationFinancialTransactionsDtoPaginatedList {
     /**
      * 
-     * @type {string}
-     * @memberof OrganizationType
+     * @type {number}
+     * @memberof OrganizationFinancialTransactionsDtoPaginatedList
      */
-    id?: string;
+    pageIndex?: number;
     /**
      * 
-     * @type {string}
-     * @memberof OrganizationType
+     * @type {number}
+     * @memberof OrganizationFinancialTransactionsDtoPaginatedList
      */
-    countryId?: string;
+    pageSize?: number;
     /**
      * 
-     * @type {string}
-     * @memberof OrganizationType
+     * @type {number}
+     * @memberof OrganizationFinancialTransactionsDtoPaginatedList
      */
-    typeName?: string | null;
+    totalPages?: number;
     /**
      * 
-     * @type {string}
-     * @memberof OrganizationType
+     * @type {number}
+     * @memberof OrganizationFinancialTransactionsDtoPaginatedList
      */
-    elfCode?: string | null;
+    totalItems?: number;
     /**
      * 
-     * @type {Country}
-     * @memberof OrganizationType
+     * @type {Array<OrganizationFinancialTransactionsDto>}
+     * @memberof OrganizationFinancialTransactionsDtoPaginatedList
      */
-    country?: Country;
+    items?: Array<OrganizationFinancialTransactionsDto> | null;
 }
 
 

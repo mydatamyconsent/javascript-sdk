@@ -13,74 +13,79 @@
  */
 
 
-import { CountryState } from './country-state';
 
 /**
  * 
  * @export
- * @interface Country
+ * @interface OrganizationDocumentDetailsDto
  */
-export interface Country {
+export interface OrganizationDocumentDetailsDto {
     /**
      * 
      * @type {string}
-     * @memberof Country
+     * @memberof OrganizationDocumentDetailsDto
      */
     id?: string;
     /**
      * 
      * @type {string}
-     * @memberof Country
+     * @memberof OrganizationDocumentDetailsDto
+     */
+    organizationId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDocumentDetailsDto
+     */
+    organizationName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDocumentDetailsDto
+     */
+    typeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDocumentDetailsDto
+     */
+    typeName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof OrganizationDocumentDetailsDto
      */
     name?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Country
+     * @memberof OrganizationDocumentDetailsDto
      */
-    iso3?: string | null;
+    identifier?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Country
+     * @memberof OrganizationDocumentDetailsDto
      */
-    iso2?: string | null;
+    storageUrl?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Country
+     * @memberof OrganizationDocumentDetailsDto
      */
-    phoneCode?: string | null;
+    countryIso2?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof Country
+     * @memberof OrganizationDocumentDetailsDto
      */
-    capital?: string | null;
+    issuerId?: string;
     /**
      * 
      * @type {string}
-     * @memberof Country
+     * @memberof OrganizationDocumentDetailsDto
      */
-    currencyCode?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Country
-     */
-    currencySymbol?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Country
-     */
-    flagUrl?: string | null;
-    /**
-     * 
-     * @type {Array<CountryState>}
-     * @memberof Country
-     */
-    states?: Array<CountryState> | null;
+    issuerName?: string | null;
 }
 
 

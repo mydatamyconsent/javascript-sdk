@@ -25,25 +25,13 @@ export interface DataConsentRequestedDocument {
      * @type {string}
      * @memberof DataConsentRequestedDocument
      */
+    customKey?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentRequestedDocument
+     */
     drn?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocument
-     */
-    fromDatetime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocument
-     */
-    toDatetime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocument
-     */
-    providerId?: string;
     /**
      * 
      * @type {string}

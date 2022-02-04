@@ -13,94 +13,99 @@
  */
 
 
-import { ApplicationUser } from './application-user';
-import { Organization } from './organization';
-import { Rejection } from './rejection';
+import { DigitalSignature } from './digital-signature';
+import { DocumentCategoryType } from './document-category-type';
 
 /**
  * 
  * @export
- * @interface OrganizationKyoDocument
+ * @interface UserDocumentDetailsDto
  */
-export interface OrganizationKyoDocument {
+export interface UserDocumentDetailsDto {
     /**
      * 
      * @type {string}
-     * @memberof OrganizationKyoDocument
+     * @memberof UserDocumentDetailsDto
      */
     id?: string;
     /**
      * 
-     * @type {string}
-     * @memberof OrganizationKyoDocument
+     * @type {DocumentCategoryType}
+     * @memberof UserDocumentDetailsDto
      */
-    organizationId?: string;
+    categoryType?: DocumentCategoryType;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationKyoDocument
+     * @memberof UserDocumentDetailsDto
      */
-    documentName?: string | null;
+    typeId?: string;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationKyoDocument
+     * @memberof UserDocumentDetailsDto
+     */
+    typeName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDetailsDto
+     */
+    fullName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDetailsDto
+     */
+    identifier?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDetailsDto
+     */
+    accountId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDetailsDto
+     */
+    issuerId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDetailsDto
+     */
+    issuerName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDetailsDto
      */
     storageUrl?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof OrganizationKyoDocument
+     * @type {boolean}
+     * @memberof UserDocumentDetailsDto
      */
-    uploadedAtUtc?: string;
+    isQuickAccessEnabled?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UserDocumentDetailsDto
+     */
+    isOwner?: boolean;
+    /**
+     * 
+     * @type {Array<DigitalSignature>}
+     * @memberof UserDocumentDetailsDto
+     */
+    digitalSignatureDetails?: Array<DigitalSignature> | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationKyoDocument
+     * @memberof UserDocumentDetailsDto
      */
-    verifiedBy?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganizationKyoDocument
-     */
-    verifiedAtUtc?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganizationKyoDocument
-     */
-    deletedBy?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganizationKyoDocument
-     */
-    deletedAtUtc?: string | null;
-    /**
-     * 
-     * @type {Organization}
-     * @memberof OrganizationKyoDocument
-     */
-    organization?: Organization;
-    /**
-     * 
-     * @type {ApplicationUser}
-     * @memberof OrganizationKyoDocument
-     */
-    verifiedByUser?: ApplicationUser;
-    /**
-     * 
-     * @type {ApplicationUser}
-     * @memberof OrganizationKyoDocument
-     */
-    deletedByUser?: ApplicationUser;
-    /**
-     * 
-     * @type {Rejection}
-     * @memberof OrganizationKyoDocument
-     */
-    rejection?: Rejection;
+    ownerId?: string;
 }
 
 

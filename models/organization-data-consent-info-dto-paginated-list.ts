@@ -13,33 +13,44 @@
  */
 
 
-import { FilterType } from './filter-type';
-import { Operator } from './operator';
+import { OrganizationDataConsentInfoDto } from './organization-data-consent-info-dto';
 
 /**
  * 
  * @export
- * @interface DataConsentRfaFilter
+ * @interface OrganizationDataConsentInfoDtoPaginatedList
  */
-export interface DataConsentRfaFilter {
+export interface OrganizationDataConsentInfoDtoPaginatedList {
     /**
      * 
-     * @type {FilterType}
-     * @memberof DataConsentRfaFilter
+     * @type {number}
+     * @memberof OrganizationDataConsentInfoDtoPaginatedList
      */
-    filterType?: FilterType;
+    pageIndex?: number;
     /**
      * 
-     * @type {Operator}
-     * @memberof DataConsentRfaFilter
+     * @type {number}
+     * @memberof OrganizationDataConsentInfoDtoPaginatedList
      */
-    operator?: Operator;
+    pageSize?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRfaFilter
+     * @type {number}
+     * @memberof OrganizationDataConsentInfoDtoPaginatedList
      */
-    value?: string | null;
+    totalPages?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof OrganizationDataConsentInfoDtoPaginatedList
+     */
+    totalItems?: number;
+    /**
+     * 
+     * @type {Array<OrganizationDataConsentInfoDto>}
+     * @memberof OrganizationDataConsentInfoDtoPaginatedList
+     */
+    items?: Array<OrganizationDataConsentInfoDto> | null;
 }
 
 

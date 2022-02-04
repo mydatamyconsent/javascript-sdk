@@ -13,44 +13,61 @@
  */
 
 
-import { Country } from './country';
 
 /**
  * 
  * @export
- * @interface CountryState
+ * @interface UserAccountFinancialTransactionsDto
  */
-export interface CountryState {
+export interface UserAccountFinancialTransactionsDto {
     /**
      * 
      * @type {string}
-     * @memberof CountryState
+     * @memberof UserAccountFinancialTransactionsDto
      */
     id?: string;
     /**
      * 
      * @type {string}
-     * @memberof CountryState
+     * @memberof UserAccountFinancialTransactionsDto
      */
-    countryId?: string;
+    accountId?: string;
     /**
      * 
      * @type {string}
-     * @memberof CountryState
+     * @memberof UserAccountFinancialTransactionsDto
      */
     name?: string | null;
     /**
      * 
-     * @type {number}
-     * @memberof CountryState
+     * @type {string}
+     * @memberof UserAccountFinancialTransactionsDto
      */
-    fipsCode?: number;
+    instrumentId?: string;
     /**
      * 
-     * @type {Country}
-     * @memberof CountryState
+     * @type {string}
+     * @memberof UserAccountFinancialTransactionsDto
      */
-    country?: Country;
+    transactionType?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof UserAccountFinancialTransactionsDto
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UserAccountFinancialTransactionsDto
+     */
+    averagePrice?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserAccountFinancialTransactionsDto
+     */
+    currency?: string | null;
 }
 
 
