@@ -22,16 +22,16 @@
 export interface IdentitySupportedFields {
     /**
      * 
-     * @type {string}
+     * @type {number}
      * @memberof IdentitySupportedFields
      */
-    icon?: string | null;
+    iconCodePoint: number;
     /**
      * 
      * @type {string}
      * @memberof IdentitySupportedFields
      */
-    title?: string | null;
+    title: string;
     /**
      * 
      * @type {string}
@@ -43,13 +43,13 @@ export interface IdentitySupportedFields {
      * @type {string}
      * @memberof IdentitySupportedFields
      */
-    key?: string | null;
+    key: string;
     /**
      * 
      * @type {string}
      * @memberof IdentitySupportedFields
      */
-    dataType?: string | null;
+    dataType: string;
 }
 
 

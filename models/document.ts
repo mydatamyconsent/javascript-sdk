@@ -26,25 +26,25 @@ export interface Document {
      * @type {string}
      * @memberof Document
      */
-    documentField?: string | null;
+    fieldTitle: string;
     /**
      * 
      * @type {string}
      * @memberof Document
      */
-    customKey?: string | null;
+    fieldSlug: string;
     /**
      * 
      * @type {Array<string>}
      * @memberof Document
      */
-    drn?: Array<string> | null;
+    drn: Array<string>;
     /**
      * 
      * @type {DocumentsRequired}
      * @memberof Document
      */
-    requirement?: DocumentsRequired;
+    requirement: DocumentsRequired;
 }
 
 
