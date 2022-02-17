@@ -21,13 +21,11 @@
  */
 
 export enum DocumentCategoryType {
+    Personal = 'Personal',
+    Education = 'Education',
     Health = 'Health',
     Finance = 'Finance',
-    Education = 'Education',
-    Bills = 'Bills',
-    Tax = 'Tax',
-    Certificates = 'Certificates',
-    Invoices = 'Invoices'
+    Certificates = 'Certificates'
 }
 
 
