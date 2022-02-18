@@ -13,26 +13,43 @@
  */
 
 
-import { Receiver } from './receiver';
 
 /**
  * 
  * @export
- * @interface DataConsentRequestModel
+ * @interface DataConsentRequest
  */
-export interface DataConsentRequestModel {
+export interface DataConsentRequest {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof DataConsentRequest
      */
-    consentTemplateId?: string;
+    id?: string;
     /**
      * 
-     * @type {Receiver}
-     * @memberof DataConsentRequestModel
+     * @type {string}
+     * @memberof DataConsentRequest
      */
-    receiver: Receiver;
+    templateId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentRequest
+     */
+    requestedAtUtc?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentRequest
+     */
+    requestExpiredAtUtc?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentRequest
+     */
+    transactionId?: string | null;
 }
 
 

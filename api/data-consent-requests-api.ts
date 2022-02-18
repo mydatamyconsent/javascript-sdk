@@ -23,6 +23,8 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { DataConsentDetailsDto } from '../models';
 // @ts-ignore
+import { DataConsentRequest } from '../models';
+// @ts-ignore
 import { DataConsentRequestModel } from '../models';
 // @ts-ignore
 import { DataConsentStatus } from '../models';
@@ -288,7 +290,7 @@ export const DataConsentRequestsApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createRequest(dataConsentRequestModel?: DataConsentRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean>> {
+        async createRequest(dataConsentRequestModel?: DataConsentRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentRequest>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.createRequest(dataConsentRequestModel, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -367,7 +369,7 @@ export const DataConsentRequestsApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createRequest(dataConsentRequestModel?: DataConsentRequestModel, options?: any): AxiosPromise<boolean> {
+        createRequest(dataConsentRequestModel?: DataConsentRequestModel, options?: any): AxiosPromise<DataConsentRequest> {
             return localVarFp.createRequest(dataConsentRequestModel, options).then((request) => request(axios, basePath));
         },
         /**

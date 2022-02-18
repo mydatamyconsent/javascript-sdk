@@ -23,6 +23,7 @@ models/data-consent-documents-dto.ts
 models/data-consent-financials-dto.ts
 models/data-consent-identifier.ts
 models/data-consent-request-model.ts
+models/data-consent-request.ts
 models/data-consent-requested-document.ts
 models/data-consent-requested-financial-account.ts
 models/data-consent-requester-dto.ts

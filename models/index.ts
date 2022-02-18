@@ -8,6 +8,7 @@ export * from './data-consent-details-dto';
 export * from './data-consent-documents-dto';
 export * from './data-consent-financials-dto';
 export * from './data-consent-identifier';
+export * from './data-consent-request';
 export * from './data-consent-request-model';
 export * from './data-consent-requested-document';
 export * from './data-consent-requested-financial-account';
