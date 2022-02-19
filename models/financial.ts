@@ -27,13 +27,13 @@ export interface Financial {
      * @type {string}
      * @memberof Financial
      */
-    accountField?: string | null;
+    field_name?: string | null;
     /**
      * 
      * @type {string}
      * @memberof Financial
      */
-    customKey?: string | null;
+    custom_key?: string | null;
     /**
      * 
      * @type {Array<FinancialAccounts>}

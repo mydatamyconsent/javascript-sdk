@@ -32,7 +32,7 @@ export interface DocumentIssueRequest {
      * @type {string}
      * @memberof DocumentIssueRequest
      */
-    identifier: string;
+    documentIdentifier: string;
     /**
      * 
      * @type {string}

@@ -25,7 +25,7 @@ export interface IdentitySupportedFields {
      * @type {number}
      * @memberof IdentitySupportedFields
      */
-    iconCodePoint: number;
+    icon: number;
     /**
      * 
      * @type {string}

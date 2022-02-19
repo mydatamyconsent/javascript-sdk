@@ -25,7 +25,7 @@ export interface DataConsentRequestedDocument {
      * @type {string}
      * @memberof DataConsentRequestedDocument
      */
-    customKey?: string | null;
+    custom_key?: string | null;
     /**
      * 
      * @type {string}

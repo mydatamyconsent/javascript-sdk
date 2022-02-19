@@ -26,13 +26,13 @@ export interface Document {
      * @type {string}
      * @memberof Document
      */
-    fieldTitle: string;
+    field_title: string;
     /**
      * 
      * @type {string}
      * @memberof Document
      */
-    fieldSlug: string;
+    field_slug: string;
     /**
      * 
      * @type {Array<string>}

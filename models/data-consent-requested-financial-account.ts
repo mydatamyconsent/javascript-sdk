@@ -25,7 +25,7 @@ export interface DataConsentRequestedFinancialAccount {
      * @type {string}
      * @memberof DataConsentRequestedFinancialAccount
      */
-    customKey?: string | null;
+    custom_key?: string | null;
     /**
      * 
      * @type {string}

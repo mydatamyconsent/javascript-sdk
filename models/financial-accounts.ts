@@ -32,19 +32,19 @@ export interface FinancialAccounts {
      * @type {Array<FinancialAccountDetailsRequired>}
      * @memberof FinancialAccounts
      */
-    financialAccountDetailsRequired?: Array<FinancialAccountDetailsRequired> | null;
+    required_details?: Array<FinancialAccountDetailsRequired> | null;
     /**
      * 
      * @type {string}
      * @memberof FinancialAccounts
      */
-    startDate?: string | null;
+    start_date?: string | null;
     /**
      * 
      * @type {string}
      * @memberof FinancialAccounts
      */
-    endDate?: string | null;
+    end_date?: string | null;
 }
 
 
