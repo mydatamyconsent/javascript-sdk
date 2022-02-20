@@ -16,21 +16,21 @@
 import { Receiver } from './receiver';
 
 /**
- * 
+ * Individual Data Consent Request.
  * @export
- * @interface DataConsentRequestModel
+ * @interface CreateIndividualDataConsentRequest
  */
-export interface DataConsentRequestModel {
+export interface CreateIndividualDataConsentRequest {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequestModel
+     * @memberof CreateIndividualDataConsentRequest
      */
     consentTemplateId?: string;
     /**
      * 
      * @type {Receiver}
-     * @memberof DataConsentRequestModel
+     * @memberof CreateIndividualDataConsentRequest
      */
     receiver: Receiver;
 }

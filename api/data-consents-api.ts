@@ -58,156 +58,17 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
     return {
         /**
          * 
-         * @summary Get individual consented financial account details based on account id.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsConsentIdAccountsAccountIdGet: async (consentId: string, accountId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdAccountsAccountIdGet', 'consentId', consentId)
-            // verify required parameter 'accountId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdAccountsAccountIdGet', 'accountId', accountId)
-            const localVarPath = `/v1/consents/individuals/{consentId}/accounts/{accountId}`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
-                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get consented financial account transactions of an individual based on accountId.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {string} [filters] 
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {string} [fromDate] 
-         * @param {string} [toDate] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet: async (consentId: string, accountId: string, filters?: string, pageNo?: number, pageSize?: number, fromDate?: string, toDate?: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet', 'consentId', consentId)
-            // verify required parameter 'accountId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet', 'accountId', accountId)
-            const localVarPath = `/v1/consents/individuals/{consentId}/accounts/{accountId}/transactions`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
-                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (filters !== undefined) {
-                localVarQueryParameter['filters'] = filters;
-            }
-
-            if (pageNo !== undefined) {
-                localVarQueryParameter['pageNo'] = pageNo;
-            }
-
-            if (pageSize !== undefined) {
-                localVarQueryParameter['pageSize'] = pageSize;
-            }
-
-            if (fromDate !== undefined) {
-                localVarQueryParameter['fromDate'] = (fromDate as any instanceof Date) ?
-                    (fromDate as any).toISOString() :
-                    fromDate;
-            }
-
-            if (toDate !== undefined) {
-                localVarQueryParameter['toDate'] = (toDate as any instanceof Date) ?
-                    (toDate as any).toISOString() :
-                    toDate;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get all individual financial accounts in a consent.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsConsentIdAccountsGet: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdAccountsGet', 'consentId', consentId)
-            const localVarPath = `/v1/consents/individuals/{consentId}/accounts`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Download a individuals consented document.
-         * @param {string} consentId consentId.
-         * @param {string} documentId documentId.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
+        downloadConsentedDocumentById: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet', 'consentId', consentId)
+            assertParamExists('downloadConsentedDocumentById', 'consentId', consentId)
             // verify required parameter 'documentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet', 'documentId', documentId)
+            assertParamExists('downloadConsentedDocumentById', 'documentId', documentId)
             const localVarPath = `/v1/consents/individuals/{consentId}/documents/{documentId}/download`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
                 .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
@@ -235,321 +96,17 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
-         * @summary Get individuals consent document based on document id.
-         * @param {string} consentId 
-         * @param {string} documentId Document Id.
+         * @summary Download a organizations consented document.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
+        downloadOrgConsentedDocumentById: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet', 'consentId', consentId)
+            assertParamExists('downloadOrgConsentedDocumentById', 'consentId', consentId)
             // verify required parameter 'documentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet', 'documentId', documentId)
-            const localVarPath = `/v1/consents/individuals/{consentId}/documents/{documentId}`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
-                .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get the individual documents based on ConsentId.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsConsentIdDocumentsGet: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdDocumentsGet', 'consentId', consentId)
-            const localVarPath = `/v1/consents/individuals/{consentId}/documents`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get individuals consent details by consent id.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsConsentIdGet: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsIndividualsConsentIdGet', 'consentId', consentId)
-            const localVarPath = `/v1/consents/individuals/{consentId}`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get the list of Consents Sent to Individuals.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
-         * @param {string} [startDate] 
-         * @param {string} [endDate] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsGet: async (pageNo?: number, pageSize?: number, status?: DataConsentStatus, startDate?: string, endDate?: string, options: any = {}): Promise<RequestArgs> => {
-            const localVarPath = `/v1/consents/individuals`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (pageNo !== undefined) {
-                localVarQueryParameter['pageNo'] = pageNo;
-            }
-
-            if (pageSize !== undefined) {
-                localVarQueryParameter['pageSize'] = pageSize;
-            }
-
-            if (status !== undefined) {
-                localVarQueryParameter['status'] = status;
-            }
-
-            if (startDate !== undefined) {
-                localVarQueryParameter['startDate'] = (startDate as any instanceof Date) ?
-                    (startDate as any).toISOString() :
-                    startDate;
-            }
-
-            if (endDate !== undefined) {
-                localVarQueryParameter['endDate'] = (endDate as any instanceof Date) ?
-                    (endDate as any).toISOString() :
-                    endDate;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get orgnization consented financial account details based on account id.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdAccountsAccountIdGet: async (consentId: string, accountId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdAccountsAccountIdGet', 'consentId', consentId)
-            // verify required parameter 'accountId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdAccountsAccountIdGet', 'accountId', accountId)
-            const localVarPath = `/v1/consents/organizations/{consentId}/accounts/{accountId}`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
-                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get consented financial account transactions of an organization based on accountId.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {string} [filters] 
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {string} [fromDate] 
-         * @param {string} [toDate] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet: async (consentId: string, accountId: string, filters?: string, pageNo?: number, pageSize?: number, fromDate?: string, toDate?: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet', 'consentId', consentId)
-            // verify required parameter 'accountId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet', 'accountId', accountId)
-            const localVarPath = `/v1/consents/organizations/{consentId}/accounts/{accountId}/transactions`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
-                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (filters !== undefined) {
-                localVarQueryParameter['filters'] = filters;
-            }
-
-            if (pageNo !== undefined) {
-                localVarQueryParameter['pageNo'] = pageNo;
-            }
-
-            if (pageSize !== undefined) {
-                localVarQueryParameter['pageSize'] = pageSize;
-            }
-
-            if (fromDate !== undefined) {
-                localVarQueryParameter['fromDate'] = (fromDate as any instanceof Date) ?
-                    (fromDate as any).toISOString() :
-                    fromDate;
-            }
-
-            if (toDate !== undefined) {
-                localVarQueryParameter['toDate'] = (toDate as any instanceof Date) ?
-                    (toDate as any).toISOString() :
-                    toDate;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get all organizational financial accounts in a consent.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdAccountsGet: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdAccountsGet', 'consentId', consentId)
-            const localVarPath = `/v1/consents/organizations/{consentId}/accounts`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Download organizations consented document.
-         * @param {string} consentId 
-         * @param {string} documentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet', 'consentId', consentId)
-            // verify required parameter 'documentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet', 'documentId', documentId)
+            assertParamExists('downloadOrgConsentedDocumentById', 'documentId', documentId)
             const localVarPath = `/v1/consents/organizations/{consentId}/documents/{documentId}/download`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
                 .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
@@ -577,20 +134,16 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
-         * @summary Get organizations consent document based on document id.
-         * @param {string} consentId 
-         * @param {string} documentId 
+         * @summary Get the individual documents based on ConsentId.
+         * @param {string} consentId Consent id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
+        getAllConsentedDocuments: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet', 'consentId', consentId)
-            // verify required parameter 'documentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet', 'documentId', documentId)
-            const localVarPath = `/v1/consents/organizations/{consentId}/documents/{documentId}`
-                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
-                .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
+            assertParamExists('getAllConsentedDocuments', 'consentId', consentId)
+            const localVarPath = `/v1/consents/individuals/{consentId}/documents`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -615,14 +168,82 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
-         * @summary Get the organizations documents based on ConsentId.
-         * @param {string} consentId 
+         * @summary Get all individual consented financial accounts.
+         * @param {string} consentId Consent id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsOrganizationsConsentIdDocumentsGet: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
+        getAllConsentedFinancialAccounts: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdDocumentsGet', 'consentId', consentId)
+            assertParamExists('getAllConsentedFinancialAccounts', 'consentId', consentId)
+            const localVarPath = `/v1/consents/individuals/{consentId}/accounts`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get all organizational consented financial accounts.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllOrganizationConsentedAccounts: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getAllOrganizationConsentedAccounts', 'consentId', consentId)
+            const localVarPath = `/v1/consents/organizations/{consentId}/accounts`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get the organization documents based on ConsentId.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllOrganizationConsentedDocuments: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getAllOrganizationConsentedDocuments', 'consentId', consentId)
             const localVarPath = `/v1/consents/organizations/{consentId}/documents`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -649,14 +270,414 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
-         * @summary Get organizations consent details by consent id.
-         * @param {string} consentId 
+         * @summary Get all individuals consent details by consent id.
+         * @param {string} consentId Consent id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsOrganizationsConsentIdGet: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
+        getConsentDetailsById: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'consentId' is not null or undefined
-            assertParamExists('v1ConsentsOrganizationsConsentIdGet', 'consentId', consentId)
+            assertParamExists('getConsentDetailsById', 'consentId', consentId)
+            const localVarPath = `/v1/consents/individuals/{consentId}`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get individual consented financial account details based on account id.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedAccountById: async (consentId: string, accountId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getConsentedAccountById', 'consentId', consentId)
+            // verify required parameter 'accountId' is not null or undefined
+            assertParamExists('getConsentedAccountById', 'accountId', accountId)
+            const localVarPath = `/v1/consents/individuals/{consentId}/accounts/{accountId}`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
+                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get individuals consent document based on document id.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document Id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedDocumentById: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getConsentedDocumentById', 'consentId', consentId)
+            // verify required parameter 'documentId' is not null or undefined
+            assertParamExists('getConsentedDocumentById', 'documentId', documentId)
+            const localVarPath = `/v1/consents/individuals/{consentId}/documents/{documentId}`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
+                .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get organization consented financial account details based on account id.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedFinancialAccount: async (consentId: string, accountId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getConsentedFinancialAccount', 'consentId', consentId)
+            // verify required parameter 'accountId' is not null or undefined
+            assertParamExists('getConsentedFinancialAccount', 'accountId', accountId)
+            const localVarPath = `/v1/consents/organizations/{consentId}/accounts/{accountId}`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
+                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get individual consented financial account transactions of an individual based on accountId.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {string} [filters] Filters.
+         * @param {string} [fromDateTimeUtc] From date time in utc timezone.
+         * @param {string} [toDateTimeUtc] Til date time in utc timezone.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedFinancialAccountTransactions: async (consentId: string, accountId: string, filters?: string, fromDateTimeUtc?: string, toDateTimeUtc?: string, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getConsentedFinancialAccountTransactions', 'consentId', consentId)
+            // verify required parameter 'accountId' is not null or undefined
+            assertParamExists('getConsentedFinancialAccountTransactions', 'accountId', accountId)
+            const localVarPath = `/v1/consents/individuals/{consentId}/accounts/{accountId}/transactions`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
+                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (filters !== undefined) {
+                localVarQueryParameter['filters'] = filters;
+            }
+
+            if (fromDateTimeUtc !== undefined) {
+                localVarQueryParameter['fromDateTimeUtc'] = (fromDateTimeUtc as any instanceof Date) ?
+                    (fromDateTimeUtc as any).toISOString() :
+                    fromDateTimeUtc;
+            }
+
+            if (toDateTimeUtc !== undefined) {
+                localVarQueryParameter['toDateTimeUtc'] = (toDateTimeUtc as any instanceof Date) ?
+                    (toDateTimeUtc as any).toISOString() :
+                    toDateTimeUtc;
+            }
+
+            if (pageNo !== undefined) {
+                localVarQueryParameter['pageNo'] = pageNo;
+            }
+
+            if (pageSize !== undefined) {
+                localVarQueryParameter['pageSize'] = pageSize;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get the list of Consents Sent to Individuals.
+         * @param {DataConsentStatus} [status] Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+         * @param {string} [from] From date time in utc timezone.
+         * @param {string} [to] Til date time in utc timezone.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Page size.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsents: async (status?: DataConsentStatus, from?: string, to?: string, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
+            const localVarPath = `/v1/consents/individuals`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            if (from !== undefined) {
+                localVarQueryParameter['from'] = (from as any instanceof Date) ?
+                    (from as any).toISOString() :
+                    from;
+            }
+
+            if (to !== undefined) {
+                localVarQueryParameter['to'] = (to as any instanceof Date) ?
+                    (to as any).toISOString() :
+                    to;
+            }
+
+            if (pageNo !== undefined) {
+                localVarQueryParameter['pageNo'] = pageNo;
+            }
+
+            if (pageSize !== undefined) {
+                localVarQueryParameter['pageSize'] = pageSize;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get the list of data consents sent for organizations.
+         * @param {DataConsentStatus} [status] Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+         * @param {string} [from] From date time in utc timezone.
+         * @param {string} [to] Til date time in utc timezone.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Page size.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentsForOrganizations: async (status?: DataConsentStatus, from?: string, to?: string, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
+            const localVarPath = `/v1/consents/organizations`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            if (from !== undefined) {
+                localVarQueryParameter['from'] = (from as any instanceof Date) ?
+                    (from as any).toISOString() :
+                    from;
+            }
+
+            if (to !== undefined) {
+                localVarQueryParameter['to'] = (to as any instanceof Date) ?
+                    (to as any).toISOString() :
+                    to;
+            }
+
+            if (pageNo !== undefined) {
+                localVarQueryParameter['pageNo'] = pageNo;
+            }
+
+            if (pageSize !== undefined) {
+                localVarQueryParameter['pageSize'] = pageSize;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get organization consented financial account transactions of an individual based on accountId.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {string} [filters] Filters.
+         * @param {string} [fromDateTimeUtc] From date time in utc timezone.
+         * @param {string} [toDateTimeUtc] Til date time in utc timezone.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOrgConsentedAccountTransactions: async (consentId: string, accountId: string, filters?: string, fromDateTimeUtc?: string, toDateTimeUtc?: string, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getOrgConsentedAccountTransactions', 'consentId', consentId)
+            // verify required parameter 'accountId' is not null or undefined
+            assertParamExists('getOrgConsentedAccountTransactions', 'accountId', accountId)
+            const localVarPath = `/v1/consents/organizations/{consentId}/accounts/{accountId}/transactions`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
+                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (filters !== undefined) {
+                localVarQueryParameter['filters'] = filters;
+            }
+
+            if (fromDateTimeUtc !== undefined) {
+                localVarQueryParameter['fromDateTimeUtc'] = (fromDateTimeUtc as any instanceof Date) ?
+                    (fromDateTimeUtc as any).toISOString() :
+                    fromDateTimeUtc;
+            }
+
+            if (toDateTimeUtc !== undefined) {
+                localVarQueryParameter['toDateTimeUtc'] = (toDateTimeUtc as any instanceof Date) ?
+                    (toDateTimeUtc as any).toISOString() :
+                    toDateTimeUtc;
+            }
+
+            if (pageNo !== undefined) {
+                localVarQueryParameter['pageNo'] = pageNo;
+            }
+
+            if (pageSize !== undefined) {
+                localVarQueryParameter['pageSize'] = pageSize;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get all organization consent details by consent id.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOrganizationConsentDetailsById: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getOrganizationConsentDetailsById', 'consentId', consentId)
             const localVarPath = `/v1/consents/organizations/{consentId}`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -683,17 +704,20 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
-         * @summary Get the list of data consents sent for organizations.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
-         * @param {string} [startDate] 
-         * @param {string} [endDate] 
+         * @summary Get organization consent document based on document id.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document Id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsOrganizationsGet: async (pageNo?: number, pageSize?: number, status?: DataConsentStatus, startDate?: string, endDate?: string, options: any = {}): Promise<RequestArgs> => {
-            const localVarPath = `/v1/consents/organizations`;
+        getOrganizationConsentedDocumentById: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getOrganizationConsentedDocumentById', 'consentId', consentId)
+            // verify required parameter 'documentId' is not null or undefined
+            assertParamExists('getOrganizationConsentedDocumentById', 'documentId', documentId)
+            const localVarPath = `/v1/consents/organizations/{consentId}/documents/{documentId}`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
+                .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -704,30 +728,6 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
-
-            if (pageNo !== undefined) {
-                localVarQueryParameter['pageNo'] = pageNo;
-            }
-
-            if (pageSize !== undefined) {
-                localVarQueryParameter['pageSize'] = pageSize;
-            }
-
-            if (status !== undefined) {
-                localVarQueryParameter['status'] = status;
-            }
-
-            if (startDate !== undefined) {
-                localVarQueryParameter['startDate'] = (startDate as any instanceof Date) ?
-                    (startDate as any).toISOString() :
-                    startDate;
-            }
-
-            if (endDate !== undefined) {
-                localVarQueryParameter['endDate'] = (endDate as any instanceof Date) ?
-                    (endDate as any).toISOString() :
-                    endDate;
-            }
 
 
     
@@ -752,204 +752,204 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
-         * @summary Get individual consented financial account details based on account id.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsIndividualsConsentIdAccountsAccountIdGet(consentId: string, accountId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FinancialAccount>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsIndividualsConsentIdAccountsAccountIdGet(consentId, accountId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get consented financial account transactions of an individual based on accountId.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {string} [filters] 
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {string} [fromDate] 
-         * @param {string} [toDate] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, pageNo?: number, pageSize?: number, fromDate?: string, toDate?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserAccountFinancialTransactionsDtoPaginatedList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, pageNo, pageSize, fromDate, toDate, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get all individual financial accounts in a consent.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsIndividualsConsentIdAccountsGet(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentFinancialsDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsIndividualsConsentIdAccountsGet(consentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Download a individuals consented document.
-         * @param {string} consentId consentId.
-         * @param {string} documentId documentId.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDocumentDownloadDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId, options);
+        async downloadConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDocumentDownloadDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.downloadConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
-         * @summary Get individuals consent document based on document id.
-         * @param {string} consentId 
-         * @param {string} documentId Document Id.
+         * @summary Download a organizations consented document.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDocumentDetailsDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet(consentId, documentId, options);
+        async downloadOrgConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDocumentDownloadDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.downloadOrgConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get the individual documents based on ConsentId.
-         * @param {string} consentId 
+         * @param {string} consentId Consent id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1ConsentsIndividualsConsentIdDocumentsGet(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentDocumentsDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsIndividualsConsentIdDocumentsGet(consentId, options);
+        async getAllConsentedDocuments(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentDocumentsDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllConsentedDocuments(consentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
-         * @summary Get individuals consent details by consent id.
-         * @param {string} consentId 
+         * @summary Get all individual consented financial accounts.
+         * @param {string} consentId Consent id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1ConsentsIndividualsConsentIdGet(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentDetailsDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsIndividualsConsentIdGet(consentId, options);
+        async getAllConsentedFinancialAccounts(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentFinancialsDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllConsentedFinancialAccounts(consentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get all organizational consented financial accounts.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAllOrganizationConsentedAccounts(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentFinancialsDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllOrganizationConsentedAccounts(consentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get the organization documents based on ConsentId.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getAllOrganizationConsentedDocuments(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentDocumentsDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllOrganizationConsentedDocuments(consentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get all individuals consent details by consent id.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getConsentDetailsById(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentDetailsDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentDetailsById(consentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get individual consented financial account details based on account id.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getConsentedAccountById(consentId: string, accountId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FinancialAccount>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentedAccountById(consentId, accountId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get individuals consent document based on document id.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document Id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDocumentDetailsDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentedDocumentById(consentId, documentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get organization consented financial account details based on account id.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getConsentedFinancialAccount(consentId: string, accountId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationFinancialAccountDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentedFinancialAccount(consentId, accountId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get individual consented financial account transactions of an individual based on accountId.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {string} [filters] Filters.
+         * @param {string} [fromDateTimeUtc] From date time in utc timezone.
+         * @param {string} [toDateTimeUtc] Til date time in utc timezone.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getConsentedFinancialAccountTransactions(consentId: string, accountId: string, filters?: string, fromDateTimeUtc?: string, toDateTimeUtc?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserAccountFinancialTransactionsDtoPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentedFinancialAccountTransactions(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get the list of Consents Sent to Individuals.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
-         * @param {string} [startDate] 
-         * @param {string} [endDate] 
+         * @param {DataConsentStatus} [status] Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+         * @param {string} [from] From date time in utc timezone.
+         * @param {string} [to] Til date time in utc timezone.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1ConsentsIndividualsGet(pageNo?: number, pageSize?: number, status?: DataConsentStatus, startDate?: string, endDate?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDataConsentInfoDtoPaginatedList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsIndividualsGet(pageNo, pageSize, status, startDate, endDate, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get orgnization consented financial account details based on account id.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsOrganizationsConsentIdAccountsAccountIdGet(consentId: string, accountId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationFinancialAccountDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsOrganizationsConsentIdAccountsAccountIdGet(consentId, accountId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get consented financial account transactions of an organization based on accountId.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {string} [filters] 
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {string} [fromDate] 
-         * @param {string} [toDate] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, pageNo?: number, pageSize?: number, fromDate?: string, toDate?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationFinancialTransactionsDtoPaginatedList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, pageNo, pageSize, fromDate, toDate, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get all organizational financial accounts in a consent.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsOrganizationsConsentIdAccountsGet(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentFinancialsDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsOrganizationsConsentIdAccountsGet(consentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Download organizations consented document.
-         * @param {string} consentId 
-         * @param {string} documentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDocumentDownloadDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get organizations consent document based on document id.
-         * @param {string} consentId 
-         * @param {string} documentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDocumentDetailsDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet(consentId, documentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get the organizations documents based on ConsentId.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsOrganizationsConsentIdDocumentsGet(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentDocumentsDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsOrganizationsConsentIdDocumentsGet(consentId, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get organizations consent details by consent id.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1ConsentsOrganizationsConsentIdGet(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentDetailsDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsOrganizationsConsentIdGet(consentId, options);
+        async getConsents(status?: DataConsentStatus, from?: string, to?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDataConsentInfoDtoPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getConsents(status, from, to, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get the list of data consents sent for organizations.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
-         * @param {string} [startDate] 
-         * @param {string} [endDate] 
+         * @param {DataConsentStatus} [status] Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+         * @param {string} [from] From date time in utc timezone.
+         * @param {string} [to] Til date time in utc timezone.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1ConsentsOrganizationsGet(pageNo?: number, pageSize?: number, status?: DataConsentStatus, startDate?: string, endDate?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDataConsentInfoDtoPaginatedList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1ConsentsOrganizationsGet(pageNo, pageSize, status, startDate, endDate, options);
+        async getConsentsForOrganizations(status?: DataConsentStatus, from?: string, to?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDataConsentInfoDtoPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentsForOrganizations(status, from, to, pageNo, pageSize, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get organization consented financial account transactions of an individual based on accountId.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {string} [filters] Filters.
+         * @param {string} [fromDateTimeUtc] From date time in utc timezone.
+         * @param {string} [toDateTimeUtc] Til date time in utc timezone.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getOrgConsentedAccountTransactions(consentId: string, accountId: string, filters?: string, fromDateTimeUtc?: string, toDateTimeUtc?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationFinancialTransactionsDtoPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOrgConsentedAccountTransactions(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get all organization consent details by consent id.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getOrganizationConsentDetailsById(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentDetailsDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOrganizationConsentDetailsById(consentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get organization consent document based on document id.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document Id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDocumentDetailsDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getOrganizationConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -964,189 +964,189 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
     return {
         /**
          * 
-         * @summary Get individual consented financial account details based on account id.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsConsentIdAccountsAccountIdGet(consentId: string, accountId: string, options?: any): AxiosPromise<FinancialAccount> {
-            return localVarFp.v1ConsentsIndividualsConsentIdAccountsAccountIdGet(consentId, accountId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get consented financial account transactions of an individual based on accountId.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {string} [filters] 
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {string} [fromDate] 
-         * @param {string} [toDate] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, pageNo?: number, pageSize?: number, fromDate?: string, toDate?: string, options?: any): AxiosPromise<UserAccountFinancialTransactionsDtoPaginatedList> {
-            return localVarFp.v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, pageNo, pageSize, fromDate, toDate, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get all individual financial accounts in a consent.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsIndividualsConsentIdAccountsGet(consentId: string, options?: any): AxiosPromise<DataConsentFinancialsDto> {
-            return localVarFp.v1ConsentsIndividualsConsentIdAccountsGet(consentId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Download a individuals consented document.
-         * @param {string} consentId consentId.
-         * @param {string} documentId documentId.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet(consentId: string, documentId: string, options?: any): AxiosPromise<UserDocumentDownloadDto> {
-            return localVarFp.v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId, options).then((request) => request(axios, basePath));
+        downloadConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<UserDocumentDownloadDto> {
+            return localVarFp.downloadConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
-         * @summary Get individuals consent document based on document id.
-         * @param {string} consentId 
-         * @param {string} documentId Document Id.
+         * @summary Download a organizations consented document.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet(consentId: string, documentId: string, options?: any): AxiosPromise<UserDocumentDetailsDto> {
-            return localVarFp.v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet(consentId, documentId, options).then((request) => request(axios, basePath));
+        downloadOrgConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<OrganizationDocumentDownloadDto> {
+            return localVarFp.downloadOrgConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get the individual documents based on ConsentId.
-         * @param {string} consentId 
+         * @param {string} consentId Consent id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsIndividualsConsentIdDocumentsGet(consentId: string, options?: any): AxiosPromise<DataConsentDocumentsDto> {
-            return localVarFp.v1ConsentsIndividualsConsentIdDocumentsGet(consentId, options).then((request) => request(axios, basePath));
+        getAllConsentedDocuments(consentId: string, options?: any): AxiosPromise<DataConsentDocumentsDto> {
+            return localVarFp.getAllConsentedDocuments(consentId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
-         * @summary Get individuals consent details by consent id.
-         * @param {string} consentId 
+         * @summary Get all individual consented financial accounts.
+         * @param {string} consentId Consent id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsIndividualsConsentIdGet(consentId: string, options?: any): AxiosPromise<DataConsentDetailsDto> {
-            return localVarFp.v1ConsentsIndividualsConsentIdGet(consentId, options).then((request) => request(axios, basePath));
+        getAllConsentedFinancialAccounts(consentId: string, options?: any): AxiosPromise<DataConsentFinancialsDto> {
+            return localVarFp.getAllConsentedFinancialAccounts(consentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get all organizational consented financial accounts.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllOrganizationConsentedAccounts(consentId: string, options?: any): AxiosPromise<DataConsentFinancialsDto> {
+            return localVarFp.getAllOrganizationConsentedAccounts(consentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get the organization documents based on ConsentId.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllOrganizationConsentedDocuments(consentId: string, options?: any): AxiosPromise<DataConsentDocumentsDto> {
+            return localVarFp.getAllOrganizationConsentedDocuments(consentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get all individuals consent details by consent id.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentDetailsById(consentId: string, options?: any): AxiosPromise<DataConsentDetailsDto> {
+            return localVarFp.getConsentDetailsById(consentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get individual consented financial account details based on account id.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedAccountById(consentId: string, accountId: string, options?: any): AxiosPromise<FinancialAccount> {
+            return localVarFp.getConsentedAccountById(consentId, accountId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get individuals consent document based on document id.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document Id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<UserDocumentDetailsDto> {
+            return localVarFp.getConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get organization consented financial account details based on account id.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedFinancialAccount(consentId: string, accountId: string, options?: any): AxiosPromise<OrganizationFinancialAccountDto> {
+            return localVarFp.getConsentedFinancialAccount(consentId, accountId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get individual consented financial account transactions of an individual based on accountId.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {string} [filters] Filters.
+         * @param {string} [fromDateTimeUtc] From date time in utc timezone.
+         * @param {string} [toDateTimeUtc] Til date time in utc timezone.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedFinancialAccountTransactions(consentId: string, accountId: string, filters?: string, fromDateTimeUtc?: string, toDateTimeUtc?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<UserAccountFinancialTransactionsDtoPaginatedList> {
+            return localVarFp.getConsentedFinancialAccountTransactions(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get the list of Consents Sent to Individuals.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
-         * @param {string} [startDate] 
-         * @param {string} [endDate] 
+         * @param {DataConsentStatus} [status] Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+         * @param {string} [from] From date time in utc timezone.
+         * @param {string} [to] Til date time in utc timezone.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsIndividualsGet(pageNo?: number, pageSize?: number, status?: DataConsentStatus, startDate?: string, endDate?: string, options?: any): AxiosPromise<UserDataConsentInfoDtoPaginatedList> {
-            return localVarFp.v1ConsentsIndividualsGet(pageNo, pageSize, status, startDate, endDate, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get orgnization consented financial account details based on account id.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdAccountsAccountIdGet(consentId: string, accountId: string, options?: any): AxiosPromise<OrganizationFinancialAccountDto> {
-            return localVarFp.v1ConsentsOrganizationsConsentIdAccountsAccountIdGet(consentId, accountId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get consented financial account transactions of an organization based on accountId.
-         * @param {string} consentId 
-         * @param {string} accountId 
-         * @param {string} [filters] 
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {string} [fromDate] 
-         * @param {string} [toDate] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, pageNo?: number, pageSize?: number, fromDate?: string, toDate?: string, options?: any): AxiosPromise<OrganizationFinancialTransactionsDtoPaginatedList> {
-            return localVarFp.v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, pageNo, pageSize, fromDate, toDate, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get all organizational financial accounts in a consent.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdAccountsGet(consentId: string, options?: any): AxiosPromise<DataConsentFinancialsDto> {
-            return localVarFp.v1ConsentsOrganizationsConsentIdAccountsGet(consentId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Download organizations consented document.
-         * @param {string} consentId 
-         * @param {string} documentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet(consentId: string, documentId: string, options?: any): AxiosPromise<OrganizationDocumentDownloadDto> {
-            return localVarFp.v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get organizations consent document based on document id.
-         * @param {string} consentId 
-         * @param {string} documentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet(consentId: string, documentId: string, options?: any): AxiosPromise<OrganizationDocumentDetailsDto> {
-            return localVarFp.v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet(consentId, documentId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get the organizations documents based on ConsentId.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdDocumentsGet(consentId: string, options?: any): AxiosPromise<DataConsentDocumentsDto> {
-            return localVarFp.v1ConsentsOrganizationsConsentIdDocumentsGet(consentId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get organizations consent details by consent id.
-         * @param {string} consentId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1ConsentsOrganizationsConsentIdGet(consentId: string, options?: any): AxiosPromise<DataConsentDetailsDto> {
-            return localVarFp.v1ConsentsOrganizationsConsentIdGet(consentId, options).then((request) => request(axios, basePath));
+        getConsents(status?: DataConsentStatus, from?: string, to?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<UserDataConsentInfoDtoPaginatedList> {
+            return localVarFp.getConsents(status, from, to, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get the list of data consents sent for organizations.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
-         * @param {string} [startDate] 
-         * @param {string} [endDate] 
+         * @param {DataConsentStatus} [status] Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+         * @param {string} [from] From date time in utc timezone.
+         * @param {string} [to] Til date time in utc timezone.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1ConsentsOrganizationsGet(pageNo?: number, pageSize?: number, status?: DataConsentStatus, startDate?: string, endDate?: string, options?: any): AxiosPromise<OrganizationDataConsentInfoDtoPaginatedList> {
-            return localVarFp.v1ConsentsOrganizationsGet(pageNo, pageSize, status, startDate, endDate, options).then((request) => request(axios, basePath));
+        getConsentsForOrganizations(status?: DataConsentStatus, from?: string, to?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<OrganizationDataConsentInfoDtoPaginatedList> {
+            return localVarFp.getConsentsForOrganizations(status, from, to, pageNo, pageSize, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get organization consented financial account transactions of an individual based on accountId.
+         * @param {string} consentId Consent id.
+         * @param {string} accountId Account id.
+         * @param {string} [filters] Filters.
+         * @param {string} [fromDateTimeUtc] From date time in utc timezone.
+         * @param {string} [toDateTimeUtc] Til date time in utc timezone.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOrgConsentedAccountTransactions(consentId: string, accountId: string, filters?: string, fromDateTimeUtc?: string, toDateTimeUtc?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<OrganizationFinancialTransactionsDtoPaginatedList> {
+            return localVarFp.getOrgConsentedAccountTransactions(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get all organization consent details by consent id.
+         * @param {string} consentId Consent id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOrganizationConsentDetailsById(consentId: string, options?: any): AxiosPromise<DataConsentDetailsDto> {
+            return localVarFp.getOrganizationConsentDetailsById(consentId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get organization consent document based on document id.
+         * @param {string} consentId Consent id.
+         * @param {string} documentId Document Id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<OrganizationDocumentDetailsDto> {
+            return localVarFp.getOrganizationConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1160,219 +1160,219 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
 export class DataConsentsApi extends BaseAPI {
     /**
      * 
-     * @summary Get individual consented financial account details based on account id.
-     * @param {string} consentId 
-     * @param {string} accountId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsIndividualsConsentIdAccountsAccountIdGet(consentId: string, accountId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsIndividualsConsentIdAccountsAccountIdGet(consentId, accountId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get consented financial account transactions of an individual based on accountId.
-     * @param {string} consentId 
-     * @param {string} accountId 
-     * @param {string} [filters] 
-     * @param {number} [pageNo] 
-     * @param {number} [pageSize] 
-     * @param {string} [fromDate] 
-     * @param {string} [toDate] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, pageNo?: number, pageSize?: number, fromDate?: string, toDate?: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsIndividualsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, pageNo, pageSize, fromDate, toDate, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get all individual financial accounts in a consent.
-     * @param {string} consentId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsIndividualsConsentIdAccountsGet(consentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsIndividualsConsentIdAccountsGet(consentId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Download a individuals consented document.
-     * @param {string} consentId consentId.
-     * @param {string} documentId documentId.
+     * @param {string} consentId Consent id.
+     * @param {string} documentId Document id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
      */
-    public v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet(consentId: string, documentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsIndividualsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
+    public downloadConsentedDocumentById(consentId: string, documentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).downloadConsentedDocumentById(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
-     * @summary Get individuals consent document based on document id.
-     * @param {string} consentId 
-     * @param {string} documentId Document Id.
+     * @summary Download a organizations consented document.
+     * @param {string} consentId Consent id.
+     * @param {string} documentId Document id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
      */
-    public v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet(consentId: string, documentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsIndividualsConsentIdDocumentsDocumentIdGet(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
+    public downloadOrgConsentedDocumentById(consentId: string, documentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).downloadOrgConsentedDocumentById(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get the individual documents based on ConsentId.
-     * @param {string} consentId 
+     * @param {string} consentId Consent id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
      */
-    public v1ConsentsIndividualsConsentIdDocumentsGet(consentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsIndividualsConsentIdDocumentsGet(consentId, options).then((request) => request(this.axios, this.basePath));
+    public getAllConsentedDocuments(consentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getAllConsentedDocuments(consentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
-     * @summary Get individuals consent details by consent id.
-     * @param {string} consentId 
+     * @summary Get all individual consented financial accounts.
+     * @param {string} consentId Consent id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
      */
-    public v1ConsentsIndividualsConsentIdGet(consentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsIndividualsConsentIdGet(consentId, options).then((request) => request(this.axios, this.basePath));
+    public getAllConsentedFinancialAccounts(consentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getAllConsentedFinancialAccounts(consentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get all organizational consented financial accounts.
+     * @param {string} consentId Consent id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getAllOrganizationConsentedAccounts(consentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getAllOrganizationConsentedAccounts(consentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get the organization documents based on ConsentId.
+     * @param {string} consentId Consent id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getAllOrganizationConsentedDocuments(consentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getAllOrganizationConsentedDocuments(consentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get all individuals consent details by consent id.
+     * @param {string} consentId Consent id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getConsentDetailsById(consentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getConsentDetailsById(consentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get individual consented financial account details based on account id.
+     * @param {string} consentId Consent id.
+     * @param {string} accountId Account id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getConsentedAccountById(consentId: string, accountId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getConsentedAccountById(consentId, accountId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get individuals consent document based on document id.
+     * @param {string} consentId Consent id.
+     * @param {string} documentId Document Id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getConsentedDocumentById(consentId: string, documentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getConsentedDocumentById(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get organization consented financial account details based on account id.
+     * @param {string} consentId Consent id.
+     * @param {string} accountId Account id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getConsentedFinancialAccount(consentId: string, accountId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getConsentedFinancialAccount(consentId, accountId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get individual consented financial account transactions of an individual based on accountId.
+     * @param {string} consentId Consent id.
+     * @param {string} accountId Account id.
+     * @param {string} [filters] Filters.
+     * @param {string} [fromDateTimeUtc] From date time in utc timezone.
+     * @param {string} [toDateTimeUtc] Til date time in utc timezone.
+     * @param {number} [pageNo] Page no.
+     * @param {number} [pageSize] Page size.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getConsentedFinancialAccountTransactions(consentId: string, accountId: string, filters?: string, fromDateTimeUtc?: string, toDateTimeUtc?: string, pageNo?: number, pageSize?: number, options?: any) {
+        return DataConsentsApiFp(this.configuration).getConsentedFinancialAccountTransactions(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get the list of Consents Sent to Individuals.
-     * @param {number} [pageNo] 
-     * @param {number} [pageSize] 
-     * @param {DataConsentStatus} [status] 
-     * @param {string} [startDate] 
-     * @param {string} [endDate] 
+     * @param {DataConsentStatus} [status] Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+     * @param {string} [from] From date time in utc timezone.
+     * @param {string} [to] Til date time in utc timezone.
+     * @param {number} [pageNo] Page number.
+     * @param {number} [pageSize] Page size.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
      */
-    public v1ConsentsIndividualsGet(pageNo?: number, pageSize?: number, status?: DataConsentStatus, startDate?: string, endDate?: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsIndividualsGet(pageNo, pageSize, status, startDate, endDate, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get orgnization consented financial account details based on account id.
-     * @param {string} consentId 
-     * @param {string} accountId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsOrganizationsConsentIdAccountsAccountIdGet(consentId: string, accountId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsOrganizationsConsentIdAccountsAccountIdGet(consentId, accountId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get consented financial account transactions of an organization based on accountId.
-     * @param {string} consentId 
-     * @param {string} accountId 
-     * @param {string} [filters] 
-     * @param {number} [pageNo] 
-     * @param {number} [pageSize] 
-     * @param {string} [fromDate] 
-     * @param {string} [toDate] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, pageNo?: number, pageSize?: number, fromDate?: string, toDate?: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsOrganizationsConsentIdAccountsAccountIdTransactionsGet(consentId, accountId, filters, pageNo, pageSize, fromDate, toDate, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get all organizational financial accounts in a consent.
-     * @param {string} consentId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsOrganizationsConsentIdAccountsGet(consentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsOrganizationsConsentIdAccountsGet(consentId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Download organizations consented document.
-     * @param {string} consentId 
-     * @param {string} documentId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet(consentId: string, documentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsOrganizationsConsentIdDocumentsDocumentIdDownloadGet(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get organizations consent document based on document id.
-     * @param {string} consentId 
-     * @param {string} documentId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet(consentId: string, documentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsOrganizationsConsentIdDocumentsDocumentIdGet(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get the organizations documents based on ConsentId.
-     * @param {string} consentId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsOrganizationsConsentIdDocumentsGet(consentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsOrganizationsConsentIdDocumentsGet(consentId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get organizations consent details by consent id.
-     * @param {string} consentId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataConsentsApi
-     */
-    public v1ConsentsOrganizationsConsentIdGet(consentId: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsOrganizationsConsentIdGet(consentId, options).then((request) => request(this.axios, this.basePath));
+    public getConsents(status?: DataConsentStatus, from?: string, to?: string, pageNo?: number, pageSize?: number, options?: any) {
+        return DataConsentsApiFp(this.configuration).getConsents(status, from, to, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get the list of data consents sent for organizations.
-     * @param {number} [pageNo] 
-     * @param {number} [pageSize] 
-     * @param {DataConsentStatus} [status] 
-     * @param {string} [startDate] 
-     * @param {string} [endDate] 
+     * @param {DataConsentStatus} [status] Data consent status MyDataMyConsent.Domain.Entities.ConsentAggregate.Enums.DataConsentStatus.
+     * @param {string} [from] From date time in utc timezone.
+     * @param {string} [to] Til date time in utc timezone.
+     * @param {number} [pageNo] Page number.
+     * @param {number} [pageSize] Page size.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
      */
-    public v1ConsentsOrganizationsGet(pageNo?: number, pageSize?: number, status?: DataConsentStatus, startDate?: string, endDate?: string, options?: any) {
-        return DataConsentsApiFp(this.configuration).v1ConsentsOrganizationsGet(pageNo, pageSize, status, startDate, endDate, options).then((request) => request(this.axios, this.basePath));
+    public getConsentsForOrganizations(status?: DataConsentStatus, from?: string, to?: string, pageNo?: number, pageSize?: number, options?: any) {
+        return DataConsentsApiFp(this.configuration).getConsentsForOrganizations(status, from, to, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get organization consented financial account transactions of an individual based on accountId.
+     * @param {string} consentId Consent id.
+     * @param {string} accountId Account id.
+     * @param {string} [filters] Filters.
+     * @param {string} [fromDateTimeUtc] From date time in utc timezone.
+     * @param {string} [toDateTimeUtc] Til date time in utc timezone.
+     * @param {number} [pageNo] Page no.
+     * @param {number} [pageSize] Page size.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getOrgConsentedAccountTransactions(consentId: string, accountId: string, filters?: string, fromDateTimeUtc?: string, toDateTimeUtc?: string, pageNo?: number, pageSize?: number, options?: any) {
+        return DataConsentsApiFp(this.configuration).getOrgConsentedAccountTransactions(consentId, accountId, filters, fromDateTimeUtc, toDateTimeUtc, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get all organization consent details by consent id.
+     * @param {string} consentId Consent id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getOrganizationConsentDetailsById(consentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getOrganizationConsentDetailsById(consentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get organization consent document based on document id.
+     * @param {string} consentId Consent id.
+     * @param {string} documentId Document Id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getOrganizationConsentedDocumentById(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
     }
 }

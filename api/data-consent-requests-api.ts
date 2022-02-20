@@ -21,15 +21,23 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
+import { CreateIndividualDataConsentRequest } from '../models';
+// @ts-ignore
+import { CreateOrganizationDataConsentRequest } from '../models';
+// @ts-ignore
 import { DataConsentDetailsDto } from '../models';
-// @ts-ignore
-import { DataConsentRequest } from '../models';
-// @ts-ignore
-import { DataConsentRequestModel } from '../models';
 // @ts-ignore
 import { DataConsentStatus } from '../models';
 // @ts-ignore
+import { IndividualDataConsentRequestResponse } from '../models';
+// @ts-ignore
+import { OrganizationDataConsentInfoDtoPaginatedList } from '../models';
+// @ts-ignore
+import { OrganizationDataConsentRequestResponse } from '../models';
+// @ts-ignore
 import { ProblemDetails } from '../models';
+// @ts-ignore
+import { UserDataConsentInfoDtoPaginatedList } from '../models';
 /**
  * DataConsentRequestsApi - axios parameter creator
  * @export
@@ -38,15 +46,15 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
     return {
         /**
          * 
-         * @summary Revoke / Cancel the ConsentRequest based on Id.
-         * @param {string} requestId 
+         * @summary Cancel the individual data consent request based on Id.
+         * @param {string} requestId Individual consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelConsentRequest: async (requestId: string, options: any = {}): Promise<RequestArgs> => {
+        cancelIndividualDataConsentRequest: async (requestId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'requestId' is not null or undefined
-            assertParamExists('cancelConsentRequest', 'requestId', requestId)
-            const localVarPath = `/v1/consent-requests/{requestId}/cancel`
+            assertParamExists('cancelIndividualDataConsentRequest', 'requestId', requestId)
+            const localVarPath = `/v1/consent-requests/individual/{requestId}/cancel`
                 .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -55,7 +63,7 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
                 baseOptions = configuration.baseOptions;
             }
 
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -72,13 +80,49 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
         },
         /**
          * 
-         * @summary Create a consent request.
-         * @param {DataConsentRequestModel} [dataConsentRequestModel] MyDataMyConsent.Models.Consents.DataConsentRequestModel.
+         * @summary Cancel the Organization data consent request based on Id.
+         * @param {string} requestId Organization consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createRequest: async (dataConsentRequestModel?: DataConsentRequestModel, options: any = {}): Promise<RequestArgs> => {
-            const localVarPath = `/v1/consent-requests`;
+        cancelOrganizationDataConsentRequest: async (requestId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'requestId' is not null or undefined
+            assertParamExists('cancelOrganizationDataConsentRequest', 'requestId', requestId)
+            const localVarPath = `/v1/consent-requests/organization/{requestId}/cancel`
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Create a individual data consent request.
+         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createIndividualDataConsentRequest: async (createIndividualDataConsentRequest: CreateIndividualDataConsentRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'createIndividualDataConsentRequest' is not null or undefined
+            assertParamExists('createIndividualDataConsentRequest', 'createIndividualDataConsentRequest', createIndividualDataConsentRequest)
+            const localVarPath = `/v1/consent-requests/individual`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -97,7 +141,43 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
             setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(dataConsentRequestModel, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(createIndividualDataConsentRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Create a organization data consent request.
+         * @param {CreateOrganizationDataConsentRequest} createOrganizationDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createOrganizationDataConsentRequest: async (createOrganizationDataConsentRequest: CreateOrganizationDataConsentRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'createOrganizationDataConsentRequest' is not null or undefined
+            assertParamExists('createOrganizationDataConsentRequest', 'createOrganizationDataConsentRequest', createOrganizationDataConsentRequest)
+            const localVarPath = `/v1/consent-requests/organization`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createOrganizationDataConsentRequest, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -107,13 +187,15 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
         /**
          * 
          * @summary Get all Consent Requests sent to Individuals.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
+         * @param {DataConsentStatus} [status] Data consent status.
+         * @param {string} [startDateTime] Start date time.
+         * @param {string} [endDateTime] End date time.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllConsentRequestsToIndividuals: async (pageNo?: number, pageSize?: number, status?: DataConsentStatus, options: any = {}): Promise<RequestArgs> => {
+        getAllConsentRequestsToIndividuals: async (status?: DataConsentStatus, startDateTime?: string, endDateTime?: string, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/consent-requests/individuals`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -126,16 +208,28 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            if (status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            if (startDateTime !== undefined) {
+                localVarQueryParameter['startDateTime'] = (startDateTime as any instanceof Date) ?
+                    (startDateTime as any).toISOString() :
+                    startDateTime;
+            }
+
+            if (endDateTime !== undefined) {
+                localVarQueryParameter['endDateTime'] = (endDateTime as any instanceof Date) ?
+                    (endDateTime as any).toISOString() :
+                    endDateTime;
+            }
+
             if (pageNo !== undefined) {
                 localVarQueryParameter['pageNo'] = pageNo;
             }
 
             if (pageSize !== undefined) {
                 localVarQueryParameter['pageSize'] = pageSize;
-            }
-
-            if (status !== undefined) {
-                localVarQueryParameter['status'] = status;
             }
 
 
@@ -151,14 +245,16 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
         },
         /**
          * 
-         * @summary Get All Consent Requests sent to Organizations
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
+         * @summary Get All Consent Requests sent to Organizations.
+         * @param {DataConsentStatus} [status] Data consent status.
+         * @param {string} [startDateTime] Start date time.
+         * @param {string} [endDateTime] End date time.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllConsentRequestsToOrganizations: async (pageNo?: number, pageSize?: number, status?: DataConsentStatus, options: any = {}): Promise<RequestArgs> => {
+        getAllConsentRequestsToOrganizations: async (status?: DataConsentStatus, startDateTime?: string, endDateTime?: string, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/consent-requests/organizations`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -171,16 +267,28 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            if (status !== undefined) {
+                localVarQueryParameter['status'] = status;
+            }
+
+            if (startDateTime !== undefined) {
+                localVarQueryParameter['startDateTime'] = (startDateTime as any instanceof Date) ?
+                    (startDateTime as any).toISOString() :
+                    startDateTime;
+            }
+
+            if (endDateTime !== undefined) {
+                localVarQueryParameter['endDateTime'] = (endDateTime as any instanceof Date) ?
+                    (endDateTime as any).toISOString() :
+                    endDateTime;
+            }
+
             if (pageNo !== undefined) {
                 localVarQueryParameter['pageNo'] = pageNo;
             }
 
             if (pageSize !== undefined) {
                 localVarQueryParameter['pageSize'] = pageSize;
-            }
-
-            if (status !== undefined) {
-                localVarQueryParameter['status'] = status;
             }
 
 
@@ -197,7 +305,7 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
         /**
          * 
          * @summary Get a Consent Request by ID.
-         * @param {string} requestId 
+         * @param {string} requestId Individual consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -230,8 +338,8 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
         },
         /**
          * 
-         * @summary Get a OrganizationConsent Request by Id
-         * @param {string} requestId 
+         * @summary Get a OrganizationConsent Request by Id.
+         * @param {string} requestId Organization consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -274,56 +382,82 @@ export const DataConsentRequestsApiFp = function(configuration?: Configuration) 
     return {
         /**
          * 
-         * @summary Revoke / Cancel the ConsentRequest based on Id.
-         * @param {string} requestId 
+         * @summary Cancel the individual data consent request based on Id.
+         * @param {string} requestId Individual consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async cancelConsentRequest(requestId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.cancelConsentRequest(requestId, options);
+        async cancelIndividualDataConsentRequest(requestId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IndividualDataConsentRequestResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.cancelIndividualDataConsentRequest(requestId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
-         * @summary Create a consent request.
-         * @param {DataConsentRequestModel} [dataConsentRequestModel] MyDataMyConsent.Models.Consents.DataConsentRequestModel.
+         * @summary Cancel the Organization data consent request based on Id.
+         * @param {string} requestId Organization consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async createRequest(dataConsentRequestModel?: DataConsentRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsentRequest>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.createRequest(dataConsentRequestModel, options);
+        async cancelOrganizationDataConsentRequest(requestId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDataConsentRequestResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.cancelOrganizationDataConsentRequest(requestId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Create a individual data consent request.
+         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createIndividualDataConsentRequest(createIndividualDataConsentRequest: CreateIndividualDataConsentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IndividualDataConsentRequestResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createIndividualDataConsentRequest(createIndividualDataConsentRequest, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Create a organization data consent request.
+         * @param {CreateOrganizationDataConsentRequest} createOrganizationDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createOrganizationDataConsentRequest(createOrganizationDataConsentRequest: CreateOrganizationDataConsentRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDataConsentRequestResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createOrganizationDataConsentRequest(createOrganizationDataConsentRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get all Consent Requests sent to Individuals.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
+         * @param {DataConsentStatus} [status] Data consent status.
+         * @param {string} [startDateTime] Start date time.
+         * @param {string} [endDateTime] End date time.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllConsentRequestsToIndividuals(pageNo?: number, pageSize?: number, status?: DataConsentStatus, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllConsentRequestsToIndividuals(pageNo, pageSize, status, options);
+        async getAllConsentRequestsToIndividuals(status?: DataConsentStatus, startDateTime?: string, endDateTime?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDataConsentInfoDtoPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllConsentRequestsToIndividuals(status, startDateTime, endDateTime, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
-         * @summary Get All Consent Requests sent to Organizations
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
+         * @summary Get All Consent Requests sent to Organizations.
+         * @param {DataConsentStatus} [status] Data consent status.
+         * @param {string} [startDateTime] Start date time.
+         * @param {string} [endDateTime] End date time.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllConsentRequestsToOrganizations(pageNo?: number, pageSize?: number, status?: DataConsentStatus, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllConsentRequestsToOrganizations(pageNo, pageSize, status, options);
+        async getAllConsentRequestsToOrganizations(status?: DataConsentStatus, startDateTime?: string, endDateTime?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDataConsentInfoDtoPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getAllConsentRequestsToOrganizations(status, startDateTime, endDateTime, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get a Consent Request by ID.
-         * @param {string} requestId 
+         * @param {string} requestId Individual consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -333,8 +467,8 @@ export const DataConsentRequestsApiFp = function(configuration?: Configuration) 
         },
         /**
          * 
-         * @summary Get a OrganizationConsent Request by Id
-         * @param {string} requestId 
+         * @summary Get a OrganizationConsent Request by Id.
+         * @param {string} requestId Organization consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -354,52 +488,76 @@ export const DataConsentRequestsApiFactory = function (configuration?: Configura
     return {
         /**
          * 
-         * @summary Revoke / Cancel the ConsentRequest based on Id.
-         * @param {string} requestId 
+         * @summary Cancel the individual data consent request based on Id.
+         * @param {string} requestId Individual consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        cancelConsentRequest(requestId: string, options?: any): AxiosPromise<boolean> {
-            return localVarFp.cancelConsentRequest(requestId, options).then((request) => request(axios, basePath));
+        cancelIndividualDataConsentRequest(requestId: string, options?: any): AxiosPromise<IndividualDataConsentRequestResponse> {
+            return localVarFp.cancelIndividualDataConsentRequest(requestId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
-         * @summary Create a consent request.
-         * @param {DataConsentRequestModel} [dataConsentRequestModel] MyDataMyConsent.Models.Consents.DataConsentRequestModel.
+         * @summary Cancel the Organization data consent request based on Id.
+         * @param {string} requestId Organization consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        createRequest(dataConsentRequestModel?: DataConsentRequestModel, options?: any): AxiosPromise<DataConsentRequest> {
-            return localVarFp.createRequest(dataConsentRequestModel, options).then((request) => request(axios, basePath));
+        cancelOrganizationDataConsentRequest(requestId: string, options?: any): AxiosPromise<OrganizationDataConsentRequestResponse> {
+            return localVarFp.cancelOrganizationDataConsentRequest(requestId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Create a individual data consent request.
+         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createIndividualDataConsentRequest(createIndividualDataConsentRequest: CreateIndividualDataConsentRequest, options?: any): AxiosPromise<IndividualDataConsentRequestResponse> {
+            return localVarFp.createIndividualDataConsentRequest(createIndividualDataConsentRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Create a organization data consent request.
+         * @param {CreateOrganizationDataConsentRequest} createOrganizationDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createOrganizationDataConsentRequest(createOrganizationDataConsentRequest: CreateOrganizationDataConsentRequest, options?: any): AxiosPromise<OrganizationDataConsentRequestResponse> {
+            return localVarFp.createOrganizationDataConsentRequest(createOrganizationDataConsentRequest, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get all Consent Requests sent to Individuals.
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
+         * @param {DataConsentStatus} [status] Data consent status.
+         * @param {string} [startDateTime] Start date time.
+         * @param {string} [endDateTime] End date time.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllConsentRequestsToIndividuals(pageNo?: number, pageSize?: number, status?: DataConsentStatus, options?: any): AxiosPromise<object> {
-            return localVarFp.getAllConsentRequestsToIndividuals(pageNo, pageSize, status, options).then((request) => request(axios, basePath));
+        getAllConsentRequestsToIndividuals(status?: DataConsentStatus, startDateTime?: string, endDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<UserDataConsentInfoDtoPaginatedList> {
+            return localVarFp.getAllConsentRequestsToIndividuals(status, startDateTime, endDateTime, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
-         * @summary Get All Consent Requests sent to Organizations
-         * @param {number} [pageNo] 
-         * @param {number} [pageSize] 
-         * @param {DataConsentStatus} [status] 
+         * @summary Get All Consent Requests sent to Organizations.
+         * @param {DataConsentStatus} [status] Data consent status.
+         * @param {string} [startDateTime] Start date time.
+         * @param {string} [endDateTime] End date time.
+         * @param {number} [pageNo] Page no.
+         * @param {number} [pageSize] Page size.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllConsentRequestsToOrganizations(pageNo?: number, pageSize?: number, status?: DataConsentStatus, options?: any): AxiosPromise<object> {
-            return localVarFp.getAllConsentRequestsToOrganizations(pageNo, pageSize, status, options).then((request) => request(axios, basePath));
+        getAllConsentRequestsToOrganizations(status?: DataConsentStatus, startDateTime?: string, endDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<OrganizationDataConsentInfoDtoPaginatedList> {
+            return localVarFp.getAllConsentRequestsToOrganizations(status, startDateTime, endDateTime, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get a Consent Request by ID.
-         * @param {string} requestId 
+         * @param {string} requestId Individual consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -408,8 +566,8 @@ export const DataConsentRequestsApiFactory = function (configuration?: Configura
         },
         /**
          * 
-         * @summary Get a OrganizationConsent Request by Id
-         * @param {string} requestId 
+         * @summary Get a OrganizationConsent Request by Id.
+         * @param {string} requestId Organization consent request id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -428,60 +586,88 @@ export const DataConsentRequestsApiFactory = function (configuration?: Configura
 export class DataConsentRequestsApi extends BaseAPI {
     /**
      * 
-     * @summary Revoke / Cancel the ConsentRequest based on Id.
-     * @param {string} requestId 
+     * @summary Cancel the individual data consent request based on Id.
+     * @param {string} requestId Individual consent request id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi
      */
-    public cancelConsentRequest(requestId: string, options?: any) {
-        return DataConsentRequestsApiFp(this.configuration).cancelConsentRequest(requestId, options).then((request) => request(this.axios, this.basePath));
+    public cancelIndividualDataConsentRequest(requestId: string, options?: any) {
+        return DataConsentRequestsApiFp(this.configuration).cancelIndividualDataConsentRequest(requestId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
-     * @summary Create a consent request.
-     * @param {DataConsentRequestModel} [dataConsentRequestModel] MyDataMyConsent.Models.Consents.DataConsentRequestModel.
+     * @summary Cancel the Organization data consent request based on Id.
+     * @param {string} requestId Organization consent request id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi
      */
-    public createRequest(dataConsentRequestModel?: DataConsentRequestModel, options?: any) {
-        return DataConsentRequestsApiFp(this.configuration).createRequest(dataConsentRequestModel, options).then((request) => request(this.axios, this.basePath));
+    public cancelOrganizationDataConsentRequest(requestId: string, options?: any) {
+        return DataConsentRequestsApiFp(this.configuration).cancelOrganizationDataConsentRequest(requestId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Create a individual data consent request.
+     * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentRequestsApi
+     */
+    public createIndividualDataConsentRequest(createIndividualDataConsentRequest: CreateIndividualDataConsentRequest, options?: any) {
+        return DataConsentRequestsApiFp(this.configuration).createIndividualDataConsentRequest(createIndividualDataConsentRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Create a organization data consent request.
+     * @param {CreateOrganizationDataConsentRequest} createOrganizationDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentRequestsApi
+     */
+    public createOrganizationDataConsentRequest(createOrganizationDataConsentRequest: CreateOrganizationDataConsentRequest, options?: any) {
+        return DataConsentRequestsApiFp(this.configuration).createOrganizationDataConsentRequest(createOrganizationDataConsentRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get all Consent Requests sent to Individuals.
-     * @param {number} [pageNo] 
-     * @param {number} [pageSize] 
-     * @param {DataConsentStatus} [status] 
+     * @param {DataConsentStatus} [status] Data consent status.
+     * @param {string} [startDateTime] Start date time.
+     * @param {string} [endDateTime] End date time.
+     * @param {number} [pageNo] Page no.
+     * @param {number} [pageSize] Page size.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi
      */
-    public getAllConsentRequestsToIndividuals(pageNo?: number, pageSize?: number, status?: DataConsentStatus, options?: any) {
-        return DataConsentRequestsApiFp(this.configuration).getAllConsentRequestsToIndividuals(pageNo, pageSize, status, options).then((request) => request(this.axios, this.basePath));
+    public getAllConsentRequestsToIndividuals(status?: DataConsentStatus, startDateTime?: string, endDateTime?: string, pageNo?: number, pageSize?: number, options?: any) {
+        return DataConsentRequestsApiFp(this.configuration).getAllConsentRequestsToIndividuals(status, startDateTime, endDateTime, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
-     * @summary Get All Consent Requests sent to Organizations
-     * @param {number} [pageNo] 
-     * @param {number} [pageSize] 
-     * @param {DataConsentStatus} [status] 
+     * @summary Get All Consent Requests sent to Organizations.
+     * @param {DataConsentStatus} [status] Data consent status.
+     * @param {string} [startDateTime] Start date time.
+     * @param {string} [endDateTime] End date time.
+     * @param {number} [pageNo] Page no.
+     * @param {number} [pageSize] Page size.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi
      */
-    public getAllConsentRequestsToOrganizations(pageNo?: number, pageSize?: number, status?: DataConsentStatus, options?: any) {
-        return DataConsentRequestsApiFp(this.configuration).getAllConsentRequestsToOrganizations(pageNo, pageSize, status, options).then((request) => request(this.axios, this.basePath));
+    public getAllConsentRequestsToOrganizations(status?: DataConsentStatus, startDateTime?: string, endDateTime?: string, pageNo?: number, pageSize?: number, options?: any) {
+        return DataConsentRequestsApiFp(this.configuration).getAllConsentRequestsToOrganizations(status, startDateTime, endDateTime, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get a Consent Request by ID.
-     * @param {string} requestId 
+     * @param {string} requestId Individual consent request id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi
@@ -492,8 +678,8 @@ export class DataConsentRequestsApi extends BaseAPI {
 
     /**
      * 
-     * @summary Get a OrganizationConsent Request by Id
-     * @param {string} requestId 
+     * @summary Get a OrganizationConsent Request by Id.
+     * @param {string} requestId Organization consent request id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi

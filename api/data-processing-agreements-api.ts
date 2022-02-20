@@ -38,13 +38,115 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
     return {
         /**
          * 
+         * @summary Create a data processing agreement.
+         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createDataProcessingAgreement: async (createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options: any = {}): Promise<RequestArgs> => {
+            const localVarPath = `/v1/data-agreements`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(createDataProcessingAgreementRequestModel, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+         * @param {string} id Agreement id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteDataProcessingAgreementById: async (id: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteDataProcessingAgreementById', 'id', id)
+            const localVarPath = `/v1/data-agreements/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get data processing agreement by id.
+         * @param {string} id Agreement id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getDataProcessingAgreementById: async (id: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getDataProcessingAgreementById', 'id', id)
+            const localVarPath = `/v1/data-agreements/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get all data processing agreements.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsGet: async (pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
+        getDataProcessingAgreements: async (pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/data-agreements`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -78,15 +180,15 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
         },
         /**
          * 
-         * @summary Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
-         * @param {string} id 
+         * @summary Terminate a data processing agreement.
+         * @param {string} id Agreement id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsIdDelete: async (id: string, options: any = {}): Promise<RequestArgs> => {
+        terminateDataProcessingAgreementById: async (id: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('v1DataAgreementsIdDelete', 'id', id)
-            const localVarPath = `/v1/data-agreements/{id}`
+            assertParamExists('terminateDataProcessingAgreementById', 'id', id)
+            const localVarPath = `/v1/data-agreements/{id}/terminate`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -95,41 +197,7 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
                 baseOptions = configuration.baseOptions;
             }
 
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get data processing agreement by Id.
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1DataAgreementsIdGet: async (id: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('v1DataAgreementsIdGet', 'id', id)
-            const localVarPath = `/v1/data-agreements/{id}`
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -147,14 +215,14 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
         /**
          * 
          * @summary Update a data processing agreement.
-         * @param {string} id 
-         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] 
+         * @param {string} id Agreement id.
+         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsIdPut: async (id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options: any = {}): Promise<RequestArgs> => {
+        updateDataProcessingAgreement: async (id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'id' is not null or undefined
-            assertParamExists('v1DataAgreementsIdPut', 'id', id)
+            assertParamExists('updateDataProcessingAgreement', 'id', id)
             const localVarPath = `/v1/data-agreements/{id}`
                 .replace(`{${"id"}}`, encodeURIComponent(String(id)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -182,74 +250,6 @@ export const DataProcessingAgreementsApiAxiosParamCreator = function (configurat
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Terminate a data processing agreement.
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1DataAgreementsIdTerminatePut: async (id: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'id' is not null or undefined
-            assertParamExists('v1DataAgreementsIdTerminatePut', 'id', id)
-            const localVarPath = `/v1/data-agreements/{id}/terminate`
-                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Create a data processing agreement.
-         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1DataAgreementsPost: async (createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options: any = {}): Promise<RequestArgs> => {
-            const localVarPath = `/v1/data-agreements`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(createDataProcessingAgreementRequestModel, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -262,70 +262,70 @@ export const DataProcessingAgreementsApiFp = function(configuration?: Configurat
     return {
         /**
          * 
+         * @summary Create a data processing agreement.
+         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async createDataProcessingAgreement(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.createDataProcessingAgreement(createDataProcessingAgreementRequestModel, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+         * @param {string} id Agreement id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteDataProcessingAgreementById(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteDataProcessingAgreementById(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get data processing agreement by id.
+         * @param {string} id Agreement id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getDataProcessingAgreementById(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDataProcessingAgreementById(id, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Get all data processing agreements.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DataAgreementsGet(pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDtoPaginatedList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsGet(pageNo, pageSize, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1DataAgreementsIdDelete(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsIdDelete(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Get data processing agreement by Id.
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1DataAgreementsIdGet(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsIdGet(id, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Update a data processing agreement.
-         * @param {string} id 
-         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async v1DataAgreementsIdPut(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel, options);
+        async getDataProcessingAgreements(pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDtoPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDataProcessingAgreements(pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Terminate a data processing agreement.
-         * @param {string} id 
+         * @param {string} id Agreement id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DataAgreementsIdTerminatePut(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsIdTerminatePut(id, options);
+        async terminateDataProcessingAgreementById(id: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.terminateDataProcessingAgreementById(id, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
-         * @summary Create a data processing agreement.
-         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] 
+         * @summary Update a data processing agreement.
+         * @param {string} id Agreement id.
+         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DataAgreementsPost(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DataAgreementsPost(createDataProcessingAgreementRequestModel, options);
+        async updateDataProcessingAgreement(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProcessingAgreementDto>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.updateDataProcessingAgreement(id, updateDataProcessingAgreementRequestModel, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -340,65 +340,65 @@ export const DataProcessingAgreementsApiFactory = function (configuration?: Conf
     return {
         /**
          * 
+         * @summary Create a data processing agreement.
+         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        createDataProcessingAgreement(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any): AxiosPromise<DataProcessingAgreementDto> {
+            return localVarFp.createDataProcessingAgreement(createDataProcessingAgreementRequestModel, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+         * @param {string} id Agreement id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteDataProcessingAgreementById(id: string, options?: any): AxiosPromise<void> {
+            return localVarFp.deleteDataProcessingAgreementById(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get data processing agreement by id.
+         * @param {string} id Agreement id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getDataProcessingAgreementById(id: string, options?: any): AxiosPromise<DataProcessingAgreementDto> {
+            return localVarFp.getDataProcessingAgreementById(id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Get all data processing agreements.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsGet(pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DataProcessingAgreementDtoPaginatedList> {
-            return localVarFp.v1DataAgreementsGet(pageNo, pageSize, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1DataAgreementsIdDelete(id: string, options?: any): AxiosPromise<void> {
-            return localVarFp.v1DataAgreementsIdDelete(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Get data processing agreement by Id.
-         * @param {string} id 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1DataAgreementsIdGet(id: string, options?: any): AxiosPromise<DataProcessingAgreementDto> {
-            return localVarFp.v1DataAgreementsIdGet(id, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Update a data processing agreement.
-         * @param {string} id 
-         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        v1DataAgreementsIdPut(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any): AxiosPromise<DataProcessingAgreementDto> {
-            return localVarFp.v1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel, options).then((request) => request(axios, basePath));
+        getDataProcessingAgreements(pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DataProcessingAgreementDtoPaginatedList> {
+            return localVarFp.getDataProcessingAgreements(pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Terminate a data processing agreement.
-         * @param {string} id 
+         * @param {string} id Agreement id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsIdTerminatePut(id: string, options?: any): AxiosPromise<void> {
-            return localVarFp.v1DataAgreementsIdTerminatePut(id, options).then((request) => request(axios, basePath));
+        terminateDataProcessingAgreementById(id: string, options?: any): AxiosPromise<void> {
+            return localVarFp.terminateDataProcessingAgreementById(id, options).then((request) => request(axios, basePath));
         },
         /**
          * 
-         * @summary Create a data processing agreement.
-         * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] 
+         * @summary Update a data processing agreement.
+         * @param {string} id Agreement id.
+         * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DataAgreementsPost(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any): AxiosPromise<DataProcessingAgreementDto> {
-            return localVarFp.v1DataAgreementsPost(createDataProcessingAgreementRequestModel, options).then((request) => request(axios, basePath));
+        updateDataProcessingAgreement(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any): AxiosPromise<DataProcessingAgreementDto> {
+            return localVarFp.updateDataProcessingAgreement(id, updateDataProcessingAgreementRequestModel, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -412,6 +412,42 @@ export const DataProcessingAgreementsApiFactory = function (configuration?: Conf
 export class DataProcessingAgreementsApi extends BaseAPI {
     /**
      * 
+     * @summary Create a data processing agreement.
+     * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] Create data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.CreateDataProcessingAgreementRequestModel.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataProcessingAgreementsApi
+     */
+    public createDataProcessingAgreement(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any) {
+        return DataProcessingAgreementsApiFp(this.configuration).createDataProcessingAgreement(createDataProcessingAgreementRequestModel, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
+     * @param {string} id Agreement id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataProcessingAgreementsApi
+     */
+    public deleteDataProcessingAgreementById(id: string, options?: any) {
+        return DataProcessingAgreementsApiFp(this.configuration).deleteDataProcessingAgreementById(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get data processing agreement by id.
+     * @param {string} id Agreement id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataProcessingAgreementsApi
+     */
+    public getDataProcessingAgreementById(id: string, options?: any) {
+        return DataProcessingAgreementsApiFp(this.configuration).getDataProcessingAgreementById(id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Get all data processing agreements.
      * @param {number} [pageNo] Page number.
      * @param {number} [pageSize] Number of items to return.
@@ -419,68 +455,32 @@ export class DataProcessingAgreementsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DataProcessingAgreementsApi
      */
-    public v1DataAgreementsGet(pageNo?: number, pageSize?: number, options?: any) {
-        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsGet(pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Delete a data processing agreement. This will not delete a published or a agreement in use with consents.
-     * @param {string} id 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataProcessingAgreementsApi
-     */
-    public v1DataAgreementsIdDelete(id: string, options?: any) {
-        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsIdDelete(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Get data processing agreement by Id.
-     * @param {string} id 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataProcessingAgreementsApi
-     */
-    public v1DataAgreementsIdGet(id: string, options?: any) {
-        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsIdGet(id, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Update a data processing agreement.
-     * @param {string} id 
-     * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DataProcessingAgreementsApi
-     */
-    public v1DataAgreementsIdPut(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any) {
-        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsIdPut(id, updateDataProcessingAgreementRequestModel, options).then((request) => request(this.axios, this.basePath));
+    public getDataProcessingAgreements(pageNo?: number, pageSize?: number, options?: any) {
+        return DataProcessingAgreementsApiFp(this.configuration).getDataProcessingAgreements(pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Terminate a data processing agreement.
-     * @param {string} id 
+     * @param {string} id Agreement id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataProcessingAgreementsApi
      */
-    public v1DataAgreementsIdTerminatePut(id: string, options?: any) {
-        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsIdTerminatePut(id, options).then((request) => request(this.axios, this.basePath));
+    public terminateDataProcessingAgreementById(id: string, options?: any) {
+        return DataProcessingAgreementsApiFp(this.configuration).terminateDataProcessingAgreementById(id, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
-     * @summary Create a data processing agreement.
-     * @param {CreateDataProcessingAgreementRequestModel} [createDataProcessingAgreementRequestModel] 
+     * @summary Update a data processing agreement.
+     * @param {string} id Agreement id.
+     * @param {UpdateDataProcessingAgreementRequestModel} [updateDataProcessingAgreementRequestModel] Updated data processing agreement MyDataMyConsent.Models.DataProcessingAgreements.UpdateDataProcessingAgreementRequestModel.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataProcessingAgreementsApi
      */
-    public v1DataAgreementsPost(createDataProcessingAgreementRequestModel?: CreateDataProcessingAgreementRequestModel, options?: any) {
-        return DataProcessingAgreementsApiFp(this.configuration).v1DataAgreementsPost(createDataProcessingAgreementRequestModel, options).then((request) => request(this.axios, this.basePath));
+    public updateDataProcessingAgreement(id: string, updateDataProcessingAgreementRequestModel?: UpdateDataProcessingAgreementRequestModel, options?: any) {
+        return DataProcessingAgreementsApiFp(this.configuration).updateDataProcessingAgreement(id, updateDataProcessingAgreementRequestModel, options).then((request) => request(this.axios, this.basePath));
     }
 }

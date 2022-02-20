@@ -32,48 +32,14 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
     return {
         /**
          * 
-         * @summary Issue a new document.
-         * @param {DocumentIssueRequest} [documentIssueRequest] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        issueDocument: async (documentIssueRequest?: DocumentIssueRequest, options: any = {}): Promise<RequestArgs> => {
-            const localVarPath = `/v1/documents/issue`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(documentIssueRequest, localVarRequestOptions, configuration)
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Get issued document.
          * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DocumentsIssuedDocumentIdGet: async (documentId: string, options: any = {}): Promise<RequestArgs> => {
+        getIssuedDocumentById: async (documentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'documentId' is not null or undefined
-            assertParamExists('v1DocumentsIssuedDocumentIdGet', 'documentId', documentId)
+            assertParamExists('getIssuedDocumentById', 'documentId', documentId)
             const localVarPath = `/v1/documents/issued/{documentId}`
                 .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -109,7 +75,7 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DocumentsIssuedGet: async (documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options: any = {}): Promise<RequestArgs> => {
+        getIssuedDocuments: async (documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/documents/issued`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -165,7 +131,7 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DocumentsTypesGet: async (pageSize?: number, pageNo?: number, options: any = {}): Promise<RequestArgs> => {
+        getRegisteredDocumentTypes: async (pageSize?: number, pageNo?: number, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/documents/types`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -197,6 +163,42 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Issue a new document.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        issueDocument: async (documentIssueRequest: DocumentIssueRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'documentIssueRequest' is not null or undefined
+            assertParamExists('issueDocument', 'documentIssueRequest', documentIssueRequest)
+            const localVarPath = `/v1/documents/issue`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(documentIssueRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -209,24 +211,13 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
-         * @summary Issue a new document.
-         * @param {DocumentIssueRequest} [documentIssueRequest] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async issueDocument(documentIssueRequest?: DocumentIssueRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.issueDocument(documentIssueRequest, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Get issued document.
          * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DocumentsIssuedDocumentIdGet(documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DocumentsIssuedDocumentIdGet(documentId, options);
+        async getIssuedDocumentById(documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getIssuedDocumentById(documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -240,8 +231,8 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DocumentsIssuedGet(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DocumentsIssuedGet(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, options);
+        async getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -252,8 +243,19 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1DocumentsTypesGet(pageSize?: number, pageNo?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1DocumentsTypesGet(pageSize, pageNo, options);
+        async getRegisteredDocumentTypes(pageSize?: number, pageNo?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getRegisteredDocumentTypes(pageSize, pageNo, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Issue a new document.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async issueDocument(documentIssueRequest: DocumentIssueRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.issueDocument(documentIssueRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -268,23 +270,13 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
     return {
         /**
          * 
-         * @summary Issue a new document.
-         * @param {DocumentIssueRequest} [documentIssueRequest] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        issueDocument(documentIssueRequest?: DocumentIssueRequest, options?: any): AxiosPromise<boolean> {
-            return localVarFp.issueDocument(documentIssueRequest, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Get issued document.
          * @param {string} documentId Document id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DocumentsIssuedDocumentIdGet(documentId: string, options?: any): AxiosPromise<void> {
-            return localVarFp.v1DocumentsIssuedDocumentIdGet(documentId, options).then((request) => request(axios, basePath));
+        getIssuedDocumentById(documentId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.getIssuedDocumentById(documentId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -297,8 +289,8 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DocumentsIssuedGet(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any): AxiosPromise<void> {
-            return localVarFp.v1DocumentsIssuedGet(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, options).then((request) => request(axios, basePath));
+        getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any): AxiosPromise<void> {
+            return localVarFp.getIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -308,8 +300,18 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1DocumentsTypesGet(pageSize?: number, pageNo?: number, options?: any): AxiosPromise<void> {
-            return localVarFp.v1DocumentsTypesGet(pageSize, pageNo, options).then((request) => request(axios, basePath));
+        getRegisteredDocumentTypes(pageSize?: number, pageNo?: number, options?: any): AxiosPromise<void> {
+            return localVarFp.getRegisteredDocumentTypes(pageSize, pageNo, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Issue a new document.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        issueDocument(documentIssueRequest: DocumentIssueRequest, options?: any): AxiosPromise<boolean> {
+            return localVarFp.issueDocument(documentIssueRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -323,26 +325,14 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
 export class DocumentsApi extends BaseAPI {
     /**
      * 
-     * @summary Issue a new document.
-     * @param {DocumentIssueRequest} [documentIssueRequest] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DocumentsApi
-     */
-    public issueDocument(documentIssueRequest?: DocumentIssueRequest, options?: any) {
-        return DocumentsApiFp(this.configuration).issueDocument(documentIssueRequest, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Get issued document.
      * @param {string} documentId Document id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DocumentsApi
      */
-    public v1DocumentsIssuedDocumentIdGet(documentId: string, options?: any) {
-        return DocumentsApiFp(this.configuration).v1DocumentsIssuedDocumentIdGet(documentId, options).then((request) => request(this.axios, this.basePath));
+    public getIssuedDocumentById(documentId: string, options?: any) {
+        return DocumentsApiFp(this.configuration).getIssuedDocumentById(documentId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -357,8 +347,8 @@ export class DocumentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DocumentsApi
      */
-    public v1DocumentsIssuedGet(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any) {
-        return DocumentsApiFp(this.configuration).v1DocumentsIssuedGet(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, options).then((request) => request(this.axios, this.basePath));
+    public getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any) {
+        return DocumentsApiFp(this.configuration).getIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -370,7 +360,19 @@ export class DocumentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DocumentsApi
      */
-    public v1DocumentsTypesGet(pageSize?: number, pageNo?: number, options?: any) {
-        return DocumentsApiFp(this.configuration).v1DocumentsTypesGet(pageSize, pageNo, options).then((request) => request(this.axios, this.basePath));
+    public getRegisteredDocumentTypes(pageSize?: number, pageNo?: number, options?: any) {
+        return DocumentsApiFp(this.configuration).getRegisteredDocumentTypes(pageSize, pageNo, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Issue a new document.
+     * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.Models.Documents.DocumentIssueRequest.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DocumentsApi
+     */
+    public issueDocument(documentIssueRequest: DocumentIssueRequest, options?: any) {
+        return DocumentsApiFp(this.configuration).issueDocument(documentIssueRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -13,43 +13,26 @@
  */
 
 
+import { Receiver } from './receiver';
 
 /**
- * 
+ * Organization Data Consent Request.
  * @export
- * @interface DataConsentRequest
+ * @interface CreateOrganizationDataConsentRequest
  */
-export interface DataConsentRequest {
+export interface CreateOrganizationDataConsentRequest {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequest
+     * @memberof CreateOrganizationDataConsentRequest
      */
-    id?: string;
+    consentTemplateId?: string;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequest
+     * @type {Receiver}
+     * @memberof CreateOrganizationDataConsentRequest
      */
-    templateId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequest
-     */
-    requestedAtUtc?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequest
-     */
-    requestExpiredAtUtc?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequest
-     */
-    transactionId?: string | null;
+    receiver: Receiver;
 }
 
 

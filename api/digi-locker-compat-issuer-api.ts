@@ -34,12 +34,12 @@ export const DigiLockerCompatIssuerApiAxiosParamCreator = function (configuratio
     return {
         /**
          * 
-         * @summary Digilocker Compatible endpoint to Issue Documents.
-         * @param {PushUriRequest} [pushUriRequest] 
+         * @summary Digilocker Compatible endpoint to issue document.
+         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        issuerIssuedoc1XmlPost: async (pushUriRequest?: PushUriRequest, options: any = {}): Promise<RequestArgs> => {
+        digilockerCompatIssueDocument: async (pushUriRequest?: PushUriRequest, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/issuer/issuedoc/1/xml`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -78,13 +78,13 @@ export const DigiLockerCompatIssuerApiFp = function(configuration?: Configuratio
     return {
         /**
          * 
-         * @summary Digilocker Compatible endpoint to Issue Documents.
-         * @param {PushUriRequest} [pushUriRequest] 
+         * @summary Digilocker Compatible endpoint to issue document.
+         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async issuerIssuedoc1XmlPost(pushUriRequest?: PushUriRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PushUriResponse>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.issuerIssuedoc1XmlPost(pushUriRequest, options);
+        async digilockerCompatIssueDocument(pushUriRequest?: PushUriRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PushUriResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.digilockerCompatIssueDocument(pushUriRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -99,13 +99,13 @@ export const DigiLockerCompatIssuerApiFactory = function (configuration?: Config
     return {
         /**
          * 
-         * @summary Digilocker Compatible endpoint to Issue Documents.
-         * @param {PushUriRequest} [pushUriRequest] 
+         * @summary Digilocker Compatible endpoint to issue document.
+         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        issuerIssuedoc1XmlPost(pushUriRequest?: PushUriRequest, options?: any): AxiosPromise<PushUriResponse> {
-            return localVarFp.issuerIssuedoc1XmlPost(pushUriRequest, options).then((request) => request(axios, basePath));
+        digilockerCompatIssueDocument(pushUriRequest?: PushUriRequest, options?: any): AxiosPromise<PushUriResponse> {
+            return localVarFp.digilockerCompatIssueDocument(pushUriRequest, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -119,13 +119,13 @@ export const DigiLockerCompatIssuerApiFactory = function (configuration?: Config
 export class DigiLockerCompatIssuerApi extends BaseAPI {
     /**
      * 
-     * @summary Digilocker Compatible endpoint to Issue Documents.
-     * @param {PushUriRequest} [pushUriRequest] 
+     * @summary Digilocker Compatible endpoint to issue document.
+     * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DigiLockerCompatIssuerApi
      */
-    public issuerIssuedoc1XmlPost(pushUriRequest?: PushUriRequest, options?: any) {
-        return DigiLockerCompatIssuerApiFp(this.configuration).issuerIssuedoc1XmlPost(pushUriRequest, options).then((request) => request(this.axios, this.basePath));
+    public digilockerCompatIssueDocument(pushUriRequest?: PushUriRequest, options?: any) {
+        return DigiLockerCompatIssuerApiFp(this.configuration).digilockerCompatIssueDocument(pushUriRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
