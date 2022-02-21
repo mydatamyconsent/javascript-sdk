@@ -23,6 +23,12 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { DocumentIssueRequest } from '../models';
 // @ts-ignore
+import { DocumentTypeDetailsDtoPaginatedList } from '../models';
+// @ts-ignore
+import { IssuedDocument } from '../models';
+// @ts-ignore
+import { IssuedDocumentPaginatedList } from '../models';
+// @ts-ignore
 import { ProblemDetails } from '../models';
 /**
  * DocumentsApi - axios parameter creator
@@ -126,12 +132,12 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Get registered document types.
-         * @param {number} [pageSize] 
-         * @param {number} [pageNo] 
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRegisteredDocumentTypes: async (pageSize?: number, pageNo?: number, options: any = {}): Promise<RequestArgs> => {
+        getRegisteredDocumentTypes: async (pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/documents/types`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -144,12 +150,12 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
-            if (pageSize !== undefined) {
-                localVarQueryParameter['pageSize'] = pageSize;
-            }
-
             if (pageNo !== undefined) {
                 localVarQueryParameter['pageNo'] = pageNo;
+            }
+
+            if (pageSize !== undefined) {
+                localVarQueryParameter['pageSize'] = pageSize;
             }
 
 
@@ -216,7 +222,7 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIssuedDocumentById(documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async getIssuedDocumentById(documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocument>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIssuedDocumentById(documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -231,20 +237,20 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocumentPaginatedList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get registered document types.
-         * @param {number} [pageSize] 
-         * @param {number} [pageNo] 
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRegisteredDocumentTypes(pageSize?: number, pageNo?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getRegisteredDocumentTypes(pageSize, pageNo, options);
+        async getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumentTypeDetailsDtoPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getRegisteredDocumentTypes(pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -254,7 +260,7 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async issueDocument(documentIssueRequest: DocumentIssueRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean>> {
+        async issueDocument(documentIssueRequest: DocumentIssueRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocument>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.issueDocument(documentIssueRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -275,7 +281,7 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIssuedDocumentById(documentId: string, options?: any): AxiosPromise<void> {
+        getIssuedDocumentById(documentId: string, options?: any): AxiosPromise<IssuedDocument> {
             return localVarFp.getIssuedDocumentById(documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -289,19 +295,19 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any): AxiosPromise<void> {
+        getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageSize?: number, pageNo?: number, options?: any): AxiosPromise<IssuedDocumentPaginatedList> {
             return localVarFp.getIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageSize, pageNo, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get registered document types.
-         * @param {number} [pageSize] 
-         * @param {number} [pageNo] 
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRegisteredDocumentTypes(pageSize?: number, pageNo?: number, options?: any): AxiosPromise<void> {
-            return localVarFp.getRegisteredDocumentTypes(pageSize, pageNo, options).then((request) => request(axios, basePath));
+        getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DocumentTypeDetailsDtoPaginatedList> {
+            return localVarFp.getRegisteredDocumentTypes(pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -310,7 +316,7 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        issueDocument(documentIssueRequest: DocumentIssueRequest, options?: any): AxiosPromise<boolean> {
+        issueDocument(documentIssueRequest: DocumentIssueRequest, options?: any): AxiosPromise<IssuedDocument> {
             return localVarFp.issueDocument(documentIssueRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -354,14 +360,14 @@ export class DocumentsApi extends BaseAPI {
     /**
      * 
      * @summary Get registered document types.
-     * @param {number} [pageSize] 
-     * @param {number} [pageNo] 
+     * @param {number} [pageNo] Page number.
+     * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DocumentsApi
      */
-    public getRegisteredDocumentTypes(pageSize?: number, pageNo?: number, options?: any) {
-        return DocumentsApiFp(this.configuration).getRegisteredDocumentTypes(pageSize, pageNo, options).then((request) => request(this.axios, this.basePath));
+    public getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any) {
+        return DocumentsApiFp(this.configuration).getRegisteredDocumentTypes(pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

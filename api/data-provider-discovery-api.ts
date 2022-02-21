@@ -24,6 +24,8 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 import { DataProvider } from '../models';
 // @ts-ignore
 import { DataProviderPaginatedList } from '../models';
+// @ts-ignore
+import { ProblemDetails } from '../models';
 /**
  * DataProviderDiscoveryApi - axios parameter creator
  * @export
@@ -71,7 +73,7 @@ export const DataProviderDiscoveryApiAxiosParamCreator = function (configuration
          * @param {string} [documentType] Document type.
          * @param {string} [organizationCategory] Organization category.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {string} [country] ISO2 Country code.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -152,7 +154,7 @@ export const DataProviderDiscoveryApiFp = function(configuration?: Configuration
          * @param {string} [documentType] Document type.
          * @param {string} [organizationCategory] Organization category.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {string} [country] ISO2 Country code.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -188,7 +190,7 @@ export const DataProviderDiscoveryApiFactory = function (configuration?: Configu
          * @param {string} [documentType] Document type.
          * @param {string} [organizationCategory] Organization category.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {string} [country] ISO2 Country code.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -225,7 +227,7 @@ export class DataProviderDiscoveryApi extends BaseAPI {
      * @param {string} [documentType] Document type.
      * @param {string} [organizationCategory] Organization category.
      * @param {number} [pageNo] Page number.
-     * @param {number} [pageSize] Page size.
+     * @param {number} [pageSize] Number of items to return.
      * @param {string} [country] ISO2 Country code.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

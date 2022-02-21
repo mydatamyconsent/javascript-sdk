@@ -98,6 +98,18 @@ export interface GetConsentTemplateDetailsDto {
      * @type {Life}
      * @memberof GetConsentTemplateDetailsDto
      */
+    dataLife?: Life;
+    /**
+     * 
+     * @type {Life}
+     * @memberof GetConsentTemplateDetailsDto
+     */
+    requestLife?: Life;
+    /**
+     * 
+     * @type {Life}
+     * @memberof GetConsentTemplateDetailsDto
+     */
     frequency?: Life;
     /**
      * 
@@ -117,6 +129,24 @@ export interface GetConsentTemplateDetailsDto {
      * @memberof GetConsentTemplateDetailsDto
      */
     financials?: Array<Financial> | null;
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof GetConsentTemplateDetailsDto
+     */
+    healthRecords?: Array<object> | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetConsentTemplateDetailsDto
+     */
+    approvedBy?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof GetConsentTemplateDetailsDto
+     */
+    approvedAtUtc?: string | null;
 }
 
 

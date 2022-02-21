@@ -424,8 +424,8 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
          * @param {string} [filters] Filters.
          * @param {string} [fromDateTimeUtc] From date time in utc timezone.
          * @param {string} [toDateTimeUtc] Til date time in utc timezone.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -490,7 +490,7 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
          * @param {string} [from] From date time in utc timezone.
          * @param {string} [to] Til date time in utc timezone.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -549,7 +549,7 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
          * @param {string} [from] From date time in utc timezone.
          * @param {string} [to] Til date time in utc timezone.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -609,8 +609,8 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
          * @param {string} [filters] Filters.
          * @param {string} [fromDateTimeUtc] From date time in utc timezone.
          * @param {string} [toDateTimeUtc] Til date time in utc timezone.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -873,8 +873,8 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {string} [filters] Filters.
          * @param {string} [fromDateTimeUtc] From date time in utc timezone.
          * @param {string} [toDateTimeUtc] Til date time in utc timezone.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -889,7 +889,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {string} [from] From date time in utc timezone.
          * @param {string} [to] Til date time in utc timezone.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -904,7 +904,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {string} [from] From date time in utc timezone.
          * @param {string} [to] Til date time in utc timezone.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -920,8 +920,8 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {string} [filters] Filters.
          * @param {string} [fromDateTimeUtc] From date time in utc timezone.
          * @param {string} [toDateTimeUtc] Til date time in utc timezone.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1075,8 +1075,8 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {string} [filters] Filters.
          * @param {string} [fromDateTimeUtc] From date time in utc timezone.
          * @param {string} [toDateTimeUtc] Til date time in utc timezone.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1090,7 +1090,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {string} [from] From date time in utc timezone.
          * @param {string} [to] Til date time in utc timezone.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1104,7 +1104,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {string} [from] From date time in utc timezone.
          * @param {string} [to] Til date time in utc timezone.
          * @param {number} [pageNo] Page number.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1119,8 +1119,8 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {string} [filters] Filters.
          * @param {string} [fromDateTimeUtc] From date time in utc timezone.
          * @param {string} [toDateTimeUtc] Til date time in utc timezone.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1291,8 +1291,8 @@ export class DataConsentsApi extends BaseAPI {
      * @param {string} [filters] Filters.
      * @param {string} [fromDateTimeUtc] From date time in utc timezone.
      * @param {string} [toDateTimeUtc] Til date time in utc timezone.
-     * @param {number} [pageNo] Page no.
-     * @param {number} [pageSize] Page size.
+     * @param {number} [pageNo] Page number.
+     * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
@@ -1308,7 +1308,7 @@ export class DataConsentsApi extends BaseAPI {
      * @param {string} [from] From date time in utc timezone.
      * @param {string} [to] Til date time in utc timezone.
      * @param {number} [pageNo] Page number.
-     * @param {number} [pageSize] Page size.
+     * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
@@ -1324,7 +1324,7 @@ export class DataConsentsApi extends BaseAPI {
      * @param {string} [from] From date time in utc timezone.
      * @param {string} [to] Til date time in utc timezone.
      * @param {number} [pageNo] Page number.
-     * @param {number} [pageSize] Page size.
+     * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi
@@ -1341,8 +1341,8 @@ export class DataConsentsApi extends BaseAPI {
      * @param {string} [filters] Filters.
      * @param {string} [fromDateTimeUtc] From date time in utc timezone.
      * @param {string} [toDateTimeUtc] Til date time in utc timezone.
-     * @param {number} [pageNo] Page no.
-     * @param {number} [pageSize] Page size.
+     * @param {number} [pageNo] Page number.
+     * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentsApi

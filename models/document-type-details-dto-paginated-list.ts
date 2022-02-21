@@ -13,55 +13,44 @@
  */
 
 
+import { DocumentTypeDetailsDto } from './document-type-details-dto';
 
 /**
  * 
  * @export
- * @interface DataConsentRequesterDto
+ * @interface DocumentTypeDetailsDtoPaginatedList
  */
-export interface DataConsentRequesterDto {
+export interface DocumentTypeDetailsDtoPaginatedList {
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {number}
+     * @memberof DocumentTypeDetailsDtoPaginatedList
      */
-    name?: string | null;
+    pageIndex?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {number}
+     * @memberof DocumentTypeDetailsDtoPaginatedList
      */
-    logoUrl?: string | null;
+    pageSize?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {number}
+     * @memberof DocumentTypeDetailsDtoPaginatedList
      */
-    description?: string | null;
+    totalPages?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {number}
+     * @memberof DocumentTypeDetailsDtoPaginatedList
      */
-    location?: string | null;
+    totalItems?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {Array<DocumentTypeDetailsDto>}
+     * @memberof DocumentTypeDetailsDtoPaginatedList
      */
-    website?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
-     */
-    supportEmail?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
-     */
-    helpLineNumber?: string | null;
+    items?: Array<DocumentTypeDetailsDto> | null;
 }
 
 

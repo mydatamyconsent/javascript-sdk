@@ -190,8 +190,8 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
          * @param {DataConsentStatus} [status] Data consent status.
          * @param {string} [startDateTime] Start date time.
          * @param {string} [endDateTime] End date time.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -249,8 +249,8 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
          * @param {DataConsentStatus} [status] Data consent status.
          * @param {string} [startDateTime] Start date time.
          * @param {string} [endDateTime] End date time.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -430,8 +430,8 @@ export const DataConsentRequestsApiFp = function(configuration?: Configuration) 
          * @param {DataConsentStatus} [status] Data consent status.
          * @param {string} [startDateTime] Start date time.
          * @param {string} [endDateTime] End date time.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -445,8 +445,8 @@ export const DataConsentRequestsApiFp = function(configuration?: Configuration) 
          * @param {DataConsentStatus} [status] Data consent status.
          * @param {string} [startDateTime] Start date time.
          * @param {string} [endDateTime] End date time.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -532,8 +532,8 @@ export const DataConsentRequestsApiFactory = function (configuration?: Configura
          * @param {DataConsentStatus} [status] Data consent status.
          * @param {string} [startDateTime] Start date time.
          * @param {string} [endDateTime] End date time.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -546,8 +546,8 @@ export const DataConsentRequestsApiFactory = function (configuration?: Configura
          * @param {DataConsentStatus} [status] Data consent status.
          * @param {string} [startDateTime] Start date time.
          * @param {string} [endDateTime] End date time.
-         * @param {number} [pageNo] Page no.
-         * @param {number} [pageSize] Page size.
+         * @param {number} [pageNo] Page number.
+         * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -638,8 +638,8 @@ export class DataConsentRequestsApi extends BaseAPI {
      * @param {DataConsentStatus} [status] Data consent status.
      * @param {string} [startDateTime] Start date time.
      * @param {string} [endDateTime] End date time.
-     * @param {number} [pageNo] Page no.
-     * @param {number} [pageSize] Page size.
+     * @param {number} [pageNo] Page number.
+     * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi
@@ -654,8 +654,8 @@ export class DataConsentRequestsApi extends BaseAPI {
      * @param {DataConsentStatus} [status] Data consent status.
      * @param {string} [startDateTime] Start date time.
      * @param {string} [endDateTime] End date time.
-     * @param {number} [pageNo] Page no.
-     * @param {number} [pageSize] Page size.
+     * @param {number} [pageNo] Page number.
+     * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi

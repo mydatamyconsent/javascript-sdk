@@ -17,51 +17,39 @@
 /**
  * 
  * @export
- * @interface DataConsentRequesterDto
+ * @interface IssuedDocument
  */
-export interface DataConsentRequesterDto {
+export interface IssuedDocument {
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @memberof IssuedDocument
      */
-    name?: string | null;
+    documentId?: string;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @memberof IssuedDocument
      */
-    logoUrl?: string | null;
+    identifier?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @memberof IssuedDocument
      */
-    description?: string | null;
+    documentType?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @memberof IssuedDocument
      */
-    location?: string | null;
+    issuedTo?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @memberof IssuedDocument
      */
-    website?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
-     */
-    supportEmail?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
-     */
-    helpLineNumber?: string | null;
+    issuedAtUtc?: string;
 }
 
 

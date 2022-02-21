@@ -13,55 +13,44 @@
  */
 
 
+import { IssuedDocument } from './issued-document';
 
 /**
  * 
  * @export
- * @interface DataConsentRequesterDto
+ * @interface IssuedDocumentPaginatedList
  */
-export interface DataConsentRequesterDto {
+export interface IssuedDocumentPaginatedList {
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {number}
+     * @memberof IssuedDocumentPaginatedList
      */
-    name?: string | null;
+    pageIndex?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {number}
+     * @memberof IssuedDocumentPaginatedList
      */
-    logoUrl?: string | null;
+    pageSize?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {number}
+     * @memberof IssuedDocumentPaginatedList
      */
-    description?: string | null;
+    totalPages?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {number}
+     * @memberof IssuedDocumentPaginatedList
      */
-    location?: string | null;
+    totalItems?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
+     * @type {Array<IssuedDocument>}
+     * @memberof IssuedDocumentPaginatedList
      */
-    website?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
-     */
-    supportEmail?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequesterDto
-     */
-    helpLineNumber?: string | null;
+    items?: Array<IssuedDocument> | null;
 }
 
 
