@@ -15,6 +15,7 @@
                 "enablePostProcessFile": true,
                 "additionalProperties": {
                     "npmName": "mydatamyconsent/mydatamyconsent",
+                    "basePath": "https://api.mydatamyconsent.com",
                     "packageName": "mydatamyconsent",
                     "apiPackage": "api",
                     "modelPackage": "models",
