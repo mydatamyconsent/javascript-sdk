@@ -18,113 +18,101 @@ import { DocumentSubCategoryType } from './document-sub-category-type';
 import { SupportedEntityType } from './supported-entity-type';
 
 /**
- * 
+ * Issuable Document Type details.
  * @export
- * @interface DocumentTypeDetailsDto
+ * @interface DocumentType
  */
-export interface DocumentTypeDetailsDto {
+export interface DocumentType {
     /**
-     * 
+     * Document Type Identifier.
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     id: string;
     /**
      * 
-     * @type {string}
-     * @memberof DocumentTypeDetailsDto
-     */
-    organizationId: string;
-    /**
-     * 
      * @type {DocumentCategoryType}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     categoryType: DocumentCategoryType;
     /**
      * 
      * @type {DocumentSubCategoryType}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     subCategoryType: DocumentSubCategoryType;
     /**
-     * 
+     * Document Type Name. eg: Driving License.
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
-     */
-    documentTypeCategoryId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     name: string;
     /**
-     * 
+     * Document Type Unique Slug. eg: \"in.gov.gj.transport.dl\".
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     slug: string;
     /**
-     * 
+     * Document Type description. eg: Gujarat State Driving License.
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     description?: string | null;
     /**
-     * 
+     * Logo URL of document type.
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     logoUrl: string;
     /**
-     * 
+     * Document search repository service name.
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
-    countryIso2: string;
+    searchServiceName?: string | null;
     /**
-     * 
+     * Document repository service name.
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
-    countryId: string;
+    repositoryServiceName?: string | null;
     /**
-     * 
+     * Supported entity types. eg: Individual, Organization.
+     * @type {Array<SupportedEntityType>}
+     * @memberof DocumentType
+     */
+    supportedEntityTypes: Array<SupportedEntityType>;
+    /**
+     * Name of the document type creator.
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
-     */
-    searchServiceId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DocumentTypeDetailsDto
-     */
-    repositoryServiceId?: string | null;
-    /**
-     * 
-     * @type {SupportedEntityType}
-     * @memberof DocumentTypeDetailsDto
-     */
-    supportedEntityType: SupportedEntityType;
-    /**
-     * 
-     * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     addedBy: string;
     /**
-     * 
+     * Payable amount if document is chargeable. eg: 10.25.
      * @type {number}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
      */
     payableAmount?: number | null;
     /**
-     * 
+     * Payable amount currency. eg: INR, USD etc.,.
      * @type {string}
-     * @memberof DocumentTypeDetailsDto
+     * @memberof DocumentType
+     */
+    payableAmountCurrency?: string | null;
+    /**
+     * DateTime of approval in UTC timezone.
+     * @type {string}
+     * @memberof DocumentType
      */
     approvedAtUtc?: string | null;
+    /**
+     * Document type approval status.
+     * @type {boolean}
+     * @memberof DocumentType
+     */
+    approved: boolean;
 }
 
 

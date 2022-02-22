@@ -23,7 +23,7 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { DocumentIssueRequest } from '../models';
 // @ts-ignore
-import { DocumentTypeDetailsDtoPaginatedList } from '../models';
+import { DocumentTypePaginatedList } from '../models';
 // @ts-ignore
 import { IssuedDocument } from '../models';
 // @ts-ignore
@@ -249,7 +249,7 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumentTypeDetailsDtoPaginatedList>> {
+        async getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumentTypePaginatedList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getRegisteredDocumentTypes(pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -306,7 +306,7 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DocumentTypeDetailsDtoPaginatedList> {
+        getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DocumentTypePaginatedList> {
             return localVarFp.getRegisteredDocumentTypes(pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**

@@ -37,8 +37,8 @@ models/digital-signature.ts
 models/document-category-type.ts
 models/document-issue-request.ts
 models/document-sub-category-type.ts
-models/document-type-details-dto-paginated-list.ts
-models/document-type-details-dto.ts
+models/document-type-paginated-list.ts
+models/document-type.ts
 models/document.ts
 models/documents-required.ts
 models/fetch-types.ts

@@ -13,44 +13,44 @@
  */
 
 
-import { DocumentTypeDetailsDto } from './document-type-details-dto';
+import { DocumentType } from './document-type';
 
 /**
  * 
  * @export
- * @interface DocumentTypeDetailsDtoPaginatedList
+ * @interface DocumentTypePaginatedList
  */
-export interface DocumentTypeDetailsDtoPaginatedList {
+export interface DocumentTypePaginatedList {
     /**
      * 
      * @type {number}
-     * @memberof DocumentTypeDetailsDtoPaginatedList
+     * @memberof DocumentTypePaginatedList
      */
     pageIndex?: number;
     /**
      * 
      * @type {number}
-     * @memberof DocumentTypeDetailsDtoPaginatedList
+     * @memberof DocumentTypePaginatedList
      */
     pageSize?: number;
     /**
      * 
      * @type {number}
-     * @memberof DocumentTypeDetailsDtoPaginatedList
+     * @memberof DocumentTypePaginatedList
      */
     totalPages?: number;
     /**
      * 
      * @type {number}
-     * @memberof DocumentTypeDetailsDtoPaginatedList
+     * @memberof DocumentTypePaginatedList
      */
     totalItems?: number;
     /**
      * 
-     * @type {Array<DocumentTypeDetailsDto>}
-     * @memberof DocumentTypeDetailsDtoPaginatedList
+     * @type {Array<DocumentType>}
+     * @memberof DocumentTypePaginatedList
      */
-    items?: Array<DocumentTypeDetailsDto> | null;
+    items?: Array<DocumentType> | null;
 }
 
 
