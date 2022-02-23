@@ -8,6 +8,7 @@ api/data-processing-agreements-api.ts
 api/data-provider-discovery-api.ts
 api/digi-locker-compat-issuer-api.ts
 api/documents-api.ts
+api/supported-identifiers-api.ts
 base.ts
 common.ts
 configuration.ts
@@ -35,7 +36,9 @@ models/data-provider-paginated-list.ts
 models/data-provider.ts
 models/digital-signature.ts
 models/document-category-type.ts
+models/document-issue-request-details.ts
 models/document-issue-request.ts
+models/document-receiver.ts
 models/document-sub-category-type.ts
 models/document-type-paginated-list.ts
 models/document-type.ts
@@ -71,7 +74,10 @@ models/push-uri-response.ts
 models/receiver-type.ts
 models/receiver.ts
 models/shared-with.ts
+models/string-string-key-value-pair.ts
 models/supported-entity-type.ts
+models/supported-identifier.ts
+models/supported-identifiers-by-country.ts
 models/update-data-processing-agreement-request-model.ts
 models/uri-details.ts
 models/user-account-financial-transactions-dto-paginated-list.ts

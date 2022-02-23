@@ -20,4 +20,5 @@ export * from './api/data-processing-agreements-api';
 export * from './api/data-provider-discovery-api';
 export * from './api/digi-locker-compat-issuer-api';
 export * from './api/documents-api';
+export * from './api/supported-identifiers-api';
 

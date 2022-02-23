@@ -13,34 +13,37 @@
  */
 
 
-import { IdentificationStrategy } from './identification-strategy';
-import { IdentifierStringKeyValuePair } from './identifier-string-key-value-pair';
-import { ReceiverType } from './receiver-type';
 
 /**
- * Consent request receiver details
+ * 
  * @export
- * @interface Receiver
+ * @interface SupportedIdentifier
  */
-export interface Receiver {
+export interface SupportedIdentifier {
     /**
      * 
-     * @type {ReceiverType}
-     * @memberof Receiver
+     * @type {string}
+     * @memberof SupportedIdentifier
      */
-    type?: ReceiverType;
-    /**
-     * Consent request receiver identifiers
-     * @type {Array<IdentifierStringKeyValuePair>}
-     * @memberof Receiver
-     */
-    identifiers?: Array<IdentifierStringKeyValuePair> | null;
+    key?: string | null;
     /**
      * 
-     * @type {IdentificationStrategy}
-     * @memberof Receiver
+     * @type {string}
+     * @memberof SupportedIdentifier
      */
-    identificationStrategy?: IdentificationStrategy;
+    name?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SupportedIdentifier
+     */
+    description?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SupportedIdentifier
+     */
+    exampleValue?: string | null;
 }
 
 

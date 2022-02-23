@@ -44,12 +44,6 @@ export interface ProblemDetails {
      * @memberof ProblemDetails
      */
     detail?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof ProblemDetails
-     */
-    instance?: string | null;
 }
 
 

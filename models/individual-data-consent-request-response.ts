@@ -22,25 +22,25 @@ import { DataConsentStatus } from './data-consent-status';
  */
 export interface IndividualDataConsentRequestResponse {
     /**
-     * 
+     * Consent request id
      * @type {string}
      * @memberof IndividualDataConsentRequestResponse
      */
     id?: string;
     /**
-     * 
+     * Consent request template id
      * @type {string}
      * @memberof IndividualDataConsentRequestResponse
      */
     templateId?: string;
     /**
-     * 
+     * Requested date time in utc zone
      * @type {string}
      * @memberof IndividualDataConsentRequestResponse
      */
     requestedAtUtc?: string;
     /**
-     * 
+     * Request expires date time in utc zone
      * @type {string}
      * @memberof IndividualDataConsentRequestResponse
      */
@@ -52,7 +52,7 @@ export interface IndividualDataConsentRequestResponse {
      */
     status?: DataConsentStatus;
     /**
-     * 
+     * Requested transaction id
      * @type {string}
      * @memberof IndividualDataConsentRequestResponse
      */

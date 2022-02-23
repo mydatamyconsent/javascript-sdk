@@ -13,34 +13,44 @@
  */
 
 
-import { IdentificationStrategy } from './identification-strategy';
-import { IdentifierStringKeyValuePair } from './identifier-string-key-value-pair';
-import { ReceiverType } from './receiver-type';
+import { SupportedIdentifier } from './supported-identifier';
 
 /**
- * Consent request receiver details
+ * 
  * @export
- * @interface Receiver
+ * @interface SupportedIdentifiersByCountry
  */
-export interface Receiver {
+export interface SupportedIdentifiersByCountry {
     /**
      * 
-     * @type {ReceiverType}
-     * @memberof Receiver
+     * @type {string}
+     * @memberof SupportedIdentifiersByCountry
      */
-    type?: ReceiverType;
-    /**
-     * Consent request receiver identifiers
-     * @type {Array<IdentifierStringKeyValuePair>}
-     * @memberof Receiver
-     */
-    identifiers?: Array<IdentifierStringKeyValuePair> | null;
+    iso2?: string | null;
     /**
      * 
-     * @type {IdentificationStrategy}
-     * @memberof Receiver
+     * @type {string}
+     * @memberof SupportedIdentifiersByCountry
      */
-    identificationStrategy?: IdentificationStrategy;
+    name?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof SupportedIdentifiersByCountry
+     */
+    flag?: string | null;
+    /**
+     * 
+     * @type {Array<SupportedIdentifier>}
+     * @memberof SupportedIdentifiersByCountry
+     */
+    individualIdentifiers?: Array<SupportedIdentifier> | null;
+    /**
+     * 
+     * @type {Array<SupportedIdentifier>}
+     * @memberof SupportedIdentifiersByCountry
+     */
+    organizationIdentifiers?: Array<SupportedIdentifier> | null;
 }
 
 

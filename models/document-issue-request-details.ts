@@ -13,50 +13,61 @@
  */
 
 
-import { DocumentReceiver } from './document-receiver';
 
 /**
- * Document Issue Request.
+ * Document issue request details.
  * @export
- * @interface DocumentIssueRequest
+ * @interface DocumentIssueRequestDetails
  */
-export interface DocumentIssueRequest {
+export interface DocumentIssueRequestDetails {
     /**
      * 
      * @type {string}
-     * @memberof DocumentIssueRequest
+     * @memberof DocumentIssueRequestDetails
      */
     documentTypeId: string;
     /**
      * 
      * @type {string}
-     * @memberof DocumentIssueRequest
+     * @memberof DocumentIssueRequestDetails
+     */
+    documentTypeName: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DocumentIssueRequestDetails
      */
     documentIdentifier: string;
     /**
      * 
      * @type {string}
-     * @memberof DocumentIssueRequest
+     * @memberof DocumentIssueRequestDetails
      */
     description: string;
     /**
      * 
-     * @type {DocumentReceiver}
-     * @memberof DocumentIssueRequest
+     * @type {any}
+     * @memberof DocumentIssueRequestDetails
      */
-    receiver: DocumentReceiver;
+    receiver: any | null;
     /**
      * 
      * @type {string}
-     * @memberof DocumentIssueRequest
+     * @memberof DocumentIssueRequestDetails
      */
     expiresAtUtc?: string | null;
     /**
      * 
-     * @type {{ [key: string]: string; }}
-     * @memberof DocumentIssueRequest
+     * @type {any}
+     * @memberof DocumentIssueRequestDetails
      */
-    metadata?: { [key: string]: string; } | null;
+    metadata?: any | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DocumentIssueRequestDetails
+     */
+    createdAtUtc: string;
 }
 
 

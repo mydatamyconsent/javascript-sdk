@@ -15,41 +15,41 @@
 
 
 /**
- * 
+ * Issued Document Identifier.
  * @export
  * @interface IssuedDocument
  */
 export interface IssuedDocument {
     /**
-     * 
+     * Document Identifier.
      * @type {string}
      * @memberof IssuedDocument
      */
-    documentId?: string;
+    id: string;
+    /**
+     * Document Identifier. eg: GJ05FG67866586.
+     * @type {string}
+     * @memberof IssuedDocument
+     */
+    identifier: string;
+    /**
+     * Document type name. eg: Driving License.
+     * @type {string}
+     * @memberof IssuedDocument
+     */
+    documentType: string;
     /**
      * 
      * @type {string}
      * @memberof IssuedDocument
      */
-    identifier?: string | null;
+    issuedTo: string;
     /**
      * 
      * @type {string}
      * @memberof IssuedDocument
      */
-    documentType?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof IssuedDocument
-     */
-    issuedTo?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof IssuedDocument
-     */
-    issuedAtUtc?: string;
+    issuedAtUtc: string;
 }
 
 

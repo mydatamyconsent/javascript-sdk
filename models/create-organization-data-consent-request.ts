@@ -22,7 +22,7 @@ import { Receiver } from './receiver';
  */
 export interface CreateOrganizationDataConsentRequest {
     /**
-     * 
+     * Consent template id
      * @type {string}
      * @memberof CreateOrganizationDataConsentRequest
      */
