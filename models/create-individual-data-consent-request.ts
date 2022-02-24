@@ -16,7 +16,7 @@
 import { Receiver } from './receiver';
 
 /**
- * Individual Data Consent Request.
+ * Create individual data consent request
  * @export
  * @interface CreateIndividualDataConsentRequest
  */

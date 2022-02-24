@@ -24,6 +24,12 @@ import { StringStringKeyValuePair } from './string-string-key-value-pair';
 export interface DocumentReceiver {
     /**
      * 
+     * @type {string}
+     * @memberof DocumentReceiver
+     */
+    countryIso2Code: string;
+    /**
+     * 
      * @type {Array<StringStringKeyValuePair>}
      * @memberof DocumentReceiver
      */

@@ -24,8 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 import { DataProvider } from '../models';
 // @ts-ignore
 import { DataProviderPaginatedList } from '../models';
-// @ts-ignore
-import { ProblemDetails } from '../models';
 /**
  * DataProviderDiscoveryApi - axios parameter creator
  * @export

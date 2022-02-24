@@ -14,8 +14,8 @@
 
 
 import { IdentificationStrategy } from './identification-strategy';
-import { IdentifierStringKeyValuePair } from './identifier-string-key-value-pair';
 import { ReceiverType } from './receiver-type';
+import { StringStringKeyValuePair } from './string-string-key-value-pair';
 
 /**
  * Consent request receiver details
@@ -31,10 +31,10 @@ export interface Receiver {
     type?: ReceiverType;
     /**
      * Consent request receiver identifiers
-     * @type {Array<IdentifierStringKeyValuePair>}
+     * @type {Array<StringStringKeyValuePair>}
      * @memberof Receiver
      */
-    identifiers?: Array<IdentifierStringKeyValuePair> | null;
+    identifiers?: Array<StringStringKeyValuePair> | null;
     /**
      * 
      * @type {IdentificationStrategy}

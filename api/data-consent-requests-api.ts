@@ -35,8 +35,6 @@ import { OrganizationDataConsentInfoDtoPaginatedList } from '../models';
 // @ts-ignore
 import { OrganizationDataConsentRequestResponse } from '../models';
 // @ts-ignore
-import { ProblemDetails } from '../models';
-// @ts-ignore
 import { UserDataConsentInfoDtoPaginatedList } from '../models';
 /**
  * DataConsentRequestsApi - axios parameter creator
@@ -113,9 +111,9 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
             };
         },
         /**
-         * 
+         * Create a individual data consent request.
          * @summary Create a individual data consent request.
-         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest The Individual data consent request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -149,7 +147,7 @@ export const DataConsentRequestsApiAxiosParamCreator = function (configuration?:
             };
         },
         /**
-         * 
+         * Create a organization data consent request.
          * @summary Create a organization data consent request.
          * @param {CreateOrganizationDataConsentRequest} createOrganizationDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
          * @param {*} [options] Override http request option.
@@ -403,9 +401,9 @@ export const DataConsentRequestsApiFp = function(configuration?: Configuration) 
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 
+         * Create a individual data consent request.
          * @summary Create a individual data consent request.
-         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest The Individual data consent request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -414,7 +412,7 @@ export const DataConsentRequestsApiFp = function(configuration?: Configuration) 
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 
+         * Create a organization data consent request.
          * @summary Create a organization data consent request.
          * @param {CreateOrganizationDataConsentRequest} createOrganizationDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
          * @param {*} [options] Override http request option.
@@ -507,9 +505,9 @@ export const DataConsentRequestsApiFactory = function (configuration?: Configura
             return localVarFp.cancelOrganizationDataConsentRequest(requestId, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * Create a individual data consent request.
          * @summary Create a individual data consent request.
-         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+         * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest The Individual data consent request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -517,7 +515,7 @@ export const DataConsentRequestsApiFactory = function (configuration?: Configura
             return localVarFp.createIndividualDataConsentRequest(createIndividualDataConsentRequest, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * Create a organization data consent request.
          * @summary Create a organization data consent request.
          * @param {CreateOrganizationDataConsentRequest} createOrganizationDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
          * @param {*} [options] Override http request option.
@@ -609,9 +607,9 @@ export class DataConsentRequestsApi extends BaseAPI {
     }
 
     /**
-     * 
+     * Create a individual data consent request.
      * @summary Create a individual data consent request.
-     * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateIndividualDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateIndividualDataConsentRequest).
+     * @param {CreateIndividualDataConsentRequest} createIndividualDataConsentRequest The Individual data consent request payload
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataConsentRequestsApi
@@ -621,7 +619,7 @@ export class DataConsentRequestsApi extends BaseAPI {
     }
 
     /**
-     * 
+     * Create a organization data consent request.
      * @summary Create a organization data consent request.
      * @param {CreateOrganizationDataConsentRequest} createOrganizationDataConsentRequest M:MyDataMyConsent.DeveloperApi.Controllers.DataConsentRequestsController.CreateOrganizationDataConsentRequest(MyDataMyConsent.DeveloperApi.Models.CreateOrganizationDataConsentRequest).
      * @param {*} [options] Override http request option.

@@ -13,12 +13,9 @@
  */
 
 
-import { DataConsentIdentifier } from './data-consent-identifier';
-import { DataConsentRequestedDocument } from './data-consent-requested-document';
-import { DataConsentRequestedFinancialAccount } from './data-consent-requested-financial-account';
-import { DataConsentRequesterDto } from './data-consent-requester-dto';
 import { DataConsentStatus } from './data-consent-status';
-import { GetConsentTemplateDetailsDto } from './get-consent-template-details-dto';
+import { JsonSchema } from './json-schema';
+import { Life } from './life';
 
 /**
  * 
@@ -31,7 +28,43 @@ export interface DataConsentDetailsDto {
      * @type {string}
      * @memberof DataConsentDetailsDto
      */
-    id?: string;
+    id: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentDetailsDto
+     */
+    title?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentDetailsDto
+     */
+    description?: string | null;
+    /**
+     * 
+     * @type {Life}
+     * @memberof DataConsentDetailsDto
+     */
+    dataLife?: Life;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentDetailsDto
+     */
+    requesterName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentDetailsDto
+     */
+    requesterLogo?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentDetailsDto
+     */
+    location?: string | null;
     /**
      * 
      * @type {DataConsentStatus}
@@ -64,34 +97,28 @@ export interface DataConsentDetailsDto {
     requestedAtUtc?: string;
     /**
      * 
-     * @type {DataConsentRequesterDto}
+     * @type {JsonSchema}
      * @memberof DataConsentDetailsDto
      */
-    requester?: DataConsentRequesterDto;
+    identifiers?: JsonSchema;
     /**
      * 
-     * @type {GetConsentTemplateDetailsDto}
+     * @type {string}
      * @memberof DataConsentDetailsDto
      */
-    consentDetails?: GetConsentTemplateDetailsDto;
+    documents?: string | null;
     /**
      * 
-     * @type {Array<DataConsentIdentifier>}
+     * @type {string}
      * @memberof DataConsentDetailsDto
      */
-    identifiers?: Array<DataConsentIdentifier> | null;
+    financials?: string | null;
     /**
      * 
-     * @type {Array<DataConsentRequestedDocument>}
+     * @type {string}
      * @memberof DataConsentDetailsDto
      */
-    approvedDocuments?: Array<DataConsentRequestedDocument> | null;
-    /**
-     * 
-     * @type {Array<DataConsentRequestedFinancialAccount>}
-     * @memberof DataConsentDetailsDto
-     */
-    approvedFinancials?: Array<DataConsentRequestedFinancialAccount> | null;
+    healthRecords?: string | null;
 }
 
 

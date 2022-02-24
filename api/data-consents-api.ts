@@ -41,8 +41,6 @@ import { OrganizationFinancialAccountDto } from '../models';
 // @ts-ignore
 import { OrganizationFinancialTransactionsDtoPaginatedList } from '../models';
 // @ts-ignore
-import { ProblemDetails } from '../models';
-// @ts-ignore
 import { UserAccountFinancialTransactionsDtoPaginatedList } from '../models';
 // @ts-ignore
 import { UserDataConsentInfoDtoPaginatedList } from '../models';

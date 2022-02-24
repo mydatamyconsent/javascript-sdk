@@ -27,8 +27,6 @@ import { DataProcessingAgreementDto } from '../models';
 // @ts-ignore
 import { DataProcessingAgreementDtoPaginatedList } from '../models';
 // @ts-ignore
-import { ProblemDetails } from '../models';
-// @ts-ignore
 import { UpdateDataProcessingAgreementRequestModel } from '../models';
 /**
  * DataProcessingAgreementsApi - axios parameter creator

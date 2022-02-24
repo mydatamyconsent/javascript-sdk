@@ -16,7 +16,7 @@
 import { Receiver } from './receiver';
 
 /**
- * Organization Data Consent Request.
+ * Create organization data consent request
  * @export
  * @interface CreateOrganizationDataConsentRequest
  */

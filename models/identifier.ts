@@ -17,18 +17,33 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface Identifier
  */
-
-export enum Identifier {
-    Email = 'Email',
-    PermanentAccountNumber = 'PermanentAccountNumber',
-    AadhaarNumber = 'AadhaarNumber',
-    MobileNumber = 'MobileNumber',
-    CorporateIdentificationNumber = 'CorporateIdentificationNumber',
-    TaxDeductionAccountNumber = 'TaxDeductionAccountNumber',
-    GoodsAndServicesTaxIdentificationNumber = 'GoodsAndServicesTaxIdentificationNumber'
+export interface Identifier {
+    /**
+     * 
+     * @type {string}
+     * @memberof Identifier
+     */
+    key?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Identifier
+     */
+    name?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Identifier
+     */
+    description?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Identifier
+     */
+    exampleValue?: string | null;
 }
-
 
 

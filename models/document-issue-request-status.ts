@@ -20,9 +20,11 @@
  * @enum {string}
  */
 
-export enum ConsentTemplateTypes {
-    Individual = 'Individual',
-    Organization = 'Organization'
+export enum DocumentIssueRequestStatus {
+    Created = 'Created',
+    Issued = 'Issued',
+    Accepted = 'Accepted',
+    Rejected = 'Rejected'
 }
 
 

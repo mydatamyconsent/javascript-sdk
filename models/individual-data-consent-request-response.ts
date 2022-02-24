@@ -16,7 +16,7 @@
 import { DataConsentStatus } from './data-consent-status';
 
 /**
- * Individual Data Consent Request Response.
+ * IndividualDataConsentRequestResponse
  * @export
  * @interface IndividualDataConsentRequestResponse
  */

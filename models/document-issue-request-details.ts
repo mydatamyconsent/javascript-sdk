@@ -13,6 +13,7 @@
  */
 
 
+import { DocumentIssueRequestStatus } from './document-issue-request-status';
 
 /**
  * Document issue request details.
@@ -20,6 +21,12 @@
  * @interface DocumentIssueRequestDetails
  */
 export interface DocumentIssueRequestDetails {
+    /**
+     * Request Id.
+     * @type {string}
+     * @memberof DocumentIssueRequestDetails
+     */
+    id: string;
     /**
      * 
      * @type {string}
@@ -38,6 +45,12 @@ export interface DocumentIssueRequestDetails {
      * @memberof DocumentIssueRequestDetails
      */
     documentIdentifier: string;
+    /**
+     * 
+     * @type {DocumentIssueRequestStatus}
+     * @memberof DocumentIssueRequestDetails
+     */
+    status?: DocumentIssueRequestStatus;
     /**
      * 
      * @type {string}

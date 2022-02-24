@@ -13,6 +13,7 @@
  */
 
 
+import { Identifier } from './identifier';
 
 /**
  * 
@@ -25,7 +26,7 @@ export interface SupportedIdentifier {
      * @type {string}
      * @memberof SupportedIdentifier
      */
-    key?: string | null;
+    iso2?: string | null;
     /**
      * 
      * @type {string}
@@ -34,16 +35,16 @@ export interface SupportedIdentifier {
     name?: string | null;
     /**
      * 
-     * @type {string}
+     * @type {Array<Identifier>}
      * @memberof SupportedIdentifier
      */
-    description?: string | null;
+    individualIdentifiers?: Array<Identifier> | null;
     /**
      * 
-     * @type {string}
+     * @type {Array<Identifier>}
      * @memberof SupportedIdentifier
      */
-    exampleValue?: string | null;
+    organizationIdentifiers?: Array<Identifier> | null;
 }
 
 

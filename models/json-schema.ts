@@ -17,13 +17,27 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface JsonSchema
  */
-
-export enum FetchTypes {
-    Onetime = 'Onetime',
-    Periodic = 'Periodic'
+export interface JsonSchema {
+    /**
+     * 
+     * @type {Array<object>}
+     * @memberof JsonSchema
+     */
+    keywords?: Array<object> | null;
+    /**
+     * 
+     * @type {{ [key: string]: any; }}
+     * @memberof JsonSchema
+     */
+    otherData?: { [key: string]: any; } | null;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof JsonSchema
+     */
+    boolValue?: boolean | null;
 }
-
 
 

@@ -21,9 +21,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { ProblemDetails } from '../models';
-// @ts-ignore
-import { SupportedIdentifiersByCountry } from '../models';
+import { SupportedIdentifier } from '../models';
 /**
  * SupportedIdentifiersApi - axios parameter creator
  * @export
@@ -31,7 +29,7 @@ import { SupportedIdentifiersByCountry } from '../models';
 export const SupportedIdentifiersApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 
+         * Get all supported identifiers by country.
          * @summary Get all supported identifiers by country.
          * @param {string} countryIso2Code Country ISO 2 code.
          * @param {*} [options] Override http request option.
@@ -75,13 +73,13 @@ export const SupportedIdentifiersApiFp = function(configuration?: Configuration)
     const localVarAxiosParamCreator = SupportedIdentifiersApiAxiosParamCreator(configuration)
     return {
         /**
-         * 
+         * Get all supported identifiers by country.
          * @summary Get all supported identifiers by country.
          * @param {string} countryIso2Code Country ISO 2 code.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getAllSupportedIdentifiers(countryIso2Code: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupportedIdentifiersByCountry>> {
+        async getAllSupportedIdentifiers(countryIso2Code: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupportedIdentifier>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getAllSupportedIdentifiers(countryIso2Code, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -96,13 +94,13 @@ export const SupportedIdentifiersApiFactory = function (configuration?: Configur
     const localVarFp = SupportedIdentifiersApiFp(configuration)
     return {
         /**
-         * 
+         * Get all supported identifiers by country.
          * @summary Get all supported identifiers by country.
          * @param {string} countryIso2Code Country ISO 2 code.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getAllSupportedIdentifiers(countryIso2Code: string, options?: any): AxiosPromise<SupportedIdentifiersByCountry> {
+        getAllSupportedIdentifiers(countryIso2Code: string, options?: any): AxiosPromise<SupportedIdentifier> {
             return localVarFp.getAllSupportedIdentifiers(countryIso2Code, options).then((request) => request(axios, basePath));
         },
     };
@@ -116,7 +114,7 @@ export const SupportedIdentifiersApiFactory = function (configuration?: Configur
  */
 export class SupportedIdentifiersApi extends BaseAPI {
     /**
-     * 
+     * Get all supported identifiers by country.
      * @summary Get all supported identifiers by country.
      * @param {string} countryIso2Code Country ISO 2 code.
      * @param {*} [options] Override http request option.
