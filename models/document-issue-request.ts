@@ -32,7 +32,7 @@ export interface DocumentIssueRequest {
      * @type {string}
      * @memberof DocumentIssueRequest
      */
-    documentIdentifier: string;
+    identifier: string;
     /**
      * 
      * @type {string}
@@ -45,6 +45,18 @@ export interface DocumentIssueRequest {
      * @memberof DocumentIssueRequest
      */
     receiver: DocumentReceiver;
+    /**
+     * 
+     * @type {string}
+     * @memberof DocumentIssueRequest
+     */
+    issuedAtUtc: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DocumentIssueRequest
+     */
+    validFromUtc: string;
     /**
      * 
      * @type {string}

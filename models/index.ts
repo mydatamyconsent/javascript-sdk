@@ -1,6 +1,7 @@
 export * from './activity';
 export * from './approved-consent-request';
 export * from './bank-account-type';
+export * from './consent-request-receiver';
 export * from './create-data-processing-agreement-request-model';
 export * from './create-individual-data-consent-request';
 export * from './create-organization-data-consent-request';
@@ -49,8 +50,6 @@ export * from './organization-financial-transactions-dto-paginated-list';
 export * from './problem-details';
 export * from './push-uri-request';
 export * from './push-uri-response';
-export * from './receiver';
-export * from './receiver-type';
 export * from './shared-with';
 export * from './string-string-key-value-pair';
 export * from './supported-entity-type';

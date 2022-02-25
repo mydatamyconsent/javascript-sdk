@@ -14,31 +14,24 @@
 
 
 import { IdentificationStrategy } from './identification-strategy';
-import { ReceiverType } from './receiver-type';
 import { StringStringKeyValuePair } from './string-string-key-value-pair';
 
 /**
  * Consent request receiver details
  * @export
- * @interface Receiver
+ * @interface ConsentRequestReceiver
  */
-export interface Receiver {
-    /**
-     * 
-     * @type {ReceiverType}
-     * @memberof Receiver
-     */
-    type?: ReceiverType;
+export interface ConsentRequestReceiver {
     /**
      * Consent request receiver identifiers
      * @type {Array<StringStringKeyValuePair>}
-     * @memberof Receiver
+     * @memberof ConsentRequestReceiver
      */
     identifiers?: Array<StringStringKeyValuePair> | null;
     /**
      * 
      * @type {IdentificationStrategy}
-     * @memberof Receiver
+     * @memberof ConsentRequestReceiver
      */
     identificationStrategy?: IdentificationStrategy;
 }

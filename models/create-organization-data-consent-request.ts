@@ -13,7 +13,7 @@
  */
 
 
-import { Receiver } from './receiver';
+import { ConsentRequestReceiver } from './consent-request-receiver';
 
 /**
  * Create organization data consent request
@@ -29,10 +29,10 @@ export interface CreateOrganizationDataConsentRequest {
     consentTemplateId?: string;
     /**
      * 
-     * @type {Receiver}
+     * @type {ConsentRequestReceiver}
      * @memberof CreateOrganizationDataConsentRequest
      */
-    receiver: Receiver;
+    receiver: ConsentRequestReceiver;
 }
 
 

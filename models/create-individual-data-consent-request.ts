@@ -13,7 +13,7 @@
  */
 
 
-import { Receiver } from './receiver';
+import { ConsentRequestReceiver } from './consent-request-receiver';
 
 /**
  * Create individual data consent request
@@ -29,10 +29,10 @@ export interface CreateIndividualDataConsentRequest {
     consentTemplateId?: string;
     /**
      * 
-     * @type {Receiver}
+     * @type {ConsentRequestReceiver}
      * @memberof CreateIndividualDataConsentRequest
      */
-    receiver: Receiver;
+    receiver: ConsentRequestReceiver;
 }
 
 

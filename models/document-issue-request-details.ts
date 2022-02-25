@@ -38,19 +38,19 @@ export interface DocumentIssueRequestDetails {
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
-    documentTypeName: string;
+    typeName: string;
     /**
      * 
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
-    documentIdentifier: string;
+    identifier: string;
     /**
      * 
      * @type {DocumentIssueRequestStatus}
      * @memberof DocumentIssueRequestDetails
      */
-    status?: DocumentIssueRequestStatus;
+    status: DocumentIssueRequestStatus;
     /**
      * 
      * @type {string}
@@ -68,13 +68,25 @@ export interface DocumentIssueRequestDetails {
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
+    issuedAtUtc: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DocumentIssueRequestDetails
+     */
+    validFromUtc: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DocumentIssueRequestDetails
+     */
     expiresAtUtc?: string | null;
     /**
      * 
      * @type {any}
      * @memberof DocumentIssueRequestDetails
      */
-    metadata?: any | null;
+    metaData?: any | null;
     /**
      * 
      * @type {string}

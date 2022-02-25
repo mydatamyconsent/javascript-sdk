@@ -16,6 +16,7 @@ index.ts
 models/activity.ts
 models/approved-consent-request.ts
 models/bank-account-type.ts
+models/consent-request-receiver.ts
 models/create-data-processing-agreement-request-model.ts
 models/create-individual-data-consent-request.ts
 models/create-organization-data-consent-request.ts
@@ -65,8 +66,6 @@ models/organization-financial-transactions-dto.ts
 models/problem-details.ts
 models/push-uri-request.ts
 models/push-uri-response.ts
-models/receiver-type.ts
-models/receiver.ts
 models/shared-with.ts
 models/string-string-key-value-pair.ts
 models/supported-entity-type.ts
