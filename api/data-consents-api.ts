@@ -33,7 +33,7 @@ import { FinancialAccount } from '../models';
 // @ts-ignore
 import { OrganizationDataConsentInfoDtoPaginatedList } from '../models';
 // @ts-ignore
-import { OrganizationDocumentDetailsDto } from '../models';
+import { OrganizationDocumentDetails } from '../models';
 // @ts-ignore
 import { OrganizationDocumentDownloadDto } from '../models';
 // @ts-ignore
@@ -45,9 +45,9 @@ import { UserAccountFinancialTransactionsDtoPaginatedList } from '../models';
 // @ts-ignore
 import { UserDataConsentInfoDtoPaginatedList } from '../models';
 // @ts-ignore
-import { UserDocumentDetailsDto } from '../models';
+import { UserDocumentDetails } from '../models';
 // @ts-ignore
-import { UserDocumentDownloadDto } from '../models';
+import { UserDocumentDownload } from '../models';
 /**
  * DataConsentsApi - axios parameter creator
  * @export
@@ -174,7 +174,7 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
         getAllConsentedFinancialAccounts: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'consentId' is not null or undefined
             assertParamExists('getAllConsentedFinancialAccounts', 'consentId', consentId)
-            const localVarPath = `/v1/consents/individuals/{consentId}/accounts`
+            const localVarPath = `/v1/consents/individuals/{consentId}/financial-accounts`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -276,7 +276,7 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
         getConsentFinancialAccounts: async (consentId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'consentId' is not null or undefined
             assertParamExists('getConsentFinancialAccounts', 'consentId', consentId)
-            const localVarPath = `/v1/consents/organizations/{consentId}/accounts`
+            const localVarPath = `/v1/consents/organizations/{consentId}/financial-accounts`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -313,7 +313,7 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
             assertParamExists('getConsentedAccountById', 'consentId', consentId)
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('getConsentedAccountById', 'accountId', accountId)
-            const localVarPath = `/v1/consents/individuals/{consentId}/accounts/{accountId}`
+            const localVarPath = `/v1/consents/individuals/{consentId}/financial-accounts/{accountId}`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
                 .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -389,7 +389,7 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
             assertParamExists('getConsentedFinancialAccount', 'consentId', consentId)
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('getConsentedFinancialAccount', 'accountId', accountId)
-            const localVarPath = `/v1/consents/organizations/{consentId}/accounts/{accountId}`
+            const localVarPath = `/v1/consents/organizations/{consentId}/financial-accounts/{accountId}`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
                 .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -432,7 +432,7 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
             assertParamExists('getConsentedFinancialAccountTransactions', 'consentId', consentId)
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('getConsentedFinancialAccountTransactions', 'accountId', accountId)
-            const localVarPath = `/v1/consents/individuals/{consentId}/accounts/{accountId}/transactions`
+            const localVarPath = `/v1/consents/individuals/{consentId}/financial-accounts/{accountId}/transactions`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
                 .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -617,7 +617,7 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
             assertParamExists('getOrgConsentedAccountTransactions', 'consentId', consentId)
             // verify required parameter 'accountId' is not null or undefined
             assertParamExists('getOrgConsentedAccountTransactions', 'accountId', accountId)
-            const localVarPath = `/v1/consents/organizations/{consentId}/accounts/{accountId}/transactions`
+            const localVarPath = `/v1/consents/organizations/{consentId}/financial-accounts/{accountId}/transactions`
                 .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
                 .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -756,7 +756,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async downloadConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDocumentDownloadDto>> {
+        async downloadConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDocumentDownload>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.downloadConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -847,7 +847,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDocumentDetailsDto>> {
+        async getConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserDocumentDetails>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -946,7 +946,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDocumentDetailsDto>> {
+        async getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDocumentDetails>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrganizationConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -968,7 +968,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        downloadConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<UserDocumentDownloadDto> {
+        downloadConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<UserDocumentDownload> {
             return localVarFp.downloadConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1051,7 +1051,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<UserDocumentDetailsDto> {
+        getConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<UserDocumentDetails> {
             return localVarFp.getConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1143,7 +1143,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<OrganizationDocumentDetailsDto> {
+        getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<OrganizationDocumentDetails> {
             return localVarFp.getOrganizationConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
     };

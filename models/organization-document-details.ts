@@ -17,73 +17,73 @@
 /**
  * 
  * @export
- * @interface OrganizationDocumentDetailsDto
+ * @interface OrganizationDocumentDetails
  */
-export interface OrganizationDocumentDetailsDto {
+export interface OrganizationDocumentDetails {
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     id?: string;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     organizationId?: string;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     organizationName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     typeId?: string;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     typeName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     name?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     identifier?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     storageUrl?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     countryIso2?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     issuerId?: string;
     /**
      * 
      * @type {string}
-     * @memberof OrganizationDocumentDetailsDto
+     * @memberof OrganizationDocumentDetails
      */
     issuerName?: string | null;
 }

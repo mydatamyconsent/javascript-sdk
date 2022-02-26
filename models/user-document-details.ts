@@ -19,91 +19,91 @@ import { DocumentCategoryType } from './document-category-type';
 /**
  * 
  * @export
- * @interface UserDocumentDetailsDto
+ * @interface UserDocumentDetails
  */
-export interface UserDocumentDetailsDto {
+export interface UserDocumentDetails {
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     id?: string;
     /**
      * 
      * @type {DocumentCategoryType}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     categoryType?: DocumentCategoryType;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     typeId?: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     typeName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     fullName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     identifier?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     accountId?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     issuerId?: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     issuerName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     storageUrl?: string | null;
     /**
      * 
      * @type {boolean}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     isQuickAccessEnabled?: boolean;
     /**
      * 
      * @type {boolean}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     isOwner?: boolean;
     /**
      * 
      * @type {Array<DigitalSignature>}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     digitalSignatureDetails?: Array<DigitalSignature> | null;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDetailsDto
+     * @memberof UserDocumentDetails
      */
     ownerId?: string;
 }

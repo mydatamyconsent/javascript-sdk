@@ -58,7 +58,7 @@ models/life.ts
 models/organization-data-consent-info-dto-paginated-list.ts
 models/organization-data-consent-info-dto.ts
 models/organization-data-consent-request-response.ts
-models/organization-document-details-dto.ts
+models/organization-document-details.ts
 models/organization-document-download-dto.ts
 models/organization-financial-account-dto.ts
 models/organization-financial-transactions-dto-paginated-list.ts
@@ -76,7 +76,7 @@ models/user-account-financial-transactions-dto-paginated-list.ts
 models/user-account-financial-transactions-dto.ts
 models/user-data-consent-info-dto-paginated-list.ts
 models/user-data-consent-info-dto.ts
-models/user-document-details-dto.ts
-models/user-document-download-dto.ts
+models/user-document-details.ts
+models/user-document-download.ts
 package.json
 tsconfig.json

@@ -17,25 +17,31 @@
 /**
  * 
  * @export
- * @interface UserDocumentDownloadDto
+ * @interface UserDocumentDownload
  */
-export interface UserDocumentDownloadDto {
+export interface UserDocumentDownload {
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDownloadDto
+     * @memberof UserDocumentDownload
      */
     id?: string;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDownloadDto
+     * @memberof UserDocumentDownload
      */
-    storageUrl?: string | null;
+    downloadUrl?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof UserDocumentDownloadDto
+     * @memberof UserDocumentDownload
+     */
+    expiresAtUtc?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UserDocumentDownload
      */
     ownerId?: string;
 }
