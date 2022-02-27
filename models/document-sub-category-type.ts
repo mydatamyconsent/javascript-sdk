@@ -22,20 +22,28 @@
 
 export enum DocumentSubCategoryType {
     Identity = 'Identity',
-    House = 'House',
+    Property = 'Property',
     Vehicle = 'Vehicle',
-    MarksMemos = 'MarksMemos',
+    AdmitAndIdCards = 'AdmitAndIdCards',
+    Marksheets = 'Marksheets',
     Transcripts = 'Transcripts',
     Certificates = 'Certificates',
     Prescriptions = 'Prescriptions',
     MedicalReports = 'MedicalReports',
     DischargeSummary = 'DischargeSummary',
-    Bills = 'Bills',
-    Invoices = 'Invoices',
+    AccountAndCertificates = 'AccountAndCertificates',
+    BillsAndInvoices = 'BillsAndInvoices',
+    Insurance = 'Insurance',
+    ReceiptsAndSubscriptions = 'ReceiptsAndSubscriptions',
     Taxes = 'Taxes',
+    LicencesAndCertificates = 'LicencesAndCertificates',
     Corporates = 'Corporates',
     Competitions = 'Competitions',
-    IntellectualProperties = 'IntellectualProperties'
+    IntellectualProperties = 'IntellectualProperties',
+    Others = 'Others',
+    ApplicationsAndCertificates = 'ApplicationsAndCertificates',
+    Licenses = 'Licenses',
+    OrganizationIds = 'OrganizationIds'
 }
 
 

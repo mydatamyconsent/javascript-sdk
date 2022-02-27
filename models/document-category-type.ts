@@ -25,7 +25,9 @@ export enum DocumentCategoryType {
     Education = 'Education',
     Health = 'Health',
     Finance = 'Finance',
-    Certificates = 'Certificates'
+    WorkAndAwards = 'WorkAndAwards',
+    LicencesAndCertificates = 'LicencesAndCertificates',
+    Others = 'Others'
 }
 
 
