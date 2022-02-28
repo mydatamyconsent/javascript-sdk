@@ -13,73 +13,39 @@
  */
 
 
+import { DocumentsRequired } from './documents-required';
+import { SupportedDocumentTypeCategoryDetailsDto } from './supported-document-type-category-details-dto';
 
 /**
  * 
  * @export
- * @interface UriDetails
+ * @interface DataConsentDocumentDetailsDto
  */
-export interface UriDetails {
+export interface DataConsentDocumentDetailsDto {
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof DataConsentDocumentDetailsDto
      */
-    aadhaar: string;
+    fieldTitle: string;
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof DataConsentDocumentDetailsDto
      */
-    uri: string;
+    fieldSlug: string;
     /**
      * 
-     * @type {string}
-     * @memberof UriDetails
+     * @type {Array<SupportedDocumentTypeCategoryDetailsDto>}
+     * @memberof DataConsentDocumentDetailsDto
      */
-    docType: string;
+    supportedDocumentTypeCategoryDetails: Array<SupportedDocumentTypeCategoryDetailsDto>;
     /**
      * 
-     * @type {string}
-     * @memberof UriDetails
+     * @type {DocumentsRequired}
+     * @memberof DataConsentDocumentDetailsDto
      */
-    docName: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    docId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    issuedOn: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    validFrom: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    validTo?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    timestamp?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    action?: string | null;
+    requirement: DocumentsRequired;
 }
 
 

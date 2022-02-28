@@ -13,6 +13,7 @@
  */
 
 
+import { DataConsentDocumentDetailsDto } from './data-consent-document-details-dto';
 import { DataConsentStatus } from './data-consent-status';
 import { JsonSchema } from './json-schema';
 import { Life } from './life';
@@ -103,10 +104,10 @@ export interface DataConsentDetailsDto {
     identifiers?: JsonSchema;
     /**
      * 
-     * @type {string}
+     * @type {Array<DataConsentDocumentDetailsDto>}
      * @memberof DataConsentDetailsDto
      */
-    documents?: string | null;
+    documents?: Array<DataConsentDocumentDetailsDto> | null;
     /**
      * 
      * @type {string}

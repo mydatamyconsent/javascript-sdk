@@ -21,6 +21,7 @@ models/create-data-processing-agreement-request-model.ts
 models/create-individual-data-consent-request.ts
 models/create-organization-data-consent-request.ts
 models/data-consent-details-dto.ts
+models/data-consent-document-details-dto.ts
 models/data-consent-documents-dto.ts
 models/data-consent-financials-dto.ts
 models/data-consent-requested-document.ts
@@ -68,6 +69,9 @@ models/push-uri-request.ts
 models/push-uri-response.ts
 models/shared-with.ts
 models/string-string-key-value-pair.ts
+models/supported-document-details-dto.ts
+models/supported-document-provider-details-dto.ts
+models/supported-document-type-category-details-dto.ts
 models/supported-entity-type.ts
 models/supported-identifier.ts
 models/update-data-processing-agreement-request-model.ts

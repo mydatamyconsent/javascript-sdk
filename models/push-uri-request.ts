@@ -26,7 +26,7 @@ export interface PushUriRequest {
      * @type {UriDetails}
      * @memberof PushUriRequest
      */
-    uriDetails?: UriDetails;
+    uriDetails: UriDetails;
     /**
      * 
      * @type {string}

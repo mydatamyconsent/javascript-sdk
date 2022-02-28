@@ -17,69 +17,45 @@
 /**
  * 
  * @export
- * @interface UriDetails
+ * @interface SupportedDocumentDetailsDto
  */
-export interface UriDetails {
+export interface SupportedDocumentDetailsDto {
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof SupportedDocumentDetailsDto
      */
-    aadhaar: string;
+    id: string;
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof SupportedDocumentDetailsDto
      */
-    uri: string;
+    typeId: string;
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof SupportedDocumentDetailsDto
      */
-    docType: string;
+    logoUrl: string;
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof SupportedDocumentDetailsDto
      */
-    docName: string;
+    storageUrl: string;
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof SupportedDocumentDetailsDto
      */
-    docId: string;
+    issuedBy: string;
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof SupportedDocumentDetailsDto
      */
-    issuedOn: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    validFrom: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    validTo?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    timestamp?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    action?: string | null;
+    uploadedAtUtc: string;
 }
 
 

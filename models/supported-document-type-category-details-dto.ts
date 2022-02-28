@@ -13,73 +13,39 @@
  */
 
 
+import { SupportedDocumentDetailsDto } from './supported-document-details-dto';
+import { SupportedDocumentProviderDetailsDto } from './supported-document-provider-details-dto';
 
 /**
  * 
  * @export
- * @interface UriDetails
+ * @interface SupportedDocumentTypeCategoryDetailsDto
  */
-export interface UriDetails {
+export interface SupportedDocumentTypeCategoryDetailsDto {
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof SupportedDocumentTypeCategoryDetailsDto
      */
-    aadhaar: string;
+    documentTypeCategoryId: string;
     /**
      * 
      * @type {string}
-     * @memberof UriDetails
+     * @memberof SupportedDocumentTypeCategoryDetailsDto
      */
-    uri: string;
+    documentTypeCategoryName: string;
     /**
      * 
-     * @type {string}
-     * @memberof UriDetails
+     * @type {Array<SupportedDocumentDetailsDto>}
+     * @memberof SupportedDocumentTypeCategoryDetailsDto
      */
-    docType: string;
+    supportedDocuments: Array<SupportedDocumentDetailsDto>;
     /**
      * 
-     * @type {string}
-     * @memberof UriDetails
+     * @type {Array<SupportedDocumentProviderDetailsDto>}
+     * @memberof SupportedDocumentTypeCategoryDetailsDto
      */
-    docName: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    docId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    issuedOn: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    validFrom: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    validTo?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    timestamp?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UriDetails
-     */
-    action?: string | null;
+    supportedDocumentProviderDetails: Array<SupportedDocumentProviderDetailsDto>;
 }
 
 
