@@ -54,7 +54,6 @@ models/index.ts
 models/individual-data-consent-request-response.ts
 models/issued-document-paginated-list.ts
 models/issued-document.ts
-models/json-schema.ts
 models/life.ts
 models/organization-data-consent-info-dto-paginated-list.ts
 models/organization-data-consent-info-dto.ts
@@ -67,6 +66,7 @@ models/organization-financial-transactions-dto.ts
 models/problem-details.ts
 models/push-uri-request.ts
 models/push-uri-response.ts
+models/requester.ts
 models/shared-with.ts
 models/string-string-key-value-pair.ts
 models/supported-document-details-dto.ts

@@ -17,27 +17,57 @@
 /**
  * 
  * @export
- * @interface JsonSchema
+ * @interface Requester
  */
-export interface JsonSchema {
+export interface Requester {
     /**
      * 
-     * @type {Array<object>}
-     * @memberof JsonSchema
+     * @type {string}
+     * @memberof Requester
      */
-    keywords?: Array<object> | null;
+    id: string;
     /**
      * 
-     * @type {{ [key: string]: any; }}
-     * @memberof JsonSchema
+     * @type {string}
+     * @memberof Requester
      */
-    otherData?: { [key: string]: any; } | null;
+    name: string;
     /**
      * 
-     * @type {boolean}
-     * @memberof JsonSchema
+     * @type {string}
+     * @memberof Requester
      */
-    boolValue?: boolean | null;
+    logoUrl?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Requester
+     */
+    description?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Requester
+     */
+    location?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Requester
+     */
+    websiteUrl?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Requester
+     */
+    supportEmail?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof Requester
+     */
+    helpLineNumber?: string | null;
 }
 
 

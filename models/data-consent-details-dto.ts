@@ -15,8 +15,8 @@
 
 import { DataConsentDocumentDetailsDto } from './data-consent-document-details-dto';
 import { DataConsentStatus } from './data-consent-status';
-import { JsonSchema } from './json-schema';
 import { Life } from './life';
+import { Requester } from './requester';
 
 /**
  * 
@@ -50,22 +50,10 @@ export interface DataConsentDetailsDto {
     dataLife?: Life;
     /**
      * 
-     * @type {string}
+     * @type {Requester}
      * @memberof DataConsentDetailsDto
      */
-    requesterName?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    requesterLogo?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    location?: string | null;
+    requestedByOrg?: Requester;
     /**
      * 
      * @type {DataConsentStatus}
@@ -98,10 +86,10 @@ export interface DataConsentDetailsDto {
     requestedAtUtc?: string;
     /**
      * 
-     * @type {JsonSchema}
+     * @type {any}
      * @memberof DataConsentDetailsDto
      */
-    identifiers?: JsonSchema;
+    identifiers?: any | null;
     /**
      * 
      * @type {Array<DataConsentDocumentDetailsDto>}
