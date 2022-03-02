@@ -29,7 +29,7 @@ export interface DataConsentDetailsDto {
      * @type {string}
      * @memberof DataConsentDetailsDto
      */
-    id: string;
+    consentRequestId: string;
     /**
      * 
      * @type {string}
@@ -77,7 +77,13 @@ export interface DataConsentDetailsDto {
      * @type {string}
      * @memberof DataConsentDetailsDto
      */
-    expiresAtUtc?: string;
+    revokedAtUtc?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentDetailsDto
+     */
+    requestedExpiresAtUtc?: string;
     /**
      * 
      * @type {string}
@@ -96,18 +102,6 @@ export interface DataConsentDetailsDto {
      * @memberof DataConsentDetailsDto
      */
     documents?: Array<DataConsentDocumentDetailsDto> | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    financials?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDetailsDto
-     */
-    healthRecords?: string | null;
 }
 
 
