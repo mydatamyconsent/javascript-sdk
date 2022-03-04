@@ -26,6 +26,7 @@ export enum DataConsentStatus {
     Rejected = 'Rejected',
     Revoked = 'Revoked',
     Expired = 'Expired',
+    Timeout = 'Timeout',
     Canceled = 'Canceled'
 }
 

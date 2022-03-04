@@ -71,6 +71,12 @@ export interface DataConsentDetailsDto {
      * @type {string}
      * @memberof DataConsentDetailsDto
      */
+    approvedExpiresAtUtc?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataConsentDetailsDto
+     */
     rejectedAtUtc?: string | null;
     /**
      * 

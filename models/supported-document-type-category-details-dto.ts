@@ -45,7 +45,7 @@ export interface SupportedDocumentTypeCategoryDetailsDto {
      * @type {Array<SupportedDocumentProviderDetailsDto>}
      * @memberof SupportedDocumentTypeCategoryDetailsDto
      */
-    supportedDocumentProviderDetails: Array<SupportedDocumentProviderDetailsDto>;
+    supportedDocumentProviderDetails?: Array<SupportedDocumentProviderDetailsDto> | null;
 }
 
 

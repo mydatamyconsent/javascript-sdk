@@ -291,13 +291,15 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
          * 
          * @summary Upload a document for issuance request of organization.
          * @param {string} issueRequestId Issue Request Id System.Guid.
-         * @param {any} [formFile] 
+         * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadDocumentForOrganization: async (issueRequestId: string, formFile?: any, options: any = {}): Promise<RequestArgs> => {
+        uploadDocumentForOrganization: async (issueRequestId: string, formFile: any, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'issueRequestId' is not null or undefined
             assertParamExists('uploadDocumentForOrganization', 'issueRequestId', issueRequestId)
+            // verify required parameter 'formFile' is not null or undefined
+            assertParamExists('uploadDocumentForOrganization', 'formFile', formFile)
             const localVarPath = `/v1/documents/issue/organization/upload/{issueRequestId}`
                 .replace(`{${"issueRequestId"}}`, encodeURIComponent(String(issueRequestId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -416,11 +418,11 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Upload a document for issuance request of organization.
          * @param {string} issueRequestId Issue Request Id System.Guid.
-         * @param {any} [formFile] 
+         * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadDocumentForOrganization(issueRequestId: string, formFile?: any, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+        async uploadDocumentForOrganization(issueRequestId: string, formFile: any, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.uploadDocumentForOrganization(issueRequestId, formFile, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -504,11 +506,11 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * 
          * @summary Upload a document for issuance request of organization.
          * @param {string} issueRequestId Issue Request Id System.Guid.
-         * @param {any} [formFile] 
+         * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadDocumentForOrganization(issueRequestId: string, formFile?: any, options?: any): AxiosPromise<string> {
+        uploadDocumentForOrganization(issueRequestId: string, formFile: any, options?: any): AxiosPromise<string> {
             return localVarFp.uploadDocumentForOrganization(issueRequestId, formFile, options).then((request) => request(axios, basePath));
         },
     };
@@ -603,12 +605,12 @@ export class DocumentsApi extends BaseAPI {
      * 
      * @summary Upload a document for issuance request of organization.
      * @param {string} issueRequestId Issue Request Id System.Guid.
-     * @param {any} [formFile] 
+     * @param {any} formFile 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DocumentsApi
      */
-    public uploadDocumentForOrganization(issueRequestId: string, formFile?: any, options?: any) {
+    public uploadDocumentForOrganization(issueRequestId: string, formFile: any, options?: any) {
         return DocumentsApiFp(this.configuration).uploadDocumentForOrganization(issueRequestId, formFile, options).then((request) => request(this.axios, this.basePath));
     }
 }
