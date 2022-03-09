@@ -1,6 +1,7 @@
 export * from './activity';
 export * from './approved-consent-request';
 export * from './bank-account-type';
+export * from './collectible-types';
 export * from './consent-request-receiver';
 export * from './create-data-processing-agreement-request-model';
 export * from './create-individual-data-consent-request';

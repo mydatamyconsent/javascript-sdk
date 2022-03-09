@@ -13,6 +13,7 @@
  */
 
 
+import { CollectibleTypes } from './collectible-types';
 import { DataConsentDocumentDetailsDto } from './data-consent-document-details-dto';
 import { DataConsentStatus } from './data-consent-status';
 import { Life } from './life';
@@ -54,6 +55,12 @@ export interface DataConsentDetailsDto {
      * @memberof DataConsentDetailsDto
      */
     requestedByOrg?: Requester;
+    /**
+     * 
+     * @type {Array<CollectibleTypes>}
+     * @memberof DataConsentDetailsDto
+     */
+    collectables: Array<CollectibleTypes>;
     /**
      * 
      * @type {DataConsentStatus}
