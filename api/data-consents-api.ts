@@ -56,6 +56,44 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
     return {
         /**
          * 
+         * @summary Get analysis of a consented document.
+         * @param {string} consentId 
+         * @param {string} documentId Document Id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        downloadConsentedDocumentAnalysis: async (consentId: string, documentId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('downloadConsentedDocumentAnalysis', 'consentId', consentId)
+            // verify required parameter 'documentId' is not null or undefined
+            assertParamExists('downloadConsentedDocumentAnalysis', 'documentId', documentId)
+            const localVarPath = `/v1/consents/{consentId}/documents/{documentId}/analysis`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
+                .replace(`{${"documentId"}}`, encodeURIComponent(String(documentId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Download a individuals consented document.
          * @param {string} consentId Consent id.
          * @param {string} documentId Document id.
@@ -416,6 +454,44 @@ export const DataConsentsApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
+         * @summary Get consented financial account insights.
+         * @param {string} consentId 
+         * @param {string} accountId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedFinancialAccountInsights: async (consentId: string, accountId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consentId' is not null or undefined
+            assertParamExists('getConsentedFinancialAccountInsights', 'consentId', consentId)
+            // verify required parameter 'accountId' is not null or undefined
+            assertParamExists('getConsentedFinancialAccountInsights', 'accountId', accountId)
+            const localVarPath = `/v1/consents/{consentId}/financial-accounts/{accountId}/insights`
+                .replace(`{${"consentId"}}`, encodeURIComponent(String(consentId)))
+                .replace(`{${"accountId"}}`, encodeURIComponent(String(accountId)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get individual consented financial account transactions of an individual based on accountId.
          * @param {string} consentId Consent id.
          * @param {string} accountId Account id.
@@ -750,6 +826,18 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
+         * @summary Get analysis of a consented document.
+         * @param {string} consentId 
+         * @param {string} documentId Document Id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async downloadConsentedDocumentAnalysis(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.downloadConsentedDocumentAnalysis(consentId, documentId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Download a individuals consented document.
          * @param {string} consentId Consent id.
          * @param {string} documentId Document id.
@@ -865,6 +953,18 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Get consented financial account insights.
+         * @param {string} consentId 
+         * @param {string} accountId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getConsentedFinancialAccountInsights(consentId: string, accountId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentedFinancialAccountInsights(consentId, accountId, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Get individual consented financial account transactions of an individual based on accountId.
          * @param {string} consentId Consent id.
          * @param {string} accountId Account id.
@@ -960,6 +1060,17 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
 export const DataConsentsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = DataConsentsApiFp(configuration)
     return {
+        /**
+         * 
+         * @summary Get analysis of a consented document.
+         * @param {string} consentId 
+         * @param {string} documentId Document Id.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        downloadConsentedDocumentAnalysis(consentId: string, documentId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.downloadConsentedDocumentAnalysis(consentId, documentId, options).then((request) => request(axios, basePath));
+        },
         /**
          * 
          * @summary Download a individuals consented document.
@@ -1067,6 +1178,17 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
+         * @summary Get consented financial account insights.
+         * @param {string} consentId 
+         * @param {string} accountId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getConsentedFinancialAccountInsights(consentId: string, accountId: string, options?: any): AxiosPromise<void> {
+            return localVarFp.getConsentedFinancialAccountInsights(consentId, accountId, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Get individual consented financial account transactions of an individual based on accountId.
          * @param {string} consentId Consent id.
          * @param {string} accountId Account id.
@@ -1156,6 +1278,19 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
  * @extends {BaseAPI}
  */
 export class DataConsentsApi extends BaseAPI {
+    /**
+     * 
+     * @summary Get analysis of a consented document.
+     * @param {string} consentId 
+     * @param {string} documentId Document Id.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public downloadConsentedDocumentAnalysis(consentId: string, documentId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).downloadConsentedDocumentAnalysis(consentId, documentId, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Download a individuals consented document.
@@ -1279,6 +1414,19 @@ export class DataConsentsApi extends BaseAPI {
      */
     public getConsentedFinancialAccount(consentId: string, accountId: string, options?: any) {
         return DataConsentsApiFp(this.configuration).getConsentedFinancialAccount(consentId, accountId, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get consented financial account insights.
+     * @param {string} consentId 
+     * @param {string} accountId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DataConsentsApi
+     */
+    public getConsentedFinancialAccountInsights(consentId: string, accountId: string, options?: any) {
+        return DataConsentsApiFp(this.configuration).getConsentedFinancialAccountInsights(consentId, accountId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
