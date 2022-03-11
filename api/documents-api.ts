@@ -76,8 +76,8 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
          * 
          * @summary Get paginated list of issued documents of given document type.
          * @param {string} documentTypeId Document type id.
-         * @param {string} [fromDateTime] From DateTime.
-         * @param {string} [toDateTime] To DateTime.
+         * @param {string} [fromDateTime] From DateTime in UTC timezone.
+         * @param {string} [toDateTime] To DateTime in UTC timezone.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
@@ -132,7 +132,7 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
         },
         /**
          * 
-         * @summary Get registered document types.
+         * @summary Get paginated list of registered document types.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
@@ -245,7 +245,7 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Upload a document for issuance request of individual.
-         * @param {string} issueRequestId Issue Request Id System.Guid.
+         * @param {string} issueRequestId Document issue request id.
          * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -290,7 +290,7 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Upload a document for issuance request of organization.
-         * @param {string} issueRequestId Issue Request Id System.Guid.
+         * @param {string} issueRequestId Document issue request id System.Guid.
          * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -357,8 +357,8 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Get paginated list of issued documents of given document type.
          * @param {string} documentTypeId Document type id.
-         * @param {string} [fromDateTime] From DateTime.
-         * @param {string} [toDateTime] To DateTime.
+         * @param {string} [fromDateTime] From DateTime in UTC timezone.
+         * @param {string} [toDateTime] To DateTime in UTC timezone.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
@@ -370,7 +370,7 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Get registered document types.
+         * @summary Get paginated list of registered document types.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
@@ -405,24 +405,24 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Upload a document for issuance request of individual.
-         * @param {string} issueRequestId Issue Request Id System.Guid.
+         * @param {string} issueRequestId Document issue request id.
          * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadDocumentForIndividual(issueRequestId: string, formFile: any, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+        async uploadDocumentForIndividual(issueRequestId: string, formFile: any, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.uploadDocumentForIndividual(issueRequestId, formFile, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Upload a document for issuance request of organization.
-         * @param {string} issueRequestId Issue Request Id System.Guid.
+         * @param {string} issueRequestId Document issue request id System.Guid.
          * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async uploadDocumentForOrganization(issueRequestId: string, formFile: any, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+        async uploadDocumentForOrganization(issueRequestId: string, formFile: any, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.uploadDocumentForOrganization(issueRequestId, formFile, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -450,8 +450,8 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * 
          * @summary Get paginated list of issued documents of given document type.
          * @param {string} documentTypeId Document type id.
-         * @param {string} [fromDateTime] From DateTime.
-         * @param {string} [toDateTime] To DateTime.
+         * @param {string} [fromDateTime] From DateTime in UTC timezone.
+         * @param {string} [toDateTime] To DateTime in UTC timezone.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
@@ -462,7 +462,7 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
         },
         /**
          * 
-         * @summary Get registered document types.
+         * @summary Get paginated list of registered document types.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
@@ -494,23 +494,23 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary Upload a document for issuance request of individual.
-         * @param {string} issueRequestId Issue Request Id System.Guid.
+         * @param {string} issueRequestId Document issue request id.
          * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadDocumentForIndividual(issueRequestId: string, formFile: any, options?: any): AxiosPromise<string> {
+        uploadDocumentForIndividual(issueRequestId: string, formFile: any, options?: any): AxiosPromise<void> {
             return localVarFp.uploadDocumentForIndividual(issueRequestId, formFile, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Upload a document for issuance request of organization.
-         * @param {string} issueRequestId Issue Request Id System.Guid.
+         * @param {string} issueRequestId Document issue request id System.Guid.
          * @param {any} formFile 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        uploadDocumentForOrganization(issueRequestId: string, formFile: any, options?: any): AxiosPromise<string> {
+        uploadDocumentForOrganization(issueRequestId: string, formFile: any, options?: any): AxiosPromise<void> {
             return localVarFp.uploadDocumentForOrganization(issueRequestId, formFile, options).then((request) => request(axios, basePath));
         },
     };
@@ -539,8 +539,8 @@ export class DocumentsApi extends BaseAPI {
      * 
      * @summary Get paginated list of issued documents of given document type.
      * @param {string} documentTypeId Document type id.
-     * @param {string} [fromDateTime] From DateTime.
-     * @param {string} [toDateTime] To DateTime.
+     * @param {string} [fromDateTime] From DateTime in UTC timezone.
+     * @param {string} [toDateTime] To DateTime in UTC timezone.
      * @param {number} [pageNo] Page number.
      * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
@@ -553,7 +553,7 @@ export class DocumentsApi extends BaseAPI {
 
     /**
      * 
-     * @summary Get registered document types.
+     * @summary Get paginated list of registered document types.
      * @param {number} [pageNo] Page number.
      * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
@@ -591,7 +591,7 @@ export class DocumentsApi extends BaseAPI {
     /**
      * 
      * @summary Upload a document for issuance request of individual.
-     * @param {string} issueRequestId Issue Request Id System.Guid.
+     * @param {string} issueRequestId Document issue request id.
      * @param {any} formFile 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -604,7 +604,7 @@ export class DocumentsApi extends BaseAPI {
     /**
      * 
      * @summary Upload a document for issuance request of organization.
-     * @param {string} issueRequestId Issue Request Id System.Guid.
+     * @param {string} issueRequestId Document issue request id System.Guid.
      * @param {any} formFile 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

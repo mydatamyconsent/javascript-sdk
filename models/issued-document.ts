@@ -21,31 +21,31 @@
  */
 export interface IssuedDocument {
     /**
-     * Document Identifier.
+     * Document Id.
      * @type {string}
      * @memberof IssuedDocument
      */
     id: string;
     /**
-     * Document Identifier. eg: GJ05FG67866586.
+     * Document Identifier.
      * @type {string}
      * @memberof IssuedDocument
      */
     identifier: string;
     /**
-     * Document type name. eg: Driving License.
+     * Document type name.
      * @type {string}
      * @memberof IssuedDocument
      */
     documentType: string;
     /**
-     * 
+     * User name.
      * @type {string}
      * @memberof IssuedDocument
      */
     issuedTo: string;
     /**
-     * 
+     * Issued datetime in UTC timezone.
      * @type {string}
      * @memberof IssuedDocument
      */

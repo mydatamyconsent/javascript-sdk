@@ -22,19 +22,19 @@ import { DocumentReceiver } from './document-receiver';
  */
 export interface DocumentIssueRequest {
     /**
-     * 
+     * Document type id.
      * @type {string}
      * @memberof DocumentIssueRequest
      */
     documentTypeId: string;
     /**
-     * 
+     * Document identifier.
      * @type {string}
      * @memberof DocumentIssueRequest
      */
     identifier: string;
     /**
-     * 
+     * Document description.
      * @type {string}
      * @memberof DocumentIssueRequest
      */
@@ -46,25 +46,25 @@ export interface DocumentIssueRequest {
      */
     receiver: DocumentReceiver;
     /**
-     * 
+     * Datetime of issue in UTC timezone.
      * @type {string}
      * @memberof DocumentIssueRequest
      */
     issuedAtUtc: string;
     /**
-     * 
+     * Valid from datetime in UTC timezone.
      * @type {string}
      * @memberof DocumentIssueRequest
      */
     validFromUtc: string;
     /**
-     * 
+     * Datetime of expiry in UTC timezone.
      * @type {string}
      * @memberof DocumentIssueRequest
      */
     expiresAtUtc?: string | null;
     /**
-     * 
+     * Metadata.
      * @type {{ [key: string]: string; }}
      * @memberof DocumentIssueRequest
      */

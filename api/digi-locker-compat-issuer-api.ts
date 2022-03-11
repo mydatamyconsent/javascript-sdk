@@ -35,7 +35,7 @@ export const DigiLockerCompatIssuerApiAxiosParamCreator = function (configuratio
         /**
          * 
          * @summary Digilocker Compatible endpoint to issue document.
-         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
+         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -79,7 +79,7 @@ export const DigiLockerCompatIssuerApiFp = function(configuration?: Configuratio
         /**
          * 
          * @summary Digilocker Compatible endpoint to issue document.
-         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
+         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -100,7 +100,7 @@ export const DigiLockerCompatIssuerApiFactory = function (configuration?: Config
         /**
          * 
          * @summary Digilocker Compatible endpoint to issue document.
-         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
+         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -120,7 +120,7 @@ export class DigiLockerCompatIssuerApi extends BaseAPI {
     /**
      * 
      * @summary Digilocker Compatible endpoint to issue document.
-     * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.Models.DigiLocker.PushUriRequest.
+     * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DigiLockerCompatIssuerApi

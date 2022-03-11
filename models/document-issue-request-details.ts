@@ -22,25 +22,25 @@ import { DocumentIssueRequestStatus } from './document-issue-request-status';
  */
 export interface DocumentIssueRequestDetails {
     /**
-     * Request Id.
+     * Document issue request Id.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
     id: string;
     /**
-     * 
+     * Document type Id.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
     documentTypeId: string;
     /**
-     * 
+     * Document type name.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
     typeName: string;
     /**
-     * 
+     * Document identifier.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
@@ -52,43 +52,43 @@ export interface DocumentIssueRequestDetails {
      */
     status: DocumentIssueRequestStatus;
     /**
-     * 
+     * Document description.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
     description: string;
     /**
-     * 
+     * Document receiver details.
      * @type {any}
      * @memberof DocumentIssueRequestDetails
      */
     receiver: any | null;
     /**
-     * 
+     * Datetime of issue in UTC timezone.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
     issuedAtUtc: string;
     /**
-     * 
+     * Valid from datetime in UTC timezone.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
     validFromUtc: string;
     /**
-     * 
+     * Datetime of expiry in UTC timezone.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
     expiresAtUtc?: string | null;
     /**
-     * 
+     * Metadata.
      * @type {any}
      * @memberof DocumentIssueRequestDetails
      */
     metaData?: any | null;
     /**
-     * 
+     * Creation datetime of issue request in UTC timezone.
      * @type {string}
      * @memberof DocumentIssueRequestDetails
      */
