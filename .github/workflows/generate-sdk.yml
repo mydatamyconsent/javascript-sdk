@@ -37,7 +37,7 @@ jobs:
                   npx @openapitools/openapi-generator-cli generate
 
             - name: Repository update
-              uses: EndBug/add-and-commit@v8
+              uses: EndBug/add-and-commit@v9
               with:
                   author_name: Balamurali Pandranki
                   author_email: balamurali@live.com
