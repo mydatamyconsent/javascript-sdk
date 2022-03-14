@@ -173,7 +173,7 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Issue a new document to an individual user.
-         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -209,7 +209,7 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Issue a new document to an organization.
-         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -383,7 +383,7 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Issue a new document to an individual user.
-         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -394,7 +394,7 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Issue a new document to an organization.
-         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -474,7 +474,7 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary Issue a new document to an individual user.
-         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -484,7 +484,7 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
         /**
          * 
          * @summary Issue a new document to an organization.
-         * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+         * @param {DocumentIssueRequest} documentIssueRequest Document issue request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -567,7 +567,7 @@ export class DocumentsApi extends BaseAPI {
     /**
      * 
      * @summary Issue a new document to an individual user.
-     * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+     * @param {DocumentIssueRequest} documentIssueRequest Document issue request payload
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DocumentsApi
@@ -579,7 +579,7 @@ export class DocumentsApi extends BaseAPI {
     /**
      * 
      * @summary Issue a new document to an organization.
-     * @param {DocumentIssueRequest} documentIssueRequest Document issue request MyDataMyConsent.DeveloperApi.Models.DocumentIssueRequest.
+     * @param {DocumentIssueRequest} documentIssueRequest Document issue request payload
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DocumentsApi

@@ -13,44 +13,44 @@
  */
 
 
-import { DataProcessingAgreementDto } from './data-processing-agreement-dto';
+import { IndividualDataConsentRequestDetails } from './individual-data-consent-request-details';
 
 /**
  * 
  * @export
- * @interface DataProcessingAgreementDtoPaginatedList
+ * @interface IndividualDataConsentRequestDetailsPaginatedList
  */
-export interface DataProcessingAgreementDtoPaginatedList {
+export interface IndividualDataConsentRequestDetailsPaginatedList {
     /**
      * 
      * @type {number}
-     * @memberof DataProcessingAgreementDtoPaginatedList
+     * @memberof IndividualDataConsentRequestDetailsPaginatedList
      */
     pageIndex?: number;
     /**
      * 
      * @type {number}
-     * @memberof DataProcessingAgreementDtoPaginatedList
+     * @memberof IndividualDataConsentRequestDetailsPaginatedList
      */
     pageSize?: number;
     /**
      * 
      * @type {number}
-     * @memberof DataProcessingAgreementDtoPaginatedList
+     * @memberof IndividualDataConsentRequestDetailsPaginatedList
      */
     totalPages?: number;
     /**
      * 
      * @type {number}
-     * @memberof DataProcessingAgreementDtoPaginatedList
+     * @memberof IndividualDataConsentRequestDetailsPaginatedList
      */
     totalItems?: number;
     /**
      * 
-     * @type {Array<DataProcessingAgreementDto>}
-     * @memberof DataProcessingAgreementDtoPaginatedList
+     * @type {Array<IndividualDataConsentRequestDetails>}
+     * @memberof IndividualDataConsentRequestDetailsPaginatedList
      */
-    items?: Array<DataProcessingAgreementDto> | null;
+    items?: Array<IndividualDataConsentRequestDetails> | null;
 }
 
 

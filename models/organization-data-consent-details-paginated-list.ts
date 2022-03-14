@@ -13,39 +13,44 @@
  */
 
 
-import { DocumentsRequired } from './documents-required';
-import { SupportedDocumentTypeCategoryDetailsDto } from './supported-document-type-category-details-dto';
+import { OrganizationDataConsentDetails } from './organization-data-consent-details';
 
 /**
  * 
  * @export
- * @interface DataConsentDocumentDetailsDto
+ * @interface OrganizationDataConsentDetailsPaginatedList
  */
-export interface DataConsentDocumentDetailsDto {
+export interface OrganizationDataConsentDetailsPaginatedList {
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentDocumentDetailsDto
+     * @type {number}
+     * @memberof OrganizationDataConsentDetailsPaginatedList
      */
-    fieldTitle: string;
+    pageIndex?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DataConsentDocumentDetailsDto
+     * @type {number}
+     * @memberof OrganizationDataConsentDetailsPaginatedList
      */
-    fieldSlug: string;
+    pageSize?: number;
     /**
      * 
-     * @type {Array<SupportedDocumentTypeCategoryDetailsDto>}
-     * @memberof DataConsentDocumentDetailsDto
+     * @type {number}
+     * @memberof OrganizationDataConsentDetailsPaginatedList
      */
-    supportedDocumentTypeCategoryDetails: Array<SupportedDocumentTypeCategoryDetailsDto>;
+    totalPages?: number;
     /**
      * 
-     * @type {DocumentsRequired}
-     * @memberof DataConsentDocumentDetailsDto
+     * @type {number}
+     * @memberof OrganizationDataConsentDetailsPaginatedList
      */
-    requirement: DocumentsRequired;
+    totalItems?: number;
+    /**
+     * 
+     * @type {Array<OrganizationDataConsentDetails>}
+     * @memberof OrganizationDataConsentDetailsPaginatedList
+     */
+    items?: Array<OrganizationDataConsentDetails> | null;
 }
 
 

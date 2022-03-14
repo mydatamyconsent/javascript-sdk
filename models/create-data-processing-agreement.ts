@@ -13,49 +13,14 @@
  */
 
 
+import { DataProcessingAgreementBase } from './data-processing-agreement-base';
 
 /**
- * 
+ * @type CreateDataProcessingAgreement
+ * Create data processing agreement details.
  * @export
- * @interface SupportedDocumentDetailsDto
  */
-export interface SupportedDocumentDetailsDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentDetailsDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentDetailsDto
-     */
-    typeId: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentDetailsDto
-     */
-    logoUrl: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentDetailsDto
-     */
-    storageUrl: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentDetailsDto
-     */
-    issuedBy: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentDetailsDto
-     */
-    uploadedAtUtc: string;
-}
+export type CreateDataProcessingAgreement = DataProcessingAgreementBase;
+
 
 

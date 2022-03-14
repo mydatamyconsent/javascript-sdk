@@ -13,31 +13,15 @@
  */
 
 
+import { DataConsent } from './data-consent';
+import { DataConsentStatus } from './data-consent-status';
 
 /**
- * 
+ * @type OrganizationDataConsent
+ * Organization data consent details.
  * @export
- * @interface CreateDataProcessingAgreementRequestModel
  */
-export interface CreateDataProcessingAgreementRequestModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateDataProcessingAgreementRequestModel
-     */
-    version: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateDataProcessingAgreementRequestModel
-     */
-    body: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateDataProcessingAgreementRequestModel
-     */
-    attachmentUrl: string;
-}
+export type OrganizationDataConsent = DataConsent;
+
 
 

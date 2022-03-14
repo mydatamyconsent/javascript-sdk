@@ -13,33 +13,15 @@
  */
 
 
-import { IdentificationStrategy } from './identification-strategy';
-import { StringStringKeyValuePair } from './string-string-key-value-pair';
+import { DataConsentRequestDetails } from './data-consent-request-details';
+import { DataConsentStatus } from './data-consent-status';
 
 /**
- * Consent request receiver details
+ * @type OrganizationDataConsentRequestDetails
+ * DataConsentRequestResponse
  * @export
- * @interface ConsentRequestReceiver
  */
-export interface ConsentRequestReceiver {
-    /**
-     * Consent request receiver country ISO 2 code
-     * @type {string}
-     * @memberof ConsentRequestReceiver
-     */
-    countryIso2Code: string;
-    /**
-     * Consent request receiver identifiers
-     * @type {Array<StringStringKeyValuePair>}
-     * @memberof ConsentRequestReceiver
-     */
-    identifiers: Array<StringStringKeyValuePair>;
-    /**
-     * 
-     * @type {IdentificationStrategy}
-     * @memberof ConsentRequestReceiver
-     */
-    identificationStrategy: IdentificationStrategy;
-}
+export type OrganizationDataConsentRequestDetails = DataConsentRequestDetails;
+
 
 

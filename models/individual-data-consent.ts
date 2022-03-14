@@ -13,31 +13,15 @@
  */
 
 
+import { DataConsent } from './data-consent';
+import { DataConsentStatus } from './data-consent-status';
 
 /**
- * 
+ * @type IndividualDataConsent
+ * Individual data consent details.
  * @export
- * @interface OrganizationDocumentDownloadDto
  */
-export interface OrganizationDocumentDownloadDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganizationDocumentDownloadDto
-     */
-    id?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganizationDocumentDownloadDto
-     */
-    storageUrl?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof OrganizationDocumentDownloadDto
-     */
-    ownerId?: string;
-}
+export type IndividualDataConsent = DataConsent;
+
 
 

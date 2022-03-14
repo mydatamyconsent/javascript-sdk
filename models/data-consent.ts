@@ -16,47 +16,71 @@
 import { DataConsentStatus } from './data-consent-status';
 
 /**
- * OrganizationDataConsentRequestResponse
+ * Data Consent details.
  * @export
- * @interface OrganizationDataConsentRequestResponse
+ * @interface DataConsent
  */
-export interface OrganizationDataConsentRequestResponse {
+export interface DataConsent {
     /**
-     * Consent request id
+     * Data consent id.
      * @type {string}
-     * @memberof OrganizationDataConsentRequestResponse
+     * @memberof DataConsent
      */
-    id?: string;
+    id: string;
     /**
-     * Consent request template id
+     * Consent template id.
      * @type {string}
-     * @memberof OrganizationDataConsentRequestResponse
+     * @memberof DataConsent
      */
-    templateId?: string;
+    templateId?: string | null;
     /**
-     * Requested date time in utc zone
+     * Consent title.
      * @type {string}
-     * @memberof OrganizationDataConsentRequestResponse
+     * @memberof DataConsent
      */
-    requestedAtUtc?: string;
+    title: string;
     /**
-     * Request expires date time in utc zone
+     * Consent description.
      * @type {string}
-     * @memberof OrganizationDataConsentRequestResponse
+     * @memberof DataConsent
      */
-    requestExpiresAtUtc?: string;
+    description: string;
+    /**
+     * Consent purpose.
+     * @type {string}
+     * @memberof DataConsent
+     */
+    purpose?: string | null;
     /**
      * 
      * @type {DataConsentStatus}
-     * @memberof OrganizationDataConsentRequestResponse
+     * @memberof DataConsent
      */
-    status?: DataConsentStatus;
+    status: DataConsentStatus;
     /**
-     * Requested transaction id
+     * Transaction id.
      * @type {string}
-     * @memberof OrganizationDataConsentRequestResponse
+     * @memberof DataConsent
      */
     transactionId?: string | null;
+    /**
+     * Consent approval datetime in UTC timezone.
+     * @type {string}
+     * @memberof DataConsent
+     */
+    approvedAtUtc: string;
+    /**
+     * Data access expiration datetime in UTC timezone.
+     * @type {string}
+     * @memberof DataConsent
+     */
+    dataAccessExpiresAtUtc: string;
+    /**
+     * Consent revocation datetime in UTC timezone.
+     * @type {string}
+     * @memberof DataConsent
+     */
+    revokedAtUtc?: string | null;
 }
 
 

@@ -13,37 +13,26 @@
  */
 
 
+import { ConsentRequestReceiver } from './consent-request-receiver';
 
 /**
- * 
+ * Create individual data consent request
  * @export
- * @interface DataProcessingAgreementDto
+ * @interface CreateDataConsentRequest
  */
-export interface DataProcessingAgreementDto {
+export interface CreateDataConsentRequest {
+    /**
+     * Consent template id
+     * @type {string}
+     * @memberof CreateDataConsentRequest
+     */
+    consentTemplateId: string;
     /**
      * 
-     * @type {string}
-     * @memberof DataProcessingAgreementDto
+     * @type {ConsentRequestReceiver}
+     * @memberof CreateDataConsentRequest
      */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataProcessingAgreementDto
-     */
-    version: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataProcessingAgreementDto
-     */
-    body: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataProcessingAgreementDto
-     */
-    attachmentUrl: string;
+    receiver: ConsentRequestReceiver;
 }
 
 

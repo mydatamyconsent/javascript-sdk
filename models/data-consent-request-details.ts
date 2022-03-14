@@ -13,61 +13,62 @@
  */
 
 
+import { DataConsentStatus } from './data-consent-status';
 
 /**
- * 
+ * DataConsentRequestResponse
  * @export
- * @interface Requester
+ * @interface DataConsentRequestDetails
  */
-export interface Requester {
+export interface DataConsentRequestDetails {
     /**
-     * 
+     * Consent request id
      * @type {string}
-     * @memberof Requester
+     * @memberof DataConsentRequestDetails
      */
     id: string;
     /**
-     * 
+     * Consent request template id
      * @type {string}
-     * @memberof Requester
+     * @memberof DataConsentRequestDetails
      */
-    name: string;
+    templateId?: string | null;
+    /**
+     * Consent request title.
+     * @type {string}
+     * @memberof DataConsentRequestDetails
+     */
+    title: string;
+    /**
+     * Consent request description.
+     * @type {string}
+     * @memberof DataConsentRequestDetails
+     */
+    description: string;
+    /**
+     * Consent request purpose.
+     * @type {string}
+     * @memberof DataConsentRequestDetails
+     */
+    purpose?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof Requester
+     * @type {DataConsentStatus}
+     * @memberof DataConsentRequestDetails
      */
-    logoUrl?: string | null;
+    status: DataConsentStatus;
     /**
-     * 
+     * Transaction id
      * @type {string}
-     * @memberof Requester
+     * @memberof DataConsentRequestDetails
      */
-    description?: string | null;
+    transactionId?: string | null;
     /**
-     * 
+     * Request creation datetime in UTC timezone
      * @type {string}
-     * @memberof Requester
+     * @memberof DataConsentRequestDetails
      */
-    location?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Requester
-     */
-    websiteUrl?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Requester
-     */
-    supportEmail?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof Requester
-     */
-    helpLineNumber?: string | null;
+    createdAtUtc: string;
 }
 
 

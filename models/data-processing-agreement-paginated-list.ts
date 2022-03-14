@@ -13,55 +13,44 @@
  */
 
 
+import { DataProcessingAgreement } from './data-processing-agreement';
 
 /**
  * 
  * @export
- * @interface DigitalSignature
+ * @interface DataProcessingAgreementPaginatedList
  */
-export interface DigitalSignature {
+export interface DataProcessingAgreementPaginatedList {
     /**
      * 
-     * @type {string}
-     * @memberof DigitalSignature
+     * @type {number}
+     * @memberof DataProcessingAgreementPaginatedList
      */
-    signedBy?: string | null;
+    pageIndex?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DigitalSignature
+     * @type {number}
+     * @memberof DataProcessingAgreementPaginatedList
      */
-    certIssuedBy?: string | null;
+    pageSize?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DigitalSignature
+     * @type {number}
+     * @memberof DataProcessingAgreementPaginatedList
      */
-    validFrom?: string;
+    totalPages?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DigitalSignature
+     * @type {number}
+     * @memberof DataProcessingAgreementPaginatedList
      */
-    validTill?: string;
+    totalItems?: number;
     /**
      * 
-     * @type {string}
-     * @memberof DigitalSignature
+     * @type {Array<DataProcessingAgreement>}
+     * @memberof DataProcessingAgreementPaginatedList
      */
-    reason?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DigitalSignature
-     */
-    location?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DigitalSignature
-     */
-    sha1Digest?: string | null;
+    items?: Array<DataProcessingAgreement> | null;
 }
 
 

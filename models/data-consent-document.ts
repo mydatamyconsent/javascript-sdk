@@ -13,44 +13,37 @@
  */
 
 
-import { OrganizationDataConsentInfoDto } from './organization-data-consent-info-dto';
 
 /**
- * 
+ * Data Consent document details.
  * @export
- * @interface OrganizationDataConsentInfoDtoPaginatedList
+ * @interface DataConsentDocument
  */
-export interface OrganizationDataConsentInfoDtoPaginatedList {
+export interface DataConsentDocument {
     /**
-     * 
-     * @type {number}
-     * @memberof OrganizationDataConsentInfoDtoPaginatedList
+     * Document id.
+     * @type {string}
+     * @memberof DataConsentDocument
      */
-    pageIndex?: number;
+    id: string;
     /**
-     * 
-     * @type {number}
-     * @memberof OrganizationDataConsentInfoDtoPaginatedList
+     * Data consent id.
+     * @type {string}
+     * @memberof DataConsentDocument
      */
-    pageSize?: number;
+    consentId: string;
     /**
-     * 
-     * @type {number}
-     * @memberof OrganizationDataConsentInfoDtoPaginatedList
+     * Document name.
+     * @type {string}
+     * @memberof DataConsentDocument
      */
-    totalPages?: number;
+    name: string;
     /**
-     * 
-     * @type {number}
-     * @memberof OrganizationDataConsentInfoDtoPaginatedList
+     * Document identifier.
+     * @type {string}
+     * @memberof DataConsentDocument
      */
-    totalItems?: number;
-    /**
-     * 
-     * @type {Array<OrganizationDataConsentInfoDto>}
-     * @memberof OrganizationDataConsentInfoDtoPaginatedList
-     */
-    items?: Array<OrganizationDataConsentInfoDto> | null;
+    identifier: string;
 }
 
 

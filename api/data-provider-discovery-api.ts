@@ -32,8 +32,8 @@ export const DataProviderDiscoveryApiAxiosParamCreator = function (configuration
     return {
         /**
          * 
-         * @summary Get a Data Provider details based on provider id.
-         * @param {string} providerId Provider id.
+         * @summary Get a Data Provider details by provider id.
+         * @param {string} providerId Data provider id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -72,11 +72,11 @@ export const DataProviderDiscoveryApiAxiosParamCreator = function (configuration
          * @param {string} [organizationCategory] Organization category.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
-         * @param {string} [country] ISO2 Country code.
+         * @param {string} [countryIso2Code] ISO2 Country code.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDataProviders: async (accountType?: string, documentType?: string, organizationCategory?: string, pageNo?: number, pageSize?: number, country?: string, options: any = {}): Promise<RequestArgs> => {
+        getDataProviders: async (accountType?: string, documentType?: string, organizationCategory?: string, pageNo?: number, pageSize?: number, countryIso2Code?: string, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/data-providers`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -109,8 +109,8 @@ export const DataProviderDiscoveryApiAxiosParamCreator = function (configuration
                 localVarQueryParameter['pageSize'] = pageSize;
             }
 
-            if (country !== undefined) {
-                localVarQueryParameter['country'] = country;
+            if (countryIso2Code !== undefined) {
+                localVarQueryParameter['countryIso2Code'] = countryIso2Code;
             }
 
 
@@ -136,8 +136,8 @@ export const DataProviderDiscoveryApiFp = function(configuration?: Configuration
     return {
         /**
          * 
-         * @summary Get a Data Provider details based on provider id.
-         * @param {string} providerId Provider id.
+         * @summary Get a Data Provider details by provider id.
+         * @param {string} providerId Data provider id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -153,12 +153,12 @@ export const DataProviderDiscoveryApiFp = function(configuration?: Configuration
          * @param {string} [organizationCategory] Organization category.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
-         * @param {string} [country] ISO2 Country code.
+         * @param {string} [countryIso2Code] ISO2 Country code.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getDataProviders(accountType?: string, documentType?: string, organizationCategory?: string, pageNo?: number, pageSize?: number, country?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProviderPaginatedList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, country, options);
+        async getDataProviders(accountType?: string, documentType?: string, organizationCategory?: string, pageNo?: number, pageSize?: number, countryIso2Code?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataProviderPaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, countryIso2Code, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -173,8 +173,8 @@ export const DataProviderDiscoveryApiFactory = function (configuration?: Configu
     return {
         /**
          * 
-         * @summary Get a Data Provider details based on provider id.
-         * @param {string} providerId Provider id.
+         * @summary Get a Data Provider details by provider id.
+         * @param {string} providerId Data provider id.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -189,12 +189,12 @@ export const DataProviderDiscoveryApiFactory = function (configuration?: Configu
          * @param {string} [organizationCategory] Organization category.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
-         * @param {string} [country] ISO2 Country code.
+         * @param {string} [countryIso2Code] ISO2 Country code.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getDataProviders(accountType?: string, documentType?: string, organizationCategory?: string, pageNo?: number, pageSize?: number, country?: string, options?: any): AxiosPromise<DataProviderPaginatedList> {
-            return localVarFp.getDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, country, options).then((request) => request(axios, basePath));
+        getDataProviders(accountType?: string, documentType?: string, organizationCategory?: string, pageNo?: number, pageSize?: number, countryIso2Code?: string, options?: any): AxiosPromise<DataProviderPaginatedList> {
+            return localVarFp.getDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, countryIso2Code, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -208,8 +208,8 @@ export const DataProviderDiscoveryApiFactory = function (configuration?: Configu
 export class DataProviderDiscoveryApi extends BaseAPI {
     /**
      * 
-     * @summary Get a Data Provider details based on provider id.
-     * @param {string} providerId Provider id.
+     * @summary Get a Data Provider details by provider id.
+     * @param {string} providerId Data provider id.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataProviderDiscoveryApi
@@ -226,12 +226,12 @@ export class DataProviderDiscoveryApi extends BaseAPI {
      * @param {string} [organizationCategory] Organization category.
      * @param {number} [pageNo] Page number.
      * @param {number} [pageSize] Number of items to return.
-     * @param {string} [country] ISO2 Country code.
+     * @param {string} [countryIso2Code] ISO2 Country code.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DataProviderDiscoveryApi
      */
-    public getDataProviders(accountType?: string, documentType?: string, organizationCategory?: string, pageNo?: number, pageSize?: number, country?: string, options?: any) {
-        return DataProviderDiscoveryApiFp(this.configuration).getDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, country, options).then((request) => request(this.axios, this.basePath));
+    public getDataProviders(accountType?: string, documentType?: string, organizationCategory?: string, pageNo?: number, pageSize?: number, countryIso2Code?: string, options?: any) {
+        return DataProviderDiscoveryApiFp(this.configuration).getDataProviders(accountType, documentType, organizationCategory, pageNo, pageSize, countryIso2Code, options).then((request) => request(this.axios, this.basePath));
     }
 }

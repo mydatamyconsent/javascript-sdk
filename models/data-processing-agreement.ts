@@ -13,33 +13,14 @@
  */
 
 
-import { DataConsentRequestedDocument } from './data-consent-requested-document';
-import { Document } from './document';
+import { DataProcessingAgreementBase } from './data-processing-agreement-base';
 
 /**
- * 
+ * @type DataProcessingAgreement
+ * Data processing agreement details.
  * @export
- * @interface DataConsentDocumentsDto
  */
-export interface DataConsentDocumentsDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentDocumentsDto
-     */
-    id?: string;
-    /**
-     * 
-     * @type {Array<Document>}
-     * @memberof DataConsentDocumentsDto
-     */
-    documents?: Array<Document> | null;
-    /**
-     * 
-     * @type {Array<DataConsentRequestedDocument>}
-     * @memberof DataConsentDocumentsDto
-     */
-    approvedDocuments?: Array<DataConsentRequestedDocument> | null;
-}
+export type DataProcessingAgreement = DataProcessingAgreementBase;
+
 
 

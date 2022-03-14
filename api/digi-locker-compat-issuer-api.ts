@@ -35,11 +35,13 @@ export const DigiLockerCompatIssuerApiAxiosParamCreator = function (configuratio
         /**
          * 
          * @summary Digilocker Compatible endpoint to issue document.
-         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
+         * @param {PushUriRequest} pushUriRequest Push URI request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        digilockerCompatIssueDocument: async (pushUriRequest?: PushUriRequest, options: any = {}): Promise<RequestArgs> => {
+        digilockerCompatIssueDocument: async (pushUriRequest: PushUriRequest, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pushUriRequest' is not null or undefined
+            assertParamExists('digilockerCompatIssueDocument', 'pushUriRequest', pushUriRequest)
             const localVarPath = `/issuer/issuedoc/1/xml`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -79,11 +81,11 @@ export const DigiLockerCompatIssuerApiFp = function(configuration?: Configuratio
         /**
          * 
          * @summary Digilocker Compatible endpoint to issue document.
-         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
+         * @param {PushUriRequest} pushUriRequest Push URI request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async digilockerCompatIssueDocument(pushUriRequest?: PushUriRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PushUriResponse>> {
+        async digilockerCompatIssueDocument(pushUriRequest: PushUriRequest, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PushUriResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.digilockerCompatIssueDocument(pushUriRequest, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -100,11 +102,11 @@ export const DigiLockerCompatIssuerApiFactory = function (configuration?: Config
         /**
          * 
          * @summary Digilocker Compatible endpoint to issue document.
-         * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
+         * @param {PushUriRequest} pushUriRequest Push URI request payload
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        digilockerCompatIssueDocument(pushUriRequest?: PushUriRequest, options?: any): AxiosPromise<PushUriResponse> {
+        digilockerCompatIssueDocument(pushUriRequest: PushUriRequest, options?: any): AxiosPromise<PushUriResponse> {
             return localVarFp.digilockerCompatIssueDocument(pushUriRequest, options).then((request) => request(axios, basePath));
         },
     };
@@ -120,12 +122,12 @@ export class DigiLockerCompatIssuerApi extends BaseAPI {
     /**
      * 
      * @summary Digilocker Compatible endpoint to issue document.
-     * @param {PushUriRequest} [pushUriRequest] Push uri request MyDataMyConsent.DeveloperApi.Models.DigiLocker.PushUriRequest.
+     * @param {PushUriRequest} pushUriRequest Push URI request payload
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DigiLockerCompatIssuerApi
      */
-    public digilockerCompatIssueDocument(pushUriRequest?: PushUriRequest, options?: any) {
+    public digilockerCompatIssueDocument(pushUriRequest: PushUriRequest, options?: any) {
         return DigiLockerCompatIssuerApiFp(this.configuration).digilockerCompatIssueDocument(pushUriRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }

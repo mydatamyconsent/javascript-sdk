@@ -13,31 +13,15 @@
  */
 
 
+import { DataConsentDetails } from './data-consent-details';
+import { DataConsentStatus } from './data-consent-status';
 
 /**
- * 
+ * @type IndividualDataConsentDetails
+ * Individual data consent details.
  * @export
- * @interface UpdateDataProcessingAgreementRequestModel
  */
-export interface UpdateDataProcessingAgreementRequestModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateDataProcessingAgreementRequestModel
-     */
-    version: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateDataProcessingAgreementRequestModel
-     */
-    body: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateDataProcessingAgreementRequestModel
-     */
-    attachmentUrl: string;
-}
+export type IndividualDataConsentDetails = DataConsentDetails;
+
 
 

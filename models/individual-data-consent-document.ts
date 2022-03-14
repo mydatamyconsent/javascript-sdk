@@ -13,37 +13,14 @@
  */
 
 
+import { DataConsentDocument } from './data-consent-document';
 
 /**
- * 
+ * @type IndividualDataConsentDocument
+ * Individual data consent document details.
  * @export
- * @interface DataConsentRequestedDocument
  */
-export interface DataConsentRequestedDocument {
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocument
-     */
-    custom_key?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocument
-     */
-    drn?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocument
-     */
-    documentTypeId?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof DataConsentRequestedDocument
-     */
-    documentIdentifier?: string | null;
-}
+export type IndividualDataConsentDocument = DataConsentDocument;
+
 
 

@@ -13,38 +13,15 @@
  */
 
 
-import { DocumentsRequired } from './documents-required';
+import { DataConsentRequestDetails } from './data-consent-request-details';
+import { DataConsentStatus } from './data-consent-status';
 
 /**
- * 
+ * @type IndividualDataConsentRequestDetails
+ * DataConsentRequestResponse
  * @export
- * @interface Document
  */
-export interface Document {
-    /**
-     * 
-     * @type {string}
-     * @memberof Document
-     */
-    field_title: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Document
-     */
-    field_slug: string;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof Document
-     */
-    drn: Array<string>;
-    /**
-     * 
-     * @type {DocumentsRequired}
-     * @memberof Document
-     */
-    requirement: DocumentsRequired;
-}
+export type IndividualDataConsentRequestDetails = DataConsentRequestDetails;
+
 
 

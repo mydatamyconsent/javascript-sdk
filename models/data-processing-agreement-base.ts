@@ -13,26 +13,31 @@
  */
 
 
-import { ConsentRequestReceiver } from './consent-request-receiver';
 
 /**
- * Create individual data consent request
+ * 
  * @export
- * @interface CreateIndividualDataConsentRequest
+ * @interface DataProcessingAgreementBase
  */
-export interface CreateIndividualDataConsentRequest {
+export interface DataProcessingAgreementBase {
     /**
-     * Consent template id
+     * Agreement version.
      * @type {string}
-     * @memberof CreateIndividualDataConsentRequest
+     * @memberof DataProcessingAgreementBase
      */
-    consentTemplateId?: string;
+    version: string;
     /**
-     * 
-     * @type {ConsentRequestReceiver}
-     * @memberof CreateIndividualDataConsentRequest
+     * Agreement body content.
+     * @type {string}
+     * @memberof DataProcessingAgreementBase
      */
-    receiver: ConsentRequestReceiver;
+    body: string;
+    /**
+     * Agreement attachment file URL.
+     * @type {string}
+     * @memberof DataProcessingAgreementBase
+     */
+    attachmentUrl: string;
 }
 
 

@@ -26,13 +26,19 @@ export interface DataProvider {
      * @type {string}
      * @memberof DataProvider
      */
-    id?: string | null;
+    id: string;
     /**
      * 
      * @type {string}
      * @memberof DataProvider
      */
-    name?: string | null;
+    name: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DataProvider
+     */
+    category: string;
     /**
      * 
      * @type {string}
@@ -50,13 +56,13 @@ export interface DataProvider {
      * @type {string}
      * @memberof DataProvider
      */
-    email?: string | null;
+    supportEmail?: string | null;
     /**
      * 
      * @type {string}
      * @memberof DataProvider
      */
-    supportPhoneNumber?: string | null;
+    helpLineNumber?: string | null;
     /**
      * 
      * @type {string}
@@ -71,12 +77,6 @@ export interface DataProvider {
     termOfService?: string | null;
     /**
      * 
-     * @type {string}
-     * @memberof DataProvider
-     */
-    category?: string | null;
-    /**
-     * 
      * @type {DataProtectionOfficer}
      * @memberof DataProvider
      */
@@ -86,13 +86,13 @@ export interface DataProvider {
      * @type {Array<string>}
      * @memberof DataProvider
      */
-    supportedAccountTypes?: Array<string> | null;
+    supportedDocumentTypes: Array<string>;
     /**
      * 
      * @type {Array<string>}
      * @memberof DataProvider
      */
-    supportedDocumentTypes?: Array<string> | null;
+    supportedAccountTypes?: Array<string> | null;
 }
 
 

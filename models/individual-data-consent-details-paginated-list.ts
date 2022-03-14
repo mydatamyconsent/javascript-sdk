@@ -13,44 +13,44 @@
  */
 
 
-import { UserDataConsentInfoDto } from './user-data-consent-info-dto';
+import { IndividualDataConsentDetails } from './individual-data-consent-details';
 
 /**
  * 
  * @export
- * @interface UserDataConsentInfoDtoPaginatedList
+ * @interface IndividualDataConsentDetailsPaginatedList
  */
-export interface UserDataConsentInfoDtoPaginatedList {
+export interface IndividualDataConsentDetailsPaginatedList {
     /**
      * 
      * @type {number}
-     * @memberof UserDataConsentInfoDtoPaginatedList
+     * @memberof IndividualDataConsentDetailsPaginatedList
      */
     pageIndex?: number;
     /**
      * 
      * @type {number}
-     * @memberof UserDataConsentInfoDtoPaginatedList
+     * @memberof IndividualDataConsentDetailsPaginatedList
      */
     pageSize?: number;
     /**
      * 
      * @type {number}
-     * @memberof UserDataConsentInfoDtoPaginatedList
+     * @memberof IndividualDataConsentDetailsPaginatedList
      */
     totalPages?: number;
     /**
      * 
      * @type {number}
-     * @memberof UserDataConsentInfoDtoPaginatedList
+     * @memberof IndividualDataConsentDetailsPaginatedList
      */
     totalItems?: number;
     /**
      * 
-     * @type {Array<UserDataConsentInfoDto>}
-     * @memberof UserDataConsentInfoDtoPaginatedList
+     * @type {Array<IndividualDataConsentDetails>}
+     * @memberof IndividualDataConsentDetailsPaginatedList
      */
-    items?: Array<UserDataConsentInfoDto> | null;
+    items?: Array<IndividualDataConsentDetails> | null;
 }
 
 

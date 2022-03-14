@@ -13,37 +13,15 @@
  */
 
 
+import { DataConsentDetails } from './data-consent-details';
+import { DataConsentStatus } from './data-consent-status';
 
 /**
- * 
+ * @type OrganizationDataConsentDetails
+ * Organization data consent details.
  * @export
- * @interface UserDocumentDownload
  */
-export interface UserDocumentDownload {
-    /**
-     * 
-     * @type {string}
-     * @memberof UserDocumentDownload
-     */
-    id?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserDocumentDownload
-     */
-    downloadUrl?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserDocumentDownload
-     */
-    expiresAtUtc?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserDocumentDownload
-     */
-    ownerId?: string;
-}
+export type OrganizationDataConsentDetails = DataConsentDetails;
+
 
 

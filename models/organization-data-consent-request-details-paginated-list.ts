@@ -13,39 +13,44 @@
  */
 
 
-import { SupportedDocumentDetailsDto } from './supported-document-details-dto';
-import { SupportedDocumentProviderDetailsDto } from './supported-document-provider-details-dto';
+import { OrganizationDataConsentRequestDetails } from './organization-data-consent-request-details';
 
 /**
  * 
  * @export
- * @interface SupportedDocumentTypeCategoryDetailsDto
+ * @interface OrganizationDataConsentRequestDetailsPaginatedList
  */
-export interface SupportedDocumentTypeCategoryDetailsDto {
+export interface OrganizationDataConsentRequestDetailsPaginatedList {
     /**
      * 
-     * @type {string}
-     * @memberof SupportedDocumentTypeCategoryDetailsDto
+     * @type {number}
+     * @memberof OrganizationDataConsentRequestDetailsPaginatedList
      */
-    documentTypeCategoryId: string;
+    pageIndex?: number;
     /**
      * 
-     * @type {string}
-     * @memberof SupportedDocumentTypeCategoryDetailsDto
+     * @type {number}
+     * @memberof OrganizationDataConsentRequestDetailsPaginatedList
      */
-    documentTypeCategoryName: string;
+    pageSize?: number;
     /**
      * 
-     * @type {Array<SupportedDocumentDetailsDto>}
-     * @memberof SupportedDocumentTypeCategoryDetailsDto
+     * @type {number}
+     * @memberof OrganizationDataConsentRequestDetailsPaginatedList
      */
-    supportedDocuments: Array<SupportedDocumentDetailsDto>;
+    totalPages?: number;
     /**
      * 
-     * @type {Array<SupportedDocumentProviderDetailsDto>}
-     * @memberof SupportedDocumentTypeCategoryDetailsDto
+     * @type {number}
+     * @memberof OrganizationDataConsentRequestDetailsPaginatedList
      */
-    supportedDocumentProviderDetails?: Array<SupportedDocumentProviderDetailsDto> | null;
+    totalItems?: number;
+    /**
+     * 
+     * @type {Array<OrganizationDataConsentRequestDetails>}
+     * @memberof OrganizationDataConsentRequestDetailsPaginatedList
+     */
+    items?: Array<OrganizationDataConsentRequestDetails> | null;
 }
 
 

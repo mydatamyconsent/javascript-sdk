@@ -13,26 +13,14 @@
  */
 
 
-import { ConsentRequestReceiver } from './consent-request-receiver';
+import { DataConsentDocument } from './data-consent-document';
 
 /**
- * Create organization data consent request
+ * @type OrganizationDataConsentDocument
+ * Organization data consent document details.
  * @export
- * @interface CreateOrganizationDataConsentRequest
  */
-export interface CreateOrganizationDataConsentRequest {
-    /**
-     * Consent template id
-     * @type {string}
-     * @memberof CreateOrganizationDataConsentRequest
-     */
-    consentTemplateId?: string;
-    /**
-     * 
-     * @type {ConsentRequestReceiver}
-     * @memberof CreateOrganizationDataConsentRequest
-     */
-    receiver: ConsentRequestReceiver;
-}
+export type OrganizationDataConsentDocument = DataConsentDocument;
+
 
 

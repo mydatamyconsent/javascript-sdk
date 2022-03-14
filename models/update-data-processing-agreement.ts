@@ -13,31 +13,14 @@
  */
 
 
+import { DataProcessingAgreementBase } from './data-processing-agreement-base';
 
 /**
- * 
+ * @type UpdateDataProcessingAgreement
+ * Update data processing agreement details.
  * @export
- * @interface SupportedDocumentProviderDetailsDto
  */
-export interface SupportedDocumentProviderDetailsDto {
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentProviderDetailsDto
-     */
-    id: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentProviderDetailsDto
-     */
-    name: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SupportedDocumentProviderDetailsDto
-     */
-    logoUrl?: string | null;
-}
+export type UpdateDataProcessingAgreement = DataProcessingAgreementBase;
+
 
 
