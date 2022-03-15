@@ -21,25 +21,11 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { DataConsent } from '../models';
-// @ts-ignore
 import { DataConsentFinancialsDto } from '../models';
 // @ts-ignore
 import { DataConsentStatus } from '../models';
 // @ts-ignore
 import { FinancialAccount } from '../models';
-// @ts-ignore
-import { IndividualDataConsent } from '../models';
-// @ts-ignore
-import { IndividualDataConsentDetailsPaginatedList } from '../models';
-// @ts-ignore
-import { IndividualDataConsentDocument } from '../models';
-// @ts-ignore
-import { OrganizationDataConsent } from '../models';
-// @ts-ignore
-import { OrganizationDataConsentDetailsPaginatedList } from '../models';
-// @ts-ignore
-import { OrganizationDataConsentDocument } from '../models';
 // @ts-ignore
 import { OrganizationFinancialAccountDto } from '../models';
 // @ts-ignore
@@ -830,7 +816,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async downloadConsentedDocumentAnalysis(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async downloadConsentedDocumentAnalysis(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.downloadConsentedDocumentAnalysis(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -842,7 +828,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async downloadIndividualConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async downloadIndividualConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.downloadIndividualConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -854,7 +840,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async downloadOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async downloadOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.downloadOrganizationConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -900,7 +886,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IndividualDataConsentDocument>> {
+        async getConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -956,7 +942,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getConsents(status?: DataConsentStatus, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IndividualDataConsentDetailsPaginatedList>> {
+        async getConsents(status?: DataConsentStatus, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getConsents(status, fromDateTime, toDateTime, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -967,7 +953,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndividualConsentedDocuments(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<IndividualDataConsentDocument>>> {
+        async getIndividualConsentedDocuments(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndividualConsentedDocuments(consentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -978,7 +964,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIndividualDataConsentById(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsent | IndividualDataConsent | OrganizationDataConsent>> {
+        async getIndividualDataConsentById(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIndividualDataConsentById(consentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1007,7 +993,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDataConsentDocument>> {
+        async getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrganizationConsentedDocumentById(consentId, documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1018,7 +1004,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrganizationConsentedDocuments(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<OrganizationDataConsentDocument>>> {
+        async getOrganizationConsentedDocuments(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrganizationConsentedDocuments(consentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1029,7 +1015,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrganizationDataConsentById(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DataConsent | IndividualDataConsent | OrganizationDataConsent>> {
+        async getOrganizationDataConsentById(consentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrganizationDataConsentById(consentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1044,7 +1030,7 @@ export const DataConsentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getOrganizationDataConsents(status?: DataConsentStatus, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OrganizationDataConsentDetailsPaginatedList>> {
+        async getOrganizationDataConsents(status?: DataConsentStatus, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getOrganizationDataConsents(status, fromDateTime, toDateTime, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1066,7 +1052,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        downloadConsentedDocumentAnalysis(consentId: string, documentId: string, options?: any): AxiosPromise<void> {
+        downloadConsentedDocumentAnalysis(consentId: string, documentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.downloadConsentedDocumentAnalysis(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1077,7 +1063,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        downloadIndividualConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<void> {
+        downloadIndividualConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.downloadIndividualConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1088,7 +1074,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        downloadOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<void> {
+        downloadOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.downloadOrganizationConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1130,7 +1116,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<IndividualDataConsentDocument> {
+        getConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.getConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1182,7 +1168,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getConsents(status?: DataConsentStatus, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<IndividualDataConsentDetailsPaginatedList> {
+        getConsents(status?: DataConsentStatus, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<object> {
             return localVarFp.getConsents(status, fromDateTime, toDateTime, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1192,7 +1178,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndividualConsentedDocuments(consentId: string, options?: any): AxiosPromise<Array<IndividualDataConsentDocument>> {
+        getIndividualConsentedDocuments(consentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.getIndividualConsentedDocuments(consentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1202,7 +1188,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIndividualDataConsentById(consentId: string, options?: any): AxiosPromise<DataConsent | IndividualDataConsent | OrganizationDataConsent> {
+        getIndividualDataConsentById(consentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.getIndividualDataConsentById(consentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1229,7 +1215,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<OrganizationDataConsentDocument> {
+        getOrganizationConsentedDocumentById(consentId: string, documentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.getOrganizationConsentedDocumentById(consentId, documentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1239,7 +1225,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrganizationConsentedDocuments(consentId: string, options?: any): AxiosPromise<Array<OrganizationDataConsentDocument>> {
+        getOrganizationConsentedDocuments(consentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.getOrganizationConsentedDocuments(consentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1249,7 +1235,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrganizationDataConsentById(consentId: string, options?: any): AxiosPromise<DataConsent | IndividualDataConsent | OrganizationDataConsent> {
+        getOrganizationDataConsentById(consentId: string, options?: any): AxiosPromise<object> {
             return localVarFp.getOrganizationDataConsentById(consentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1263,7 +1249,7 @@ export const DataConsentsApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getOrganizationDataConsents(status?: DataConsentStatus, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<OrganizationDataConsentDetailsPaginatedList> {
+        getOrganizationDataConsents(status?: DataConsentStatus, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<object> {
             return localVarFp.getOrganizationDataConsents(status, fromDateTime, toDateTime, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
     };
