@@ -13,45 +13,43 @@
  */
 
 
-import { IssuedDocument } from './issued-document';
-import { IssuedDocumentDetails } from './issued-document-details';
 
 /**
- * 
+ * Document digital signature.
  * @export
- * @interface IssuedDocumentPaginatedList
+ * @interface DocumentDigitalSignature
  */
-export interface IssuedDocumentPaginatedList {
+export interface DocumentDigitalSignature {
     /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * Name.
+     * @type {string}
+     * @memberof DocumentDigitalSignature
      */
-    pageIndex?: number;
+    name: string;
     /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * Signature issued by.
+     * @type {string}
+     * @memberof DocumentDigitalSignature
      */
-    pageSize?: number;
+    issuedBy: string;
     /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * Signature issuer name.
+     * @type {string}
+     * @memberof DocumentDigitalSignature
      */
-    totalPages?: number;
+    issuerName: string;
     /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * Signature valid from datatime in UTC timezone.
+     * @type {string}
+     * @memberof DocumentDigitalSignature
      */
-    totalItems?: number;
+    validFromUtc: string;
     /**
-     * 
-     * @type {Array<IssuedDocument | IssuedDocumentDetails>}
-     * @memberof IssuedDocumentPaginatedList
+     * Signature valid to datatime in UTC timezone.
+     * @type {string}
+     * @memberof DocumentDigitalSignature
      */
-    items?: Array<IssuedDocument | IssuedDocumentDetails> | null;
+    validToUtc: string;
 }
 
 

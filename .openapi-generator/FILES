@@ -20,11 +20,16 @@ models/collectible-types.ts
 models/consent-request-receiver.ts
 models/create-data-consent-request.ts
 models/create-data-processing-agreement.ts
+models/data-consent-details-paginated-list.ts
+models/data-consent-details.ts
+models/data-consent-document-issuer.ts
+models/data-consent-document.ts
 models/data-consent-financials-dto.ts
 models/data-consent-request-details.ts
 models/data-consent-request.ts
 models/data-consent-requested-financial-account.ts
 models/data-consent-status.ts
+models/data-consent.ts
 models/data-processing-agreement-base.ts
 models/data-processing-agreement-paginated-list.ts
 models/data-processing-agreement.ts
@@ -32,6 +37,7 @@ models/data-protection-officer.ts
 models/data-provider-paginated-list.ts
 models/data-provider.ts
 models/document-category-type.ts
+models/document-digital-signature.ts
 models/document-issue-request-details.ts
 models/document-issue-request-status.ts
 models/document-issue-request.ts
@@ -50,6 +56,7 @@ models/identifier.ts
 models/index.ts
 models/individual-data-consent-request-details-paginated-list.ts
 models/individual-data-consent-request-details.ts
+models/issued-document-details.ts
 models/issued-document-paginated-list.ts
 models/issued-document.ts
 models/life.ts

@@ -13,45 +13,44 @@
  */
 
 
-import { IssuedDocument } from './issued-document';
-import { IssuedDocumentDetails } from './issued-document-details';
+import { DataConsentDetails } from './data-consent-details';
 
 /**
  * 
  * @export
- * @interface IssuedDocumentPaginatedList
+ * @interface DataConsentDetailsPaginatedList
  */
-export interface IssuedDocumentPaginatedList {
+export interface DataConsentDetailsPaginatedList {
     /**
      * 
      * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * @memberof DataConsentDetailsPaginatedList
      */
     pageIndex?: number;
     /**
      * 
      * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * @memberof DataConsentDetailsPaginatedList
      */
     pageSize?: number;
     /**
      * 
      * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * @memberof DataConsentDetailsPaginatedList
      */
     totalPages?: number;
     /**
      * 
      * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * @memberof DataConsentDetailsPaginatedList
      */
     totalItems?: number;
     /**
      * 
-     * @type {Array<IssuedDocument | IssuedDocumentDetails>}
-     * @memberof IssuedDocumentPaginatedList
+     * @type {Array<DataConsentDetails>}
+     * @memberof DataConsentDetailsPaginatedList
      */
-    items?: Array<IssuedDocument | IssuedDocumentDetails> | null;
+    items?: Array<DataConsentDetails> | null;
 }
 
 

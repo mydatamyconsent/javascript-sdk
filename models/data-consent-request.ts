@@ -14,6 +14,7 @@
 
 
 import { CollectibleTypes } from './collectible-types';
+import { ConsentRequestReceiver } from './consent-request-receiver';
 import { DataConsentStatus } from './data-consent-status';
 import { Life } from './life';
 
@@ -35,6 +36,12 @@ export interface DataConsentRequest {
      * @memberof DataConsentRequest
      */
     templateId?: string | null;
+    /**
+     * Data consent id.
+     * @type {string}
+     * @memberof DataConsentRequest
+     */
+    consentId?: string | null;
     /**
      * Data consent title.
      * @type {string}
@@ -65,6 +72,12 @@ export interface DataConsentRequest {
      * @memberof DataConsentRequest
      */
     collectables: Array<CollectibleTypes>;
+    /**
+     * 
+     * @type {ConsentRequestReceiver}
+     * @memberof DataConsentRequest
+     */
+    receiver: ConsentRequestReceiver;
     /**
      * 
      * @type {DataConsentStatus}

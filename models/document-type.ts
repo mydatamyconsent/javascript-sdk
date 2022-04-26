@@ -107,12 +107,6 @@ export interface DocumentType {
      * @memberof DocumentType
      */
     approvedAtUtc?: string | null;
-    /**
-     * Document type approval status.
-     * @type {boolean}
-     * @memberof DocumentType
-     */
-    approved: boolean;
 }
 
 

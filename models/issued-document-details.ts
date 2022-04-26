@@ -13,45 +13,15 @@
  */
 
 
+import { DocumentDigitalSignature } from './document-digital-signature';
+import { DocumentReceiver } from './document-receiver';
 import { IssuedDocument } from './issued-document';
-import { IssuedDocumentDetails } from './issued-document-details';
 
 /**
- * 
+ * @type IssuedDocumentDetails
  * @export
- * @interface IssuedDocumentPaginatedList
  */
-export interface IssuedDocumentPaginatedList {
-    /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
-     */
-    pageIndex?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
-     */
-    pageSize?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
-     */
-    totalPages?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
-     */
-    totalItems?: number;
-    /**
-     * 
-     * @type {Array<IssuedDocument | IssuedDocumentDetails>}
-     * @memberof IssuedDocumentPaginatedList
-     */
-    items?: Array<IssuedDocument | IssuedDocumentDetails> | null;
-}
+export type IssuedDocumentDetails = IssuedDocument;
+
 
 

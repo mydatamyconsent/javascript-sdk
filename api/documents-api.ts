@@ -29,6 +29,8 @@ import { DocumentTypePaginatedList } from '../models';
 // @ts-ignore
 import { IssuedDocument } from '../models';
 // @ts-ignore
+import { IssuedDocumentDetails } from '../models';
+// @ts-ignore
 import { IssuedDocumentPaginatedList } from '../models';
 // @ts-ignore
 import { ProblemDetails } from '../models';
@@ -349,7 +351,7 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIssuedDocumentById(documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocument>> {
+        async getIssuedDocumentById(documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocument | IssuedDocumentDetails>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIssuedDocumentById(documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -443,7 +445,7 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIssuedDocumentById(documentId: string, options?: any): AxiosPromise<IssuedDocument> {
+        getIssuedDocumentById(documentId: string, options?: any): AxiosPromise<IssuedDocument | IssuedDocumentDetails> {
             return localVarFp.getIssuedDocumentById(documentId, options).then((request) => request(axios, basePath));
         },
         /**

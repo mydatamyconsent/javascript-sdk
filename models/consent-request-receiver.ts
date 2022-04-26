@@ -17,19 +17,19 @@ import { IdentificationStrategy } from './identification-strategy';
 import { StringStringKeyValuePair } from './string-string-key-value-pair';
 
 /**
- * Consent request receiver details
+ * 
  * @export
  * @interface ConsentRequestReceiver
  */
 export interface ConsentRequestReceiver {
     /**
-     * Consent request receiver country ISO 2 code
+     * 
      * @type {string}
      * @memberof ConsentRequestReceiver
      */
     countryIso2Code: string;
     /**
-     * Consent request receiver identifiers
+     * 
      * @type {Array<StringStringKeyValuePair>}
      * @memberof ConsentRequestReceiver
      */

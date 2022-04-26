@@ -13,45 +13,25 @@
  */
 
 
-import { IssuedDocument } from './issued-document';
-import { IssuedDocumentDetails } from './issued-document-details';
 
 /**
- * 
+ * Data Consent document issuer details.
  * @export
- * @interface IssuedDocumentPaginatedList
+ * @interface DataConsentDocumentIssuer
  */
-export interface IssuedDocumentPaginatedList {
+export interface DataConsentDocumentIssuer {
     /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * Document issuer id.
+     * @type {string}
+     * @memberof DataConsentDocumentIssuer
      */
-    pageIndex?: number;
+    id: string;
     /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
+     * Document issuer name.
+     * @type {string}
+     * @memberof DataConsentDocumentIssuer
      */
-    pageSize?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
-     */
-    totalPages?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof IssuedDocumentPaginatedList
-     */
-    totalItems?: number;
-    /**
-     * 
-     * @type {Array<IssuedDocument | IssuedDocumentDetails>}
-     * @memberof IssuedDocumentPaginatedList
-     */
-    items?: Array<IssuedDocument | IssuedDocumentDetails> | null;
+    name: string;
 }
 
 

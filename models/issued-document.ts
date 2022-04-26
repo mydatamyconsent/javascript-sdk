@@ -50,6 +50,18 @@ export interface IssuedDocument {
      * @memberof IssuedDocument
      */
     issuedAtUtc: string;
+    /**
+     * Expires datetime in UTC timezone.
+     * @type {string}
+     * @memberof IssuedDocument
+     */
+    expiresAtUtc?: string | null;
+    /**
+     * Accepted datetime in UTC timezone.
+     * @type {string}
+     * @memberof IssuedDocument
+     */
+    acceptedAtUtc?: string | null;
 }
 
 
