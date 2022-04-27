@@ -14,7 +14,6 @@
 
 
 import { IssuedDocument } from './issued-document';
-import { IssuedDocumentDetails } from './issued-document-details';
 
 /**
  * 
@@ -48,10 +47,10 @@ export interface IssuedDocumentPaginatedList {
     totalItems?: number;
     /**
      * 
-     * @type {Array<IssuedDocument | IssuedDocumentDetails>}
+     * @type {Array<IssuedDocument>}
      * @memberof IssuedDocumentPaginatedList
      */
-    items?: Array<IssuedDocument | IssuedDocumentDetails> | null;
+    items?: Array<IssuedDocument> | null;
 }
 
 

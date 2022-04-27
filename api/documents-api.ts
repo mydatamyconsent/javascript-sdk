@@ -27,13 +27,13 @@ import { DocumentIssueRequestDetails } from '../models';
 // @ts-ignore
 import { DocumentTypePaginatedList } from '../models';
 // @ts-ignore
-import { IssuedDocument } from '../models';
-// @ts-ignore
 import { IssuedDocumentDetails } from '../models';
 // @ts-ignore
 import { IssuedDocumentPaginatedList } from '../models';
 // @ts-ignore
 import { ProblemDetails } from '../models';
+// @ts-ignore
+import { SupportedEntityType } from '../models';
 /**
  * DocumentsApi - axios parameter creator
  * @export
@@ -77,7 +77,7 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Get paginated list of issued documents of given document type.
-         * @param {string} documentTypeId Document type id.
+         * @param {string} [documentTypeId] Document type id.
          * @param {string} [fromDateTime] From DateTime in UTC timezone.
          * @param {string} [toDateTime] To DateTime in UTC timezone.
          * @param {number} [pageNo] Page number.
@@ -85,11 +85,8 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIssuedDocuments: async (documentTypeId: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'documentTypeId' is not null or undefined
-            assertParamExists('getIssuedDocuments', 'documentTypeId', documentTypeId)
-            const localVarPath = `/v1/documents/issued/{documentTypeId}`
-                .replace(`{${"documentTypeId"}}`, encodeURIComponent(String(documentTypeId)));
+        getIssuedDocuments: async (documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
+            const localVarPath = `/v1/documents/issued`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -100,6 +97,10 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (documentTypeId !== undefined) {
+                localVarQueryParameter['documentTypeId'] = documentTypeId;
+            }
 
             if (fromDateTime !== undefined) {
                 localVarQueryParameter['fromDateTime'] = (fromDateTime as any instanceof Date) ?
@@ -135,12 +136,13 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
         /**
          * 
          * @summary Get paginated list of registered document types.
+         * @param {SupportedEntityType} [supportedEntityType] Supported entity type.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRegisteredDocumentTypes: async (pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
+        getRegisteredDocumentTypes: async (supportedEntityType?: SupportedEntityType, pageNo?: number, pageSize?: number, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/v1/documents/types`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -152,6 +154,10 @@ export const DocumentsApiAxiosParamCreator = function (configuration?: Configura
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (supportedEntityType !== undefined) {
+                localVarQueryParameter['supportedEntityType'] = supportedEntityType;
+            }
 
             if (pageNo !== undefined) {
                 localVarQueryParameter['pageNo'] = pageNo;
@@ -351,14 +357,14 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIssuedDocumentById(documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocument | IssuedDocumentDetails>> {
+        async getIssuedDocumentById(documentId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocumentDetails>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIssuedDocumentById(documentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get paginated list of issued documents of given document type.
-         * @param {string} documentTypeId Document type id.
+         * @param {string} [documentTypeId] Document type id.
          * @param {string} [fromDateTime] From DateTime in UTC timezone.
          * @param {string} [toDateTime] To DateTime in UTC timezone.
          * @param {number} [pageNo] Page number.
@@ -366,20 +372,21 @@ export const DocumentsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getIssuedDocuments(documentTypeId: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocumentPaginatedList>> {
+        async getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<IssuedDocumentPaginatedList>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
          * 
          * @summary Get paginated list of registered document types.
+         * @param {SupportedEntityType} [supportedEntityType] Supported entity type.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumentTypePaginatedList>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.getRegisteredDocumentTypes(pageNo, pageSize, options);
+        async getRegisteredDocumentTypes(supportedEntityType?: SupportedEntityType, pageNo?: number, pageSize?: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumentTypePaginatedList>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getRegisteredDocumentTypes(supportedEntityType, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -445,13 +452,13 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIssuedDocumentById(documentId: string, options?: any): AxiosPromise<IssuedDocument | IssuedDocumentDetails> {
+        getIssuedDocumentById(documentId: string, options?: any): AxiosPromise<IssuedDocumentDetails> {
             return localVarFp.getIssuedDocumentById(documentId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get paginated list of issued documents of given document type.
-         * @param {string} documentTypeId Document type id.
+         * @param {string} [documentTypeId] Document type id.
          * @param {string} [fromDateTime] From DateTime in UTC timezone.
          * @param {string} [toDateTime] To DateTime in UTC timezone.
          * @param {number} [pageNo] Page number.
@@ -459,19 +466,20 @@ export const DocumentsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getIssuedDocuments(documentTypeId: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<IssuedDocumentPaginatedList> {
+        getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<IssuedDocumentPaginatedList> {
             return localVarFp.getIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @summary Get paginated list of registered document types.
+         * @param {SupportedEntityType} [supportedEntityType] Supported entity type.
          * @param {number} [pageNo] Page number.
          * @param {number} [pageSize] Number of items to return.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DocumentTypePaginatedList> {
-            return localVarFp.getRegisteredDocumentTypes(pageNo, pageSize, options).then((request) => request(axios, basePath));
+        getRegisteredDocumentTypes(supportedEntityType?: SupportedEntityType, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<DocumentTypePaginatedList> {
+            return localVarFp.getRegisteredDocumentTypes(supportedEntityType, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -540,7 +548,7 @@ export class DocumentsApi extends BaseAPI {
     /**
      * 
      * @summary Get paginated list of issued documents of given document type.
-     * @param {string} documentTypeId Document type id.
+     * @param {string} [documentTypeId] Document type id.
      * @param {string} [fromDateTime] From DateTime in UTC timezone.
      * @param {string} [toDateTime] To DateTime in UTC timezone.
      * @param {number} [pageNo] Page number.
@@ -549,21 +557,22 @@ export class DocumentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DocumentsApi
      */
-    public getIssuedDocuments(documentTypeId: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any) {
+    public getIssuedDocuments(documentTypeId?: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any) {
         return DocumentsApiFp(this.configuration).getIssuedDocuments(documentTypeId, fromDateTime, toDateTime, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
      * 
      * @summary Get paginated list of registered document types.
+     * @param {SupportedEntityType} [supportedEntityType] Supported entity type.
      * @param {number} [pageNo] Page number.
      * @param {number} [pageSize] Number of items to return.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DocumentsApi
      */
-    public getRegisteredDocumentTypes(pageNo?: number, pageSize?: number, options?: any) {
-        return DocumentsApiFp(this.configuration).getRegisteredDocumentTypes(pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
+    public getRegisteredDocumentTypes(supportedEntityType?: SupportedEntityType, pageNo?: number, pageSize?: number, options?: any) {
+        return DocumentsApiFp(this.configuration).getRegisteredDocumentTypes(supportedEntityType, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

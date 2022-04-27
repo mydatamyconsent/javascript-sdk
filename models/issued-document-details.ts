@@ -15,13 +15,73 @@
 
 import { DocumentDigitalSignature } from './document-digital-signature';
 import { DocumentReceiver } from './document-receiver';
-import { IssuedDocument } from './issued-document';
 
 /**
- * @type IssuedDocumentDetails
+ * 
  * @export
+ * @interface IssuedDocumentDetails
  */
-export type IssuedDocumentDetails = IssuedDocument;
-
+export interface IssuedDocumentDetails {
+    /**
+     * Document Id.
+     * @type {string}
+     * @memberof IssuedDocumentDetails
+     */
+    id: string;
+    /**
+     * Document Identifier.
+     * @type {string}
+     * @memberof IssuedDocumentDetails
+     */
+    identifier: string;
+    /**
+     * Document type name.
+     * @type {string}
+     * @memberof IssuedDocumentDetails
+     */
+    documentType: string;
+    /**
+     * User name.
+     * @type {string}
+     * @memberof IssuedDocumentDetails
+     */
+    issuedTo: string;
+    /**
+     * Issued datetime in UTC timezone.
+     * @type {string}
+     * @memberof IssuedDocumentDetails
+     */
+    issuedAtUtc: string;
+    /**
+     * Expires datetime in UTC timezone.
+     * @type {string}
+     * @memberof IssuedDocumentDetails
+     */
+    expiresAtUtc?: string | null;
+    /**
+     * Accepted datetime in UTC timezone.
+     * @type {string}
+     * @memberof IssuedDocumentDetails
+     */
+    acceptedAtUtc?: string | null;
+    /**
+     * 
+     * @type {DocumentReceiver}
+     * @memberof IssuedDocumentDetails
+     */
+    receiver: DocumentReceiver;
+    /**
+     * Metadata.
+     * @type {{ [key: string]: string; }}
+     * @memberof IssuedDocumentDetails
+     */
+    metadata?: { [key: string]: string; } | null;
+    /**
+     * Digital signatures.
+     * @type {Array<DocumentDigitalSignature>}
+     * @memberof IssuedDocumentDetails
+     */
+    digitalSignatures: Array<DocumentDigitalSignature>;
+}
 
 
