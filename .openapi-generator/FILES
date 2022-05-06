@@ -65,6 +65,7 @@ models/organization-data-consent-request-details.ts
 models/organization-financial-account-dto.ts
 models/organization-financial-transactions-dto-paginated-list.ts
 models/organization-financial-transactions-dto.ts
+models/payment-request.ts
 models/problem-details.ts
 models/push-uri-request.ts
 models/push-uri-response.ts

@@ -94,7 +94,7 @@ export interface DocumentType {
      * @type {number}
      * @memberof DocumentType
      */
-    payableAmount?: number | null;
+    payableAmount: number;
     /**
      * Payable amount currency. eg: INR, USD etc.,.
      * @type {string}

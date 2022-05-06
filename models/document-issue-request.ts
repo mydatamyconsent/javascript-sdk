@@ -14,6 +14,7 @@
 
 
 import { DocumentReceiver } from './document-receiver';
+import { PaymentRequest } from './payment-request';
 
 /**
  * Document Issue Request.
@@ -63,6 +64,12 @@ export interface DocumentIssueRequest {
      * @memberof DocumentIssueRequest
      */
     expiresAtUtc?: string | null;
+    /**
+     * 
+     * @type {PaymentRequest}
+     * @memberof DocumentIssueRequest
+     */
+    paymentRequest?: PaymentRequest;
     /**
      * Metadata.
      * @type {{ [key: string]: string; }}

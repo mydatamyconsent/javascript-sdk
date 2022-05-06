@@ -49,6 +49,7 @@ export * from './organization-data-consent-request-details-paginated-list';
 export * from './organization-financial-account-dto';
 export * from './organization-financial-transactions-dto';
 export * from './organization-financial-transactions-dto-paginated-list';
+export * from './payment-request';
 export * from './problem-details';
 export * from './push-uri-request';
 export * from './push-uri-response';
