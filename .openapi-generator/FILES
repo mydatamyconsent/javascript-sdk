@@ -16,6 +16,7 @@ index.ts
 models/activity.ts
 models/approved-consent-request.ts
 models/bank-account-type.ts
+models/bill-payment-order-item.ts
 models/collectible-types.ts
 models/consent-request-receiver.ts
 models/create-data-consent-request.ts

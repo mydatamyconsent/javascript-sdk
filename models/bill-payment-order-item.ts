@@ -13,50 +13,25 @@
  */
 
 
-import { BillPaymentOrderItem } from './bill-payment-order-item';
 
 /**
  * 
  * @export
- * @interface PaymentRequest
+ * @interface BillPaymentOrderItem
  */
-export interface PaymentRequest {
+export interface BillPaymentOrderItem {
     /**
      * 
      * @type {string}
-     * @memberof PaymentRequest
+     * @memberof BillPaymentOrderItem
      */
-    identifier?: string | null;
+    name?: string | null;
     /**
      * 
-     * @type {Array<BillPaymentOrderItem>}
-     * @memberof PaymentRequest
+     * @type {number}
+     * @memberof BillPaymentOrderItem
      */
-    items?: Array<BillPaymentOrderItem> | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof PaymentRequest
-     */
-    currencyCode?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof PaymentRequest
-     */
-    paymentUrl?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof PaymentRequest
-     */
-    description?: string | null;
-    /**
-     * 
-     * @type {string}
-     * @memberof PaymentRequest
-     */
-    dueByUtc?: string;
+    amount?: number;
 }
 
 
