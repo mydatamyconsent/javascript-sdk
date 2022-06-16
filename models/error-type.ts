@@ -20,9 +20,15 @@
  * @enum {string}
  */
 
-export enum FileType {
-    Pdf = 'Pdf',
-    Image = 'Image'
+export enum ErrorType {
+    InvalidAccessToken = 'InvalidAccessToken',
+    InvalidRefreshToken = 'InvalidRefreshToken',
+    InsufficientPermission = 'InsufficientPermission',
+    InternalServerError = 'InternalServerError',
+    BadRequest = 'BadRequest',
+    NotFound = 'NotFound',
+    InvalidOrganization = 'InvalidOrganization',
+    InvalidFileUploadType = 'InvalidFileUploadType'
 }
 
 

@@ -47,7 +47,7 @@ models/document-sub-category-type.ts
 models/document-type-paginated-list.ts
 models/document-type.ts
 models/documents-required.ts
-models/file-type.ts
+models/error-type.ts
 models/financial-account-details-required.ts
 models/financial-account.ts
 models/financial-accounts.ts
@@ -61,6 +61,7 @@ models/issued-document-details.ts
 models/issued-document-paginated-list.ts
 models/issued-document.ts
 models/life.ts
+models/model-error.ts
 models/organization-data-consent-request-details-paginated-list.ts
 models/organization-data-consent-request-details.ts
 models/organization-financial-account-dto.ts

@@ -14,7 +14,6 @@
 
 
 import { BankAccountType } from './bank-account-type';
-import { FileType } from './file-type';
 
 /**
  * 
@@ -94,12 +93,6 @@ export interface OrganizationFinancialAccountDto {
      * @memberof OrganizationFinancialAccountDto
      */
     bankAccountProofUrl?: string | null;
-    /**
-     * 
-     * @type {FileType}
-     * @memberof OrganizationFinancialAccountDto
-     */
-    fileType?: FileType;
 }
 
 
