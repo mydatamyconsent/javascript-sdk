@@ -36,14 +36,15 @@ export enum DocumentSubCategoryType {
     Insurance = 'Insurance',
     ReceiptsAndSubscriptions = 'ReceiptsAndSubscriptions',
     Taxes = 'Taxes',
-    LicencesAndCertificates = 'LicencesAndCertificates',
     Corporates = 'Corporates',
     Competitions = 'Competitions',
     IntellectualProperties = 'IntellectualProperties',
     Others = 'Others',
     ApplicationsAndCertificates = 'ApplicationsAndCertificates',
     Licenses = 'Licenses',
-    OrganizationIds = 'OrganizationIds'
+    OrganizationIds = 'OrganizationIds',
+    Permits = 'Permits',
+    Legal = 'Legal'
 }
 
 
