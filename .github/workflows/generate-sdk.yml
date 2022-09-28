@@ -32,6 +32,15 @@ jobs:
                 rm -rf ./api
                 rm -rf ./models
 
+            - name: Download OpenAPI Spec
+              run: curl https://api.mydatamyconsent.com/openapi-spec.json --output openapi-spec.json
+
+            - name: Cleanup Spec
+              run: |
+                sed -i 's/FinancialAccount\[\(.*\)]/FinancialAccount\1/' openapi-spec.json
+                sed -i 's/FinancialAccountTransaction\[\(.*\)]/FinancialAccount\1/' openapi-spec.json
+                sed -i 's/PaginatedList<\(.*\)>/PaginatedListOf\1s/' openapi-spec.json
+
             - name: Generate SDK's
               run: |
                   npx @openapitools/openapi-generator-cli generate
