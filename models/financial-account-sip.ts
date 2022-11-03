@@ -13,6 +13,15 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Holder } from './holder';
+// May contain unused imports in some cases
+// @ts-ignore
+import { SipInvestmentInformation } from './sip-investment-information';
+// May contain unused imports in some cases
+// @ts-ignore
+import { SipPlanInformation } from './sip-plan-information';
 
 /**
  * @type FinancialAccountSip

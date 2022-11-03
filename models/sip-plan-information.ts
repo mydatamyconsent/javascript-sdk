@@ -17,32 +17,56 @@
 /**
  * 
  * @export
- * @interface Nps
+ * @interface SipPlanInformation
  */
-export interface Nps {
+export interface SipPlanInformation {
     /**
      * 
      * @type {string}
-     * @memberof Nps
+     * @memberof SipPlanInformation
      */
-    'id': string;
+    'amc'?: string;
     /**
      * 
      * @type {string}
-     * @memberof Nps
+     * @memberof SipPlanInformation
      */
-    'name': string;
+    'registrar'?: string;
     /**
      * 
      * @type {string}
-     * @memberof Nps
+     * @memberof SipPlanInformation
      */
-    'identifier': string;
+    'scheme': string;
     /**
      * 
-     * @type {number}
-     * @memberof Nps
+     * @type {string}
+     * @memberof SipPlanInformation
      */
-    'amount': number;
+    'isin': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipPlanInformation
+     */
+    'folio_number'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipPlanInformation
+     */
+    'nav'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipPlanInformation
+     */
+    'dividend_type': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipPlanInformation
+     */
+    'creation_date'?: string;
 }
 

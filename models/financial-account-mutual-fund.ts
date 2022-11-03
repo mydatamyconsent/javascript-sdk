@@ -15,10 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MutualFundSummary } from './mutual-fund-summary';
-// May contain unused imports in some cases
-// @ts-ignore
-import { Profile } from './profile';
+import { Holder } from './holder';
 
 /**
  * @type FinancialAccountMutualFund

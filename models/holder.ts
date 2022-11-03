@@ -13,9 +13,6 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { HoldingNominee } from './holding-nominee';
 
 /**
  * 
@@ -34,7 +31,7 @@ export interface Holder {
      * @type {string}
      * @memberof Holder
      */
-    'dob'?: string;
+    'date_of_birth'?: string;
     /**
      * 
      * @type {string}
@@ -43,28 +40,10 @@ export interface Holder {
     'mobile'?: string;
     /**
      * 
-     * @type {HoldingNominee}
-     * @memberof Holder
-     */
-    'nominee'?: HoldingNominee;
-    /**
-     * 
      * @type {string}
      * @memberof Holder
      */
-    'dematId': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Holder
-     */
-    'landline'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Holder
-     */
-    'address'?: string;
+    'demat_id': string;
     /**
      * 
      * @type {string}
@@ -77,11 +56,5 @@ export interface Holder {
      * @memberof Holder
      */
     'pan'?: string;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof Holder
-     */
-    'ckycCompliance': boolean;
 }
 

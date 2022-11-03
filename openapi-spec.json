@@ -4430,41 +4430,6 @@
   },
   "components": {
     "schemas": {
-      "Aif": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "AifTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
       "ApiErrorType": {
         "type": "string",
         "enum": [
@@ -4476,146 +4441,6 @@
           "DataConsentRequestExists"
         ]
       },
-      "BillPayment": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "BillPaymentTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "Bond": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "BondTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "CIS": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "CISTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "CertificateOfDeposit": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "CertificateOfDepositTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
       "CollectibleTypes": {
         "type": "string",
         "enum": [
@@ -4624,41 +4449,6 @@
           "Financials",
           "Health"
         ]
-      },
-      "CommercialPaper": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "CommercialPaperTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
       },
       "Consent": {
         "type": "object",
@@ -5209,6 +4999,8 @@
         "required": [
           "fieldTitle",
           "fieldSlug",
+          "issuerId",
+          "issuerName",
           "category"
         ],
         "properties": {
@@ -5223,6 +5015,14 @@
           "fieldSlug": {
             "type": "string",
             "description": "Health field slug."
+          },
+          "issuerId": {
+            "type": "string",
+            "description": "Issuer id."
+          },
+          "issuerName": {
+            "type": "string",
+            "description": "Issuer name."
           },
           "category": {
             "type": "string",
@@ -5279,246 +5079,6 @@
             "description": "Agreement attachment file URL."
           }
         }
-      },
-      "CreditCard": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "balance",
-          "profile",
-          "summary",
-          "masked_account_number",
-          "linked_account_ref",
-          "version"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "balance": {
-            "type": "number",
-            "format": "double"
-          },
-          "profile": {
-            "$ref": "#/components/schemas/CreditCardProfile"
-          },
-          "summary": {
-            "$ref": "#/components/schemas/CreditCardSummary"
-          },
-          "masked_account_number": {
-            "type": "string"
-          },
-          "linked_account_ref": {
-            "type": "string"
-          },
-          "version": {
-            "type": "number",
-            "format": "float"
-          }
-        }
-      },
-      "CreditCardHolder": {
-        "type": "object",
-        "required": [
-          "id",
-          "creditCardId",
-          "name",
-          "dob",
-          "mobile",
-          "nominee",
-          "address",
-          "email",
-          "pan",
-          "ckycCompliance"
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "creditCardId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "name": {
-            "type": "string"
-          },
-          "dob": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "mobile": {
-            "type": "string"
-          },
-          "nominee": {
-            "$ref": "#/components/schemas/HoldingNominee"
-          },
-          "landline": {
-            "type": "string"
-          },
-          "address": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "pan": {
-            "type": "string"
-          },
-          "ckycCompliance": {
-            "type": "boolean"
-          }
-        }
-      },
-      "CreditCardHolders": {
-        "type": "object",
-        "required": [
-          "holder"
-        ],
-        "properties": {
-          "holder": {
-            "$ref": "#/components/schemas/CreditCardHolder"
-          }
-        }
-      },
-      "CreditCardProfile": {
-        "type": "object",
-        "required": [
-          "holders"
-        ],
-        "properties": {
-          "holders": {
-            "$ref": "#/components/schemas/CreditCardHolders"
-          }
-        }
-      },
-      "CreditCardSummary": {
-        "type": "object",
-        "required": [
-          "creditCardId",
-          "currentDue",
-          "lastStatementDate",
-          "dueDate",
-          "previousDueAmount",
-          "totalDueAmount",
-          "minDueAmount",
-          "creditLimit",
-          "cashLimit",
-          "availableCredit",
-          "loyaltyPoints",
-          "financeCharges"
-        ],
-        "properties": {
-          "creditCardId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "currentDue": {
-            "type": "number",
-            "format": "double"
-          },
-          "lastStatementDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "dueDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "previousDueAmount": {
-            "type": "number",
-            "format": "double"
-          },
-          "totalDueAmount": {
-            "type": "number",
-            "format": "double"
-          },
-          "minDueAmount": {
-            "type": "number",
-            "format": "double"
-          },
-          "creditLimit": {
-            "type": "number",
-            "format": "double"
-          },
-          "cashLimit": {
-            "type": "number",
-            "format": "double"
-          },
-          "availableCredit": {
-            "type": "number",
-            "format": "double"
-          },
-          "loyaltyPoints": {
-            "type": "string"
-          },
-          "financeCharges": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "CreditCardTransaction": {
-        "type": "object",
-        "required": [
-          "id",
-          "txn_type",
-          "txn_date",
-          "amount",
-          "value_date",
-          "narration",
-          "statement_date",
-          "mcc",
-          "masked_card_number"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "txn_type": {
-            "$ref": "#/components/schemas/CreditCardTransactionType"
-          },
-          "txn_date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "amount": {
-            "type": "number",
-            "format": "float"
-          },
-          "value_date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "narration": {
-            "type": "string"
-          },
-          "statement_date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "mcc": {
-            "type": "string"
-          },
-          "masked_card_number": {
-            "type": "string"
-          }
-        }
-      },
-      "CreditCardTransactionType": {
-        "type": "string",
-        "enum": [
-          "Debit",
-          "Credit"
-        ]
       },
       "DataConsentStatus": {
         "type": "string",
@@ -5671,76 +5231,6 @@
             "items": {
               "type": "string"
             }
-          }
-        }
-      },
-      "Debenture": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "DebentureTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "Deposit": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "DepositTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
           }
         }
       },
@@ -6103,53 +5593,20 @@
           }
         }
       },
-      "Epf": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "EpfTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
       "Equity": {
         "type": "object",
         "required": [
           "id",
           "name",
-          "identifier",
-          "balance",
-          "profile",
-          "summary",
-          "masked_account_number",
-          "linked_account_ref",
-          "version"
+          "issuer_name",
+          "exchange",
+          "isin",
+          "units",
+          "investment_value",
+          "current_value",
+          "currency_code",
+          "holder",
+          "transactions"
         ],
         "properties": {
           "id": {
@@ -6158,41 +5615,7 @@
           "name": {
             "type": "string"
           },
-          "identifier": {
-            "type": "string"
-          },
-          "balance": {
-            "type": "number",
-            "format": "double"
-          },
-          "profile": {
-            "$ref": "#/components/schemas/Profile"
-          },
-          "summary": {
-            "$ref": "#/components/schemas/EquitySummary"
-          },
-          "masked_account_number": {
-            "type": "string"
-          },
-          "linked_account_ref": {
-            "type": "string"
-          },
-          "version": {
-            "type": "number",
-            "format": "float"
-          }
-        }
-      },
-      "EquityHolding": {
-        "type": "object",
-        "required": [
-          "issuerName",
-          "exchange",
-          "isin",
-          "units"
-        ],
-        "properties": {
-          "issuerName": {
+          "issuer_name": {
             "type": "string"
           },
           "exchange": {
@@ -6205,72 +5628,22 @@
             "type": "integer",
             "format": "int64"
           },
-          "investmentDateTime": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "rate": {
-            "type": "string"
-          },
-          "lastTradedPrice": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          }
-        }
-      },
-      "EquityHoldingMode": {
-        "type": "string",
-        "enum": [
-          "Demat",
-          "Physical"
-        ]
-      },
-      "EquityHoldings": {
-        "type": "object",
-        "required": [
-          "holding",
-          "type"
-        ],
-        "properties": {
-          "holding": {
-            "$ref": "#/components/schemas/EquityHolding"
-          },
-          "type": {
-            "$ref": "#/components/schemas/EquityHoldingMode"
-          }
-        }
-      },
-      "EquityInvestment": {
-        "type": "object",
-        "required": [
-          "holdings"
-        ],
-        "properties": {
-          "holdings": {
-            "$ref": "#/components/schemas/EquityHoldings"
-          }
-        }
-      },
-      "EquitySummary": {
-        "type": "object",
-        "required": [
-          "investment",
-          "investmentValue",
-          "currentValue"
-        ],
-        "properties": {
-          "investment": {
-            "$ref": "#/components/schemas/EquityInvestment"
-          },
-          "investmentValue": {
+          "investment_value": {
             "type": "number",
             "format": "double"
           },
-          "currentValue": {
+          "current_value": {
             "type": "number",
             "format": "double"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "holder": {
+            "$ref": "#/components/schemas/Holder"
+          },
+          "transactions": {
+            "type": "boolean"
           }
         }
       },
@@ -6305,148 +5678,25 @@
           }
         }
       },
-      "Etf": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "EtfTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
       "FinancialAccount": {
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/FinancialAccountCreditCard"
+            "$ref": "#/components/schemas/FinancialAccountEquity"
           },
           {
             "$ref": "#/components/schemas/FinancialAccountMutualFund"
           },
           {
-            "$ref": "#/components/schemas/FinancialAccountEquity"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountBillPayment"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountAif"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountBond"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountCertificateOfDeposit"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountCIS"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountCommercialPaper"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountDebenture"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountDeposit"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountEpf"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountEtf"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountGovtSecurity"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountIdr"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountInsurancePolicy"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountInvit"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountLoan"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountNps"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountPpf"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountRecurringDeposit"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountReit"
-          },
-          {
             "$ref": "#/components/schemas/FinancialAccountSip"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountTermDeposit"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountUlip"
           }
         ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "CreditCard": "#/components/schemas/FinancialAccountCreditCard",
-            "MutualFund": "#/components/schemas/FinancialAccountMutualFund",
             "Equity": "#/components/schemas/FinancialAccountEquity",
-            "BillPayment": "#/components/schemas/FinancialAccountBillPayment",
-            "Aif": "#/components/schemas/FinancialAccountAif",
-            "Bond": "#/components/schemas/FinancialAccountBond",
-            "CertificateOfDeposit": "#/components/schemas/FinancialAccountCertificateOfDeposit",
-            "CIS": "#/components/schemas/FinancialAccountCIS",
-            "CommercialPaper": "#/components/schemas/FinancialAccountCommercialPaper",
-            "Debenture": "#/components/schemas/FinancialAccountDebenture",
-            "Deposit": "#/components/schemas/FinancialAccountDeposit",
-            "Epf": "#/components/schemas/FinancialAccountEpf",
-            "Etf": "#/components/schemas/FinancialAccountEtf",
-            "GovtSecurity": "#/components/schemas/FinancialAccountGovtSecurity",
-            "Idr": "#/components/schemas/FinancialAccountIdr",
-            "InsurancePolicy": "#/components/schemas/FinancialAccountInsurancePolicy",
-            "Invit": "#/components/schemas/FinancialAccountInvit",
-            "Loan": "#/components/schemas/FinancialAccountLoan",
-            "Nps": "#/components/schemas/FinancialAccountNps",
-            "Ppf": "#/components/schemas/FinancialAccountPpf",
-            "RecurringDeposit": "#/components/schemas/FinancialAccountRecurringDeposit",
-            "Reit": "#/components/schemas/FinancialAccountReit",
-            "Sip": "#/components/schemas/FinancialAccountSip",
-            "TermDeposit": "#/components/schemas/FinancialAccountTermDeposit",
-            "Ulip": "#/components/schemas/FinancialAccountUlip"
+            "MutualFund": "#/components/schemas/FinancialAccountMutualFund",
+            "Sip": "#/components/schemas/FinancialAccountSip"
           }
         }
       },
@@ -6535,109 +5785,21 @@
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/FinancialAccountCreditCardTransaction"
+            "$ref": "#/components/schemas/FinancialAccountEquityTransaction"
           },
           {
             "$ref": "#/components/schemas/FinancialAccountMutualFundTransaction"
           },
           {
-            "$ref": "#/components/schemas/FinancialAccountEquityTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountBillPaymentTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountAifTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountBondTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountCertificateOfDepositTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountCISTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountCommercialPaperTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountDebentureTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountDepositTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountEpfTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountEtfTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountGovtSecurityTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountIdrTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountInsurancePolicyTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountInvitTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountLoanTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountNpsTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountPpfTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountRecurringDepositTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountReitTransaction"
-          },
-          {
             "$ref": "#/components/schemas/FinancialAccountSipTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountTermDepositTransaction"
-          },
-          {
-            "$ref": "#/components/schemas/FinancialAccountUlipTransaction"
           }
         ],
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "CreditCardTransaction": "#/components/schemas/FinancialAccountCreditCardTransaction",
-            "MutualFundTransaction": "#/components/schemas/FinancialAccountMutualFundTransaction",
             "EquityTransaction": "#/components/schemas/FinancialAccountEquityTransaction",
-            "BillPaymentTransaction": "#/components/schemas/FinancialAccountBillPaymentTransaction",
-            "AifTransaction": "#/components/schemas/FinancialAccountAifTransaction",
-            "BondTransaction": "#/components/schemas/FinancialAccountBondTransaction",
-            "CertificateOfDepositTransaction": "#/components/schemas/FinancialAccountCertificateOfDepositTransaction",
-            "CISTransaction": "#/components/schemas/FinancialAccountCISTransaction",
-            "CommercialPaperTransaction": "#/components/schemas/FinancialAccountCommercialPaperTransaction",
-            "DebentureTransaction": "#/components/schemas/FinancialAccountDebentureTransaction",
-            "DepositTransaction": "#/components/schemas/FinancialAccountDepositTransaction",
-            "EpfTransaction": "#/components/schemas/FinancialAccountEpfTransaction",
-            "EtfTransaction": "#/components/schemas/FinancialAccountEtfTransaction",
-            "GovtSecurityTransaction": "#/components/schemas/FinancialAccountGovtSecurityTransaction",
-            "IdrTransaction": "#/components/schemas/FinancialAccountIdrTransaction",
-            "InsurancePolicyTransaction": "#/components/schemas/FinancialAccountInsurancePolicyTransaction",
-            "InvitTransaction": "#/components/schemas/FinancialAccountInvitTransaction",
-            "LoanTransaction": "#/components/schemas/FinancialAccountLoanTransaction",
-            "NpsTransaction": "#/components/schemas/FinancialAccountNpsTransaction",
-            "PpfTransaction": "#/components/schemas/FinancialAccountPpfTransaction",
-            "RecurringDepositTransaction": "#/components/schemas/FinancialAccountRecurringDepositTransaction",
-            "ReitTransaction": "#/components/schemas/FinancialAccountReitTransaction",
-            "SipTransaction": "#/components/schemas/FinancialAccountSipTransaction",
-            "TermDepositTransaction": "#/components/schemas/FinancialAccountTermDepositTransaction",
-            "UlipTransaction": "#/components/schemas/FinancialAccountUlipTransaction"
+            "MutualFundTransaction": "#/components/schemas/FinancialAccountMutualFundTransaction",
+            "SipTransaction": "#/components/schemas/FinancialAccountSipTransaction"
           }
         }
       },
@@ -6659,196 +5821,6 @@
           }
         }
       },
-      "FinancialAccountAifTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "AifTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/AifTransaction"
-          }
-        ]
-      },
-      "FinancialAccountBillPaymentTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "BillPaymentTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/BillPaymentTransaction"
-          }
-        ]
-      },
-      "FinancialAccountBondTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "BondTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/BondTransaction"
-          }
-        ]
-      },
-      "FinancialAccountCISTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "CISTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CISTransaction"
-          }
-        ]
-      },
-      "FinancialAccountCertificateOfDepositTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "CertificateOfDepositTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CertificateOfDepositTransaction"
-          }
-        ]
-      },
-      "FinancialAccountCommercialPaperTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "CommercialPaperTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CommercialPaperTransaction"
-          }
-        ]
-      },
-      "FinancialAccountCreditCardTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "CreditCardTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CreditCardTransaction"
-          }
-        ]
-      },
-      "FinancialAccountDebentureTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "DebentureTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/DebentureTransaction"
-          }
-        ]
-      },
-      "FinancialAccountDepositTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "DepositTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/DepositTransaction"
-          }
-        ]
-      },
-      "FinancialAccountEpfTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "EpfTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/EpfTransaction"
-          }
-        ]
-      },
       "FinancialAccountEquityTransaction": {
         "allOf": [
           {
@@ -6865,120 +5837,6 @@
           },
           {
             "$ref": "#/components/schemas/EquityTransaction"
-          }
-        ]
-      },
-      "FinancialAccountEtfTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "EtfTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/EtfTransaction"
-          }
-        ]
-      },
-      "FinancialAccountGovtSecurityTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "GovtSecurityTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/GovtSecurityTransaction"
-          }
-        ]
-      },
-      "FinancialAccountIdrTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "IdrTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/IdrTransaction"
-          }
-        ]
-      },
-      "FinancialAccountInsurancePolicyTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "InsurancePolicyTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/InsurancePolicyTransaction"
-          }
-        ]
-      },
-      "FinancialAccountInvitTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "InvitTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/InvitTransaction"
-          }
-        ]
-      },
-      "FinancialAccountLoanTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "LoanTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/LoanTransaction"
           }
         ]
       },
@@ -7001,82 +5859,6 @@
           }
         ]
       },
-      "FinancialAccountNpsTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "NpsTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/NpsTransaction"
-          }
-        ]
-      },
-      "FinancialAccountPpfTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "PpfTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/PpfTransaction"
-          }
-        ]
-      },
-      "FinancialAccountRecurringDepositTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "RecurringDepositTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/RecurringDepositTransaction"
-          }
-        ]
-      },
-      "FinancialAccountReitTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "ReitTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/ReitTransaction"
-          }
-        ]
-      },
       "FinancialAccountSipTransaction": {
         "allOf": [
           {
@@ -7093,234 +5875,6 @@
           },
           {
             "$ref": "#/components/schemas/SipTransaction"
-          }
-        ]
-      },
-      "FinancialAccountTermDepositTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "TermDepositTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/TermDepositTransaction"
-          }
-        ]
-      },
-      "FinancialAccountUlipTransaction": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "UlipTransaction"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/UlipTransaction"
-          }
-        ]
-      },
-      "FinancialAccountAif": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Aif"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Aif"
-          }
-        ]
-      },
-      "FinancialAccountBillPayment": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "BillPayment"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/BillPayment"
-          }
-        ]
-      },
-      "FinancialAccountBond": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Bond"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Bond"
-          }
-        ]
-      },
-      "FinancialAccountCIS": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "CIS"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CIS"
-          }
-        ]
-      },
-      "FinancialAccountCertificateOfDeposit": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "CertificateOfDeposit"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CertificateOfDeposit"
-          }
-        ]
-      },
-      "FinancialAccountCommercialPaper": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "CommercialPaper"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CommercialPaper"
-          }
-        ]
-      },
-      "FinancialAccountCreditCard": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "CreditCard"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/CreditCard"
-          }
-        ]
-      },
-      "FinancialAccountDebenture": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Debenture"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Debenture"
-          }
-        ]
-      },
-      "FinancialAccountDeposit": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Deposit"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Deposit"
-          }
-        ]
-      },
-      "FinancialAccountEpf": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Epf"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Epf"
           }
         ]
       },
@@ -7343,120 +5897,6 @@
           }
         ]
       },
-      "FinancialAccountEtf": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Etf"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Etf"
-          }
-        ]
-      },
-      "FinancialAccountGovtSecurity": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "GovtSecurity"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/GovtSecurity"
-          }
-        ]
-      },
-      "FinancialAccountIdr": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Idr"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Idr"
-          }
-        ]
-      },
-      "FinancialAccountInsurancePolicy": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "InsurancePolicy"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/InsurancePolicy"
-          }
-        ]
-      },
-      "FinancialAccountInvit": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Invit"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Invit"
-          }
-        ]
-      },
-      "FinancialAccountLoan": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Loan"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Loan"
-          }
-        ]
-      },
       "FinancialAccountMutualFund": {
         "allOf": [
           {
@@ -7473,82 +5913,6 @@
           },
           {
             "$ref": "#/components/schemas/MutualFund"
-          }
-        ]
-      },
-      "FinancialAccountNps": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Nps"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Nps"
-          }
-        ]
-      },
-      "FinancialAccountPpf": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Ppf"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Ppf"
-          }
-        ]
-      },
-      "FinancialAccountRecurringDeposit": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "RecurringDeposit"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/RecurringDeposit"
-          }
-        ]
-      },
-      "FinancialAccountReit": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Reit"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Reit"
           }
         ]
       },
@@ -7571,108 +5935,25 @@
           }
         ]
       },
-      "FinancialAccountTermDeposit": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "TermDeposit"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/TermDeposit"
-          }
-        ]
-      },
-      "FinancialAccountUlip": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Ulip"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/Ulip"
-          }
-        ]
-      },
-      "GovtSecurity": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "GovtSecurityTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
       "Holder": {
         "type": "object",
         "required": [
           "name",
-          "dematId",
-          "email",
-          "ckycCompliance"
+          "demat_id",
+          "email"
         ],
         "properties": {
           "name": {
             "type": "string"
           },
-          "dob": {
+          "date_of_birth": {
             "type": "string",
             "format": "date-time"
           },
           "mobile": {
             "type": "string"
           },
-          "nominee": {
-            "$ref": "#/components/schemas/HoldingNominee"
-          },
-          "dematId": {
-            "type": "string"
-          },
-          "landline": {
-            "type": "string"
-          },
-          "address": {
+          "demat_id": {
             "type": "string"
           },
           "email": {
@@ -7680,40 +5961,8 @@
           },
           "pan": {
             "type": "string"
-          },
-          "ckycCompliance": {
-            "type": "boolean"
           }
         }
-      },
-      "Holders": {
-        "type": "object",
-        "required": [
-          "holder",
-          "type"
-        ],
-        "properties": {
-          "holder": {
-            "$ref": "#/components/schemas/Holder"
-          },
-          "type": {
-            "$ref": "#/components/schemas/HoldersType"
-          }
-        }
-      },
-      "HoldersType": {
-        "type": "string",
-        "enum": [
-          "Single",
-          "Joint"
-        ]
-      },
-      "HoldingNominee": {
-        "type": "string",
-        "enum": [
-          "Registered",
-          "NotRegistered"
-        ]
       },
       "IdentificationStrategy": {
         "type": "string",
@@ -7775,41 +6024,6 @@
           "dataType": {
             "type": "string",
             "description": "Field data type."
-          }
-        }
-      },
-      "Idr": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "IdrTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
           }
         }
       },
@@ -8004,76 +6218,6 @@
           }
         }
       },
-      "InsurancePolicy": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "InsurancePolicyTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "Invit": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "InvitTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
       "IssuedDocument": {
         "type": "object",
         "description": "IssuedDocument : Issued Document Identifier.",
@@ -8152,41 +6296,6 @@
           }
         }
       },
-      "Loan": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "LoanTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
       "MedicalRecordField": {
         "type": "object",
         "description": "MedicalRecordField : Medical record field of consent request template.",
@@ -8218,13 +6327,15 @@
         "required": [
           "id",
           "name",
-          "identifier",
-          "balance",
-          "profile",
-          "summary",
-          "masked_account_number",
-          "linked_account_ref",
-          "version"
+          "investment_value",
+          "current_value",
+          "currency_code",
+          "fund_name",
+          "isin",
+          "folio_number",
+          "units",
+          "holder",
+          "transactions"
         ],
         "properties": {
           "id": {
@@ -8233,28 +6344,57 @@
           "name": {
             "type": "string"
           },
-          "identifier": {
-            "type": "string"
-          },
-          "balance": {
+          "investment_value": {
             "type": "number",
             "format": "double"
           },
-          "profile": {
-            "$ref": "#/components/schemas/Profile"
-          },
-          "summary": {
-            "$ref": "#/components/schemas/MutualFundSummary"
-          },
-          "masked_account_number": {
-            "type": "string"
-          },
-          "linked_account_ref": {
-            "type": "string"
-          },
-          "version": {
+          "current_value": {
             "type": "number",
-            "format": "float"
+            "format": "double"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "amc": {
+            "type": "string"
+          },
+          "registrar": {
+            "type": "string"
+          },
+          "fund_name": {
+            "type": "string"
+          },
+          "isin": {
+            "type": "string"
+          },
+          "folio_number": {
+            "type": "string"
+          },
+          "scheme_code": {
+            "type": "string"
+          },
+          "fund_type": {
+            "type": "string"
+          },
+          "fund_category": {
+            "type": "string"
+          },
+          "units": {
+            "type": "number",
+            "format": "double"
+          },
+          "lien_units": {
+            "type": "string"
+          },
+          "creation_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "holder": {
+            "$ref": "#/components/schemas/Holder"
+          },
+          "transactions": {
+            "type": "boolean"
           }
         }
       },
@@ -8268,98 +6408,12 @@
           "Others"
         ]
       },
-      "MutualFundHolding": {
-        "type": "object",
-        "required": [
-          "name",
-          "isin",
-          "folioNo",
-          "mode",
-          "units"
-        ],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "amc": {
-            "type": "string"
-          },
-          "registrar": {
-            "type": "string"
-          },
-          "schemeCode": {
-            "type": "string"
-          },
-          "isin": {
-            "type": "string"
-          },
-          "ucc": {
-            "type": "string"
-          },
-          "amfiCode": {
-            "type": "string"
-          },
-          "folioNo": {
-            "type": "string"
-          },
-          "dividendType": {
-            "type": "string"
-          },
-          "fatcaStatus": {
-            "type": "string"
-          },
-          "mode": {
-            "$ref": "#/components/schemas/MutualFundHoldingMode"
-          },
-          "units": {
-            "type": "number",
-            "format": "double"
-          },
-          "closingUnits": {
-            "type": "string"
-          },
-          "lienUnits": {
-            "type": "string"
-          },
-          "rate": {
-            "type": "string"
-          },
-          "nav": {
-            "type": "string"
-          },
-          "lockingUnits": {
-            "type": "string"
-          }
-        }
-      },
       "MutualFundHoldingMode": {
         "type": "string",
         "enum": [
           "Demat",
           "Physical"
         ]
-      },
-      "MutualFundHoldings": {
-        "type": "object",
-        "required": [
-          "holding"
-        ],
-        "properties": {
-          "holding": {
-            "$ref": "#/components/schemas/MutualFundHolding"
-          }
-        }
-      },
-      "MutualFundInvestment": {
-        "type": "object",
-        "required": [
-          "holdings"
-        ],
-        "properties": {
-          "holdings": {
-            "$ref": "#/components/schemas/MutualFundHoldings"
-          }
-        }
       },
       "MutualFundSchemeCategory": {
         "type": "string",
@@ -8428,27 +6482,6 @@
           "SolutionOrientedSchemes",
           "OtherSchemes"
         ]
-      },
-      "MutualFundSummary": {
-        "type": "object",
-        "required": [
-          "investment",
-          "investmentValue",
-          "currentValue"
-        ],
-        "properties": {
-          "investment": {
-            "$ref": "#/components/schemas/MutualFundInvestment"
-          },
-          "investmentValue": {
-            "type": "number",
-            "format": "double"
-          },
-          "currentValue": {
-            "type": "number",
-            "format": "double"
-          }
-        }
       },
       "MutualFundTransaction": {
         "type": "object",
@@ -8563,41 +6596,6 @@
           "Sell",
           "Others"
         ]
-      },
-      "Nps": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "NpsTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
       },
       "OrganizationConsentRequestDetails": {
         "type": "object",
@@ -9094,52 +7092,6 @@
           }
         }
       },
-      "Ppf": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "PpfTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "Profile": {
-        "type": "object",
-        "required": [
-          "holders"
-        ],
-        "properties": {
-          "holders": {
-            "$ref": "#/components/schemas/Holders"
-          }
-        }
-      },
       "PushUriRequest": {
         "type": "object",
         "required": [
@@ -9195,76 +7147,6 @@
           }
         }
       },
-      "RecurringDeposit": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "RecurringDepositTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "Reit": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "ReitTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
       "SelectedFinancialAccountType": {
         "type": "object",
         "description": "SelectedFinancialAccountType : Selected financial account type of financial account field of consent request template.",
@@ -9297,8 +7179,13 @@
         "required": [
           "id",
           "name",
-          "identifier",
-          "amount"
+          "investment_value",
+          "current_value",
+          "currency_code",
+          "plan_info",
+          "investment_info",
+          "holder",
+          "transactions"
         ],
         "properties": {
           "id": {
@@ -9307,12 +7194,97 @@
           "name": {
             "type": "string"
           },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
+          "investment_value": {
             "type": "number",
             "format": "double"
+          },
+          "current_value": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "plan_info": {
+            "$ref": "#/components/schemas/SipPlanInformation"
+          },
+          "investment_info": {
+            "$ref": "#/components/schemas/SipInvestmentInformation"
+          },
+          "holder": {
+            "$ref": "#/components/schemas/Holder"
+          },
+          "transactions": {
+            "type": "boolean"
+          }
+        }
+      },
+      "SipInvestmentInformation": {
+        "type": "object",
+        "required": [
+          "instalment_amount",
+          "frequency",
+          "completed_instalments",
+          "investment_value"
+        ],
+        "properties": {
+          "instalment_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "completed_instalments": {
+            "type": "number",
+            "format": "double"
+          },
+          "investment_value": {
+            "type": "number",
+            "format": "double"
+          },
+          "last_instalment_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "next_instalment_date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "SipPlanInformation": {
+        "type": "object",
+        "required": [
+          "scheme",
+          "isin",
+          "dividend_type"
+        ],
+        "properties": {
+          "amc": {
+            "type": "string"
+          },
+          "registrar": {
+            "type": "string"
+          },
+          "scheme": {
+            "type": "string"
+          },
+          "isin": {
+            "type": "string"
+          },
+          "folio_number": {
+            "type": "string"
+          },
+          "nav": {
+            "type": "string"
+          },
+          "dividend_type": {
+            "type": "string"
+          },
+          "creation_date": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
@@ -9381,76 +7353,6 @@
             "items": {
               "$ref": "#/components/schemas/Identifier"
             }
-          }
-        }
-      },
-      "TermDeposit": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "TermDepositTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "Ulip": {
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "identifier",
-          "amount"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "identifier": {
-            "type": "string"
-          },
-          "amount": {
-            "type": "number",
-            "format": "double"
-          }
-        }
-      },
-      "UlipTransaction": {
-        "type": "object",
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
           }
         }
       },

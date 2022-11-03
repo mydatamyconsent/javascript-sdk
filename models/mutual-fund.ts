@@ -15,10 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MutualFundSummary } from './mutual-fund-summary';
-// May contain unused imports in some cases
-// @ts-ignore
-import { Profile } from './profile';
+import { Holder } from './holder';
 
 /**
  * 
@@ -40,45 +37,99 @@ export interface MutualFund {
     'name': string;
     /**
      * 
-     * @type {string}
+     * @type {number}
      * @memberof MutualFund
      */
-    'identifier': string;
+    'investment_value': number;
     /**
      * 
      * @type {number}
      * @memberof MutualFund
      */
-    'balance': number;
-    /**
-     * 
-     * @type {Profile}
-     * @memberof MutualFund
-     */
-    'profile': Profile;
-    /**
-     * 
-     * @type {MutualFundSummary}
-     * @memberof MutualFund
-     */
-    'summary': MutualFundSummary;
+    'current_value': number;
     /**
      * 
      * @type {string}
      * @memberof MutualFund
      */
-    'masked_account_number': string;
+    'currency_code': string;
     /**
      * 
      * @type {string}
      * @memberof MutualFund
      */
-    'linked_account_ref': string;
+    'amc'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'registrar'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'fund_name': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'isin': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'folio_number': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'scheme_code'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'fund_type'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'fund_category'?: string;
     /**
      * 
      * @type {number}
      * @memberof MutualFund
      */
-    'version': number;
+    'units': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'lien_units'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MutualFund
+     */
+    'creation_date'?: string;
+    /**
+     * 
+     * @type {Holder}
+     * @memberof MutualFund
+     */
+    'holder': Holder;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof MutualFund
+     */
+    'transactions': boolean;
 }
 

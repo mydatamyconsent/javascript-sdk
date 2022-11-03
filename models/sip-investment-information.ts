@@ -17,32 +17,44 @@
 /**
  * 
  * @export
- * @interface CIS
+ * @interface SipInvestmentInformation
  */
-export interface CIS {
-    /**
-     * 
-     * @type {string}
-     * @memberof CIS
-     */
-    'id': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CIS
-     */
-    'name': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CIS
-     */
-    'identifier': string;
+export interface SipInvestmentInformation {
     /**
      * 
      * @type {number}
-     * @memberof CIS
+     * @memberof SipInvestmentInformation
      */
-    'amount': number;
+    'instalment_amount': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipInvestmentInformation
+     */
+    'frequency': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof SipInvestmentInformation
+     */
+    'completed_instalments': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SipInvestmentInformation
+     */
+    'investment_value': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipInvestmentInformation
+     */
+    'last_instalment_date'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipInvestmentInformation
+     */
+    'next_instalment_date'?: string;
 }
 

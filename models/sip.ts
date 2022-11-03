@@ -13,6 +13,15 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { Holder } from './holder';
+// May contain unused imports in some cases
+// @ts-ignore
+import { SipInvestmentInformation } from './sip-investment-information';
+// May contain unused imports in some cases
+// @ts-ignore
+import { SipPlanInformation } from './sip-plan-information';
 
 /**
  * 
@@ -34,15 +43,45 @@ export interface Sip {
     'name': string;
     /**
      * 
-     * @type {string}
+     * @type {number}
      * @memberof Sip
      */
-    'identifier': string;
+    'investment_value': number;
     /**
      * 
      * @type {number}
      * @memberof Sip
      */
-    'amount': number;
+    'current_value': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Sip
+     */
+    'currency_code': string;
+    /**
+     * 
+     * @type {SipPlanInformation}
+     * @memberof Sip
+     */
+    'plan_info': SipPlanInformation;
+    /**
+     * 
+     * @type {SipInvestmentInformation}
+     * @memberof Sip
+     */
+    'investment_info': SipInvestmentInformation;
+    /**
+     * 
+     * @type {Holder}
+     * @memberof Sip
+     */
+    'holder': Holder;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Sip
+     */
+    'transactions': boolean;
 }
 

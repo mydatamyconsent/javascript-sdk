@@ -15,10 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EquitySummary } from './equity-summary';
-// May contain unused imports in some cases
-// @ts-ignore
-import { Profile } from './profile';
+import { Holder } from './holder';
 
 /**
  * 
@@ -43,42 +40,54 @@ export interface Equity {
      * @type {string}
      * @memberof Equity
      */
-    'identifier': string;
-    /**
-     * 
-     * @type {number}
-     * @memberof Equity
-     */
-    'balance': number;
-    /**
-     * 
-     * @type {Profile}
-     * @memberof Equity
-     */
-    'profile': Profile;
-    /**
-     * 
-     * @type {EquitySummary}
-     * @memberof Equity
-     */
-    'summary': EquitySummary;
+    'issuer_name': string;
     /**
      * 
      * @type {string}
      * @memberof Equity
      */
-    'masked_account_number': string;
+    'exchange': string;
     /**
      * 
      * @type {string}
      * @memberof Equity
      */
-    'linked_account_ref': string;
+    'isin': string;
     /**
      * 
      * @type {number}
      * @memberof Equity
      */
-    'version': number;
+    'units': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Equity
+     */
+    'investment_value': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Equity
+     */
+    'current_value': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Equity
+     */
+    'currency_code': string;
+    /**
+     * 
+     * @type {Holder}
+     * @memberof Equity
+     */
+    'holder': Holder;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof Equity
+     */
+    'transactions': boolean;
 }
 

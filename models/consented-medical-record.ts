@@ -39,6 +39,18 @@ export interface ConsentedMedicalRecord {
      */
     'fieldSlug': string;
     /**
+     * Issuer id.
+     * @type {string}
+     * @memberof ConsentedMedicalRecord
+     */
+    'issuerId': string;
+    /**
+     * Issuer name.
+     * @type {string}
+     * @memberof ConsentedMedicalRecord
+     */
+    'issuerName': string;
+    /**
      * health category type.
      * @type {string}
      * @memberof ConsentedMedicalRecord

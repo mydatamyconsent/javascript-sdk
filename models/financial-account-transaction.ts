@@ -15,82 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditCardTransactionType } from './credit-card-transaction-type';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountAifTransaction } from './financial-account-aif-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountBillPaymentTransaction } from './financial-account-bill-payment-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountBondTransaction } from './financial-account-bond-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountCISTransaction } from './financial-account-cistransaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountCertificateOfDepositTransaction } from './financial-account-certificate-of-deposit-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountCommercialPaperTransaction } from './financial-account-commercial-paper-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountCreditCardTransaction } from './financial-account-credit-card-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountDebentureTransaction } from './financial-account-debenture-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountDepositTransaction } from './financial-account-deposit-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountEpfTransaction } from './financial-account-epf-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FinancialAccountEquityTransaction } from './financial-account-equity-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountEtfTransaction } from './financial-account-etf-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountGovtSecurityTransaction } from './financial-account-govt-security-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountIdrTransaction } from './financial-account-idr-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountInsurancePolicyTransaction } from './financial-account-insurance-policy-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountInvitTransaction } from './financial-account-invit-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountLoanTransaction } from './financial-account-loan-transaction';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FinancialAccountMutualFundTransaction } from './financial-account-mutual-fund-transaction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FinancialAccountNpsTransaction } from './financial-account-nps-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountPpfTransaction } from './financial-account-ppf-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountRecurringDepositTransaction } from './financial-account-recurring-deposit-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountReitTransaction } from './financial-account-reit-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FinancialAccountSipTransaction } from './financial-account-sip-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountTermDepositTransaction } from './financial-account-term-deposit-transaction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountUlipTransaction } from './financial-account-ulip-transaction';
 // May contain unused imports in some cases
 // @ts-ignore
 import { MutualFundFundType } from './mutual-fund-fund-type';
@@ -128,54 +59,6 @@ export interface FinancialAccountTransaction {
      * @memberof FinancialAccountTransaction
      */
     'id': string;
-    /**
-     * 
-     * @type {CreditCardTransactionType}
-     * @memberof FinancialAccountTransaction
-     */
-    'txn_type': CreditCardTransactionType;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'txn_date': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'amount': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'value_date': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'narration': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'statement_date': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'mcc': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'masked_card_number': string;
     /**
      * 
      * @type {string}
@@ -247,6 +130,12 @@ export interface FinancialAccountTransaction {
      * @type {string}
      * @memberof FinancialAccountTransaction
      */
+    'amount': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FinancialAccountTransaction
+     */
     'closing_units': string;
     /**
      * 
@@ -296,5 +185,11 @@ export interface FinancialAccountTransaction {
      * @memberof FinancialAccountTransaction
      */
     'mode': MutualFundHoldingMode;
+    /**
+     * 
+     * @type {string}
+     * @memberof FinancialAccountTransaction
+     */
+    'narration': string;
 }
 
