@@ -15,9 +15,16 @@
 
 
 /**
- * @type FinancialAccountSipTransaction
+ * 
  * @export
+ * @interface FinancialAccountTransactionSipTransactionAllOf
  */
-export type FinancialAccountSipTransaction = FinancialAccountSipTransactionAllOf & SipTransaction;
-
+export interface FinancialAccountTransactionSipTransactionAllOf {
+    /**
+     * 
+     * @type {string}
+     * @memberof FinancialAccountTransactionSipTransactionAllOf
+     */
+    'type': string;
+}
 

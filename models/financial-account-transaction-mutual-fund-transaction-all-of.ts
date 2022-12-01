@@ -17,13 +17,13 @@
 /**
  * 
  * @export
- * @interface FinancialAccountEquityTransactionAllOf
+ * @interface FinancialAccountTransactionMutualFundTransactionAllOf
  */
-export interface FinancialAccountEquityTransactionAllOf {
+export interface FinancialAccountTransactionMutualFundTransactionAllOf {
     /**
      * 
      * @type {string}
-     * @memberof FinancialAccountEquityTransactionAllOf
+     * @memberof FinancialAccountTransactionMutualFundTransactionAllOf
      */
     'type': string;
 }

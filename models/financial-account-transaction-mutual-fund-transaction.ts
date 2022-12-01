@@ -36,9 +36,9 @@ import { MutualFundSchemeType } from './mutual-fund-scheme-type';
 import { MutualFundTransactionType } from './mutual-fund-transaction-type';
 
 /**
- * @type FinancialAccountMutualFundTransaction
+ * @type FinancialAccountTransactionMutualFundTransaction
  * @export
  */
-export type FinancialAccountMutualFundTransaction = FinancialAccountMutualFundTransactionAllOf & MutualFundTransaction;
+export type FinancialAccountTransactionMutualFundTransaction = FinancialAccountTransactionMutualFundTransactionAllOf & MutualFundTransaction;
 
 

@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FinancialAccountEquityTransaction } from './financial-account-equity-transaction';
+import { FinancialAccountTransactionEquityTransaction } from './financial-account-transaction-equity-transaction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FinancialAccountMutualFundTransaction } from './financial-account-mutual-fund-transaction';
+import { FinancialAccountTransactionMutualFundTransaction } from './financial-account-transaction-mutual-fund-transaction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FinancialAccountSipTransaction } from './financial-account-sip-transaction';
+import { FinancialAccountTransactionSipTransaction } from './financial-account-transaction-sip-transaction';
 // May contain unused imports in some cases
 // @ts-ignore
 import { MutualFundFundType } from './mutual-fund-fund-type';

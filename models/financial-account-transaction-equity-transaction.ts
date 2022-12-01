@@ -15,16 +15,9 @@
 
 
 /**
- * 
+ * @type FinancialAccountTransactionEquityTransaction
  * @export
- * @interface FinancialAccountMutualFundTransactionAllOf
  */
-export interface FinancialAccountMutualFundTransactionAllOf {
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountMutualFundTransactionAllOf
-     */
-    'type': string;
-}
+export type FinancialAccountTransactionEquityTransaction = EquityTransaction & FinancialAccountTransactionEquityTransactionAllOf;
+
 
