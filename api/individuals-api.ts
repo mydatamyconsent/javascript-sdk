@@ -37,6 +37,8 @@ import { DocumentIssueRequestDetails } from '../models';
 // @ts-ignore
 import { FinancialAccount } from '../models';
 // @ts-ignore
+import { HealthRecord } from '../models';
+// @ts-ignore
 import { IndividualConsentRequestDetails } from '../models';
 // @ts-ignore
 import { IndividualConsentRequestTemplateDetails } from '../models';
@@ -249,7 +251,7 @@ export const IndividualsApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
-         * @summary Get Individual data request by id.
+         * @summary Get Individual data consent request by id.
          * @param {string} requestId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -676,7 +678,7 @@ export const IndividualsApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
-         * @summary Get Individual consented document by consent id.
+         * @summary Get Individual consented Health Records by consent id.
          * @param {string} consentId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1071,7 +1073,7 @@ export const IndividualsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Get Individual data request by id.
+         * @summary Get Individual data consent request by id.
          * @param {string} requestId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1191,12 +1193,12 @@ export const IndividualsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Get Individual consented document by consent id.
+         * @summary Get Individual consented Health Records by consent id.
          * @param {string} consentId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<HealthRecord>>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1332,7 +1334,7 @@ export const IndividualsApiFactory = function (configuration?: Configuration, ba
         },
         /**
          * 
-         * @summary Get Individual data request by id.
+         * @summary Get Individual data consent request by id.
          * @param {string} requestId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1442,12 +1444,12 @@ export const IndividualsApiFactory = function (configuration?: Configuration, ba
         },
         /**
          * 
-         * @summary Get Individual consented document by consent id.
+         * @summary Get Individual consented Health Records by consent id.
          * @param {string} consentId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId: string, options?: any): AxiosPromise<any> {
+        v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId: string, options?: any): AxiosPromise<Array<HealthRecord>> {
             return localVarFp.v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1584,7 +1586,7 @@ export class IndividualsApi extends BaseAPI {
 
     /**
      * 
-     * @summary Get Individual data request by id.
+     * @summary Get Individual data consent request by id.
      * @param {string} requestId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -1714,7 +1716,7 @@ export class IndividualsApi extends BaseAPI {
 
     /**
      * 
-     * @summary Get Individual consented document by consent id.
+     * @summary Get Individual consented Health Records by consent id.
      * @param {string} consentId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

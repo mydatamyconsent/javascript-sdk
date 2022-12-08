@@ -11,7 +11,11 @@ base.ts
 common.ts
 configuration.ts
 index.ts
+models/allergy-details.ts
+models/allergy-intolerance-reaction.ts
 models/api-error-type.ts
+models/codeable-concept.ts
+models/coding.ts
 models/collectible-types.ts
 models/consent-details.ts
 models/consent-document-issuer.ts
@@ -65,6 +69,9 @@ models/financial-account-transaction-sip-transaction-all-of.ts
 models/financial-account-transaction-sip-transaction.ts
 models/financial-account-transaction.ts
 models/financial-account.ts
+models/health-record-allergy-details-all-of.ts
+models/health-record-allergy-details.ts
+models/health-record.ts
 models/holder.ts
 models/identification-strategy.ts
 models/identifier.ts
