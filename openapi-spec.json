@@ -1085,12 +1085,7 @@
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/HealthRecord"
-                  }
-                }
+                "schema": {}
               }
             }
           },
@@ -4527,64 +4522,6 @@
   },
   "components": {
     "schemas": {
-      "AllergyDetails": {
-        "type": "object",
-        "required": [
-          "id",
-          "category",
-          "reactions"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "$ref": "#/components/schemas/CodeableConcept"
-          },
-          "category": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "level_status": {
-            "type": "string"
-          },
-          "status": {
-            "$ref": "#/components/schemas/CodeableConcept"
-          },
-          "clinical_status": {
-            "$ref": "#/components/schemas/CodeableConcept"
-          },
-          "reactions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AllergyIntoleranceReaction"
-            }
-          },
-          "recorded_at_utc": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "AllergyIntoleranceReaction": {
-        "type": "object",
-        "required": [
-          "manifestation"
-        ],
-        "properties": {
-          "description": {
-            "type": "string"
-          },
-          "manifestation": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CodeableConcept"
-            }
-          }
-        }
-      },
       "ApiErrorType": {
         "type": "string",
         "enum": [
@@ -4595,40 +4532,6 @@
           "InternalServerError",
           "DataConsentRequestExists"
         ]
-      },
-      "CodeableConcept": {
-        "type": "object",
-        "properties": {
-          "coding": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Coding"
-            }
-          },
-          "id": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string"
-          }
-        }
-      },
-      "Coding": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string"
-          },
-          "display": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "system": {
-            "type": "string"
-          }
-        }
       },
       "CollectibleTypes": {
         "type": "string",
@@ -6121,39 +6024,6 @@
           },
           {
             "$ref": "#/components/schemas/Sip"
-          }
-        ]
-      },
-      "HealthRecord": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/HealthRecord_AllergyDetails"
-          }
-        ],
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Allergy": "#/components/schemas/HealthRecord_AllergyDetails"
-          }
-        }
-      },
-      "HealthRecord_AllergyDetails": {
-        "allOf": [
-          {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "example": "Allergy"
-              }
-            }
-          },
-          {
-            "$ref": "#/components/schemas/AllergyDetails"
           }
         ]
       },
