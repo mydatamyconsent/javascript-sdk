@@ -46,6 +46,7 @@ models/document-sub-category-type.ts
 models/document-type.ts
 models/equity-transaction.ts
 models/equity.ts
+models/fhir-bundleany.ts
 models/financial-account-category-type.ts
 models/financial-account-details-required.ts
 models/financial-account-equity-all-of.ts

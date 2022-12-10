@@ -33,6 +33,7 @@ export * from './document-sub-category-type';
 export * from './document-type';
 export * from './equity';
 export * from './equity-transaction';
+export * from './fhir-bundleany';
 export * from './financial-account';
 export * from './financial-account-category-type';
 export * from './financial-account-details-required';

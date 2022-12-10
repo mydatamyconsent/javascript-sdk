@@ -1085,7 +1085,9 @@
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/FhirBundle<any>"
+                }
               }
             }
           },
@@ -5767,6 +5769,26 @@
           },
           "error_type": {
             "$ref": "#/components/schemas/ApiErrorType"
+          }
+        }
+      },
+      "FhirBundle<any>": {
+        "type": "object",
+        "required": [
+          "resourceType",
+          "type",
+          "entry"
+        ],
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "entry": {
+            "type": "array",
+            "items": {}
           }
         }
       },

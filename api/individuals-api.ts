@@ -35,6 +35,8 @@ import { DocumentIssueRequest } from '../models';
 // @ts-ignore
 import { DocumentIssueRequestDetails } from '../models';
 // @ts-ignore
+import { FhirBundleany } from '../models';
+// @ts-ignore
 import { FinancialAccount } from '../models';
 // @ts-ignore
 import { IndividualConsentRequestDetails } from '../models';
@@ -1196,7 +1198,7 @@ export const IndividualsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+        async v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FhirBundleany>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -1447,7 +1449,7 @@ export const IndividualsApiFactory = function (configuration?: Configuration, ba
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId: string, options?: any): AxiosPromise<any> {
+        v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId: string, options?: any): AxiosPromise<FhirBundleany> {
             return localVarFp.v1IndividualsConsentsConsentIdHealthFhirBundleGet(consentId, options).then((request) => request(axios, basePath));
         },
         /**
