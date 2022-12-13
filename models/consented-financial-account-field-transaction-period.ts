@@ -15,9 +15,9 @@
 
 
 /**
- * @type ConsentedFinancialAccountTransactionPeriod
+ * @type ConsentedFinancialAccountFieldTransactionPeriod
  * @export
  */
-export type ConsentedFinancialAccountTransactionPeriod = FinancialAccountTransactionPeriod;
+export type ConsentedFinancialAccountFieldTransactionPeriod = FinancialAccountTransactionPeriod;
 
 

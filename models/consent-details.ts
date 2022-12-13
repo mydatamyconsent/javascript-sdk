@@ -21,7 +21,7 @@ import { CollectibleTypes } from './collectible-types';
 import { ConsentedDocument } from './consented-document';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ConsentedFinancialAccount } from './consented-financial-account';
+import { ConsentedFinancialAccountField } from './consented-financial-account-field';
 // May contain unused imports in some cases
 // @ts-ignore
 import { ConsentedIdentifier } from './consented-identifier';
@@ -130,9 +130,9 @@ export interface ConsentDetails {
     'medicalRecords'?: Array<ConsentedMedicalRecord>;
     /**
      * List of consented financial accounts.
-     * @type {Array<ConsentedFinancialAccount>}
+     * @type {Array<ConsentedFinancialAccountField>}
      * @memberof ConsentDetails
      */
-    'financialAccounts'?: Array<ConsentedFinancialAccount>;
+    'financialAccounts'?: Array<ConsentedFinancialAccountField>;
 }
 

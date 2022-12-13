@@ -15,13 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ConsentedFinancialAccountTransactionPeriod } from './consented-financial-account-transaction-period';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FinancialAccountCategoryType } from './financial-account-category-type';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FinancialAccountDetailsRequired } from './financial-account-details-required';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FinancialAccountSubCategoryType } from './financial-account-sub-category-type';
@@ -62,30 +56,6 @@ export interface ConsentedFinancialAccount {
      * @memberof ConsentedFinancialAccount
      */
     'identifier': string;
-    /**
-     * Financial account field title.
-     * @type {string}
-     * @memberof ConsentedFinancialAccount
-     */
-    'fieldTitle': string;
-    /**
-     * Financial account field slug.
-     * @type {string}
-     * @memberof ConsentedFinancialAccount
-     */
-    'fieldSlug': string;
-    /**
-     * Requested financial account details.
-     * @type {Array<FinancialAccountDetailsRequired>}
-     * @memberof ConsentedFinancialAccount
-     */
-    'requestedDetails': Array<FinancialAccountDetailsRequired>;
-    /**
-     * 
-     * @type {ConsentedFinancialAccountTransactionPeriod}
-     * @memberof ConsentedFinancialAccount
-     */
-    'transactionPeriod'?: ConsentedFinancialAccountTransactionPeriod;
     /**
      * Financial account issuer id.
      * @type {string}

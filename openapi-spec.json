@@ -4701,7 +4701,7 @@
             "type": "array",
             "description": "List of consented financial accounts.",
             "items": {
-              "$ref": "#/components/schemas/ConsentedFinancialAccount"
+              "$ref": "#/components/schemas/ConsentedFinancialAccountField"
             }
           }
         }
@@ -4985,9 +4985,6 @@
           "category",
           "subCategory",
           "identifier",
-          "fieldTitle",
-          "fieldSlug",
-          "requestedDetails",
           "issuerId",
           "issuerName"
         ],
@@ -5024,6 +5021,26 @@
             "type": "string",
             "description": "Financial account identifier."
           },
+          "issuerId": {
+            "type": "string",
+            "description": "Financial account issuer id."
+          },
+          "issuerName": {
+            "type": "string",
+            "description": "Financial account issuer name."
+          }
+        }
+      },
+      "ConsentedFinancialAccountField": {
+        "type": "object",
+        "description": "ConsentedFinancialAccountField : Consented financial account field details.",
+        "required": [
+          "fieldTitle",
+          "fieldSlug",
+          "requestedDetails",
+          "consentedAccounts"
+        ],
+        "properties": {
           "fieldTitle": {
             "type": "string",
             "description": "Financial account field title."
@@ -5049,13 +5066,12 @@
               }
             ]
           },
-          "issuerId": {
-            "type": "string",
-            "description": "Financial account issuer id."
-          },
-          "issuerName": {
-            "type": "string",
-            "description": "Financial account issuer name."
+          "consentedAccounts": {
+            "type": "array",
+            "description": "Consented financial accounts.",
+            "items": {
+              "$ref": "#/components/schemas/ConsentedFinancialAccount"
+            }
           }
         }
       },
@@ -7265,7 +7281,6 @@
         "type": "object",
         "description": "SelectedFinancialAccountType : Selected financial account type of financial account field of consent request template.",
         "required": [
-          "subCategory",
           "drns"
         ],
         "properties": {

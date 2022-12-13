@@ -21,7 +21,8 @@ models/consent-request-template.ts
 models/consent-request.ts
 models/consent.ts
 models/consented-document.ts
-models/consented-financial-account-transaction-period.ts
+models/consented-financial-account-field-transaction-period.ts
+models/consented-financial-account-field.ts
 models/consented-financial-account.ts
 models/consented-identifier.ts
 models/consented-medical-record.ts

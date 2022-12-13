@@ -28,7 +28,7 @@ export interface SelectedFinancialAccountType {
      * @type {FinancialAccountSubCategoryType}
      * @memberof SelectedFinancialAccountType
      */
-    'subCategory': FinancialAccountSubCategoryType;
+    'subCategory'?: FinancialAccountSubCategoryType;
     /**
      * DRNs.
      * @type {Array<string>}
