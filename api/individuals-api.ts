@@ -570,23 +570,23 @@ export const IndividualsApiAxiosParamCreator = function (configuration?: Configu
             await setOAuthToObject(localVarHeaderParameter, "OAuth2ClientCredentials", ["Individuals:Consents:Read"], configuration)
 
             if (filters !== undefined) {
-                localVarQueryParameter['filters'] = filters;
+                localVarQueryParameter['_filters'] = filters;
             }
 
             if (fromDateTime !== undefined) {
-                localVarQueryParameter['from_date_time'] = fromDateTime;
+                localVarQueryParameter['_from_date_time'] = fromDateTime;
             }
 
             if (toDateTime !== undefined) {
-                localVarQueryParameter['to_date_time'] = toDateTime;
+                localVarQueryParameter['_to_date_time'] = toDateTime;
             }
 
             if (pageNo !== undefined) {
-                localVarQueryParameter['page_no'] = pageNo;
+                localVarQueryParameter['_page_no'] = pageNo;
             }
 
             if (pageSize !== undefined) {
-                localVarQueryParameter['page_size'] = pageSize;
+                localVarQueryParameter['_page_size'] = pageSize;
             }
 
 
