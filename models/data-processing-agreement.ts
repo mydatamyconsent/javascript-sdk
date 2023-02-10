@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { IssuerType } from './issuer-type';
 
 /**
  * DataProcessingAgreement : Data processing agreement details.
@@ -27,22 +30,22 @@ export interface DataProcessingAgreement {
      */
     'id': string;
     /**
-     * Agreement version.
+     * Agreement name.
      * @type {string}
      * @memberof DataProcessingAgreement
      */
-    'version': string;
+    'name': string;
     /**
-     * Agreement body content.
-     * @type {string}
+     * 
+     * @type {IssuerType}
      * @memberof DataProcessingAgreement
      */
-    'body': string;
+    'issuerType': IssuerType;
     /**
      * Agreement attachment file URL.
      * @type {string}
      * @memberof DataProcessingAgreement
      */
-    'attachmentUrl': string;
+    'agreementUrl': string;
 }
 

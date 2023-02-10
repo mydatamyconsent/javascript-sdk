@@ -5171,20 +5171,19 @@
         "type": "object",
         "description": "CreateDataProcessingAgreement : Create data processing agreement details.",
         "required": [
-          "version",
-          "body",
-          "attachmentUrl"
+          "name",
+          "issuerType",
+          "agreementUrl"
         ],
         "properties": {
-          "version": {
+          "name": {
             "type": "string",
-            "description": "Agreement version."
+            "description": "Agreement version.\nAgreement body content."
           },
-          "body": {
-            "type": "string",
-            "description": "Agreement body content."
+          "issuerType": {
+            "$ref": "#/components/schemas/IssuerType"
           },
-          "attachmentUrl": {
+          "agreementUrl": {
             "type": "string",
             "description": "Agreement attachment file URL."
           }
@@ -5207,24 +5206,23 @@
         "description": "DataProcessingAgreement : Data processing agreement details.",
         "required": [
           "id",
-          "version",
-          "body",
-          "attachmentUrl"
+          "name",
+          "issuerType",
+          "agreementUrl"
         ],
         "properties": {
           "id": {
             "type": "string",
             "description": "Agreement id."
           },
-          "version": {
+          "name": {
             "type": "string",
-            "description": "Agreement version."
+            "description": "Agreement name."
           },
-          "body": {
-            "type": "string",
-            "description": "Agreement body content."
+          "issuerType": {
+            "$ref": "#/components/schemas/IssuerType"
           },
-          "attachmentUrl": {
+          "agreementUrl": {
             "type": "string",
             "description": "Agreement attachment file URL."
           }
@@ -6393,6 +6391,13 @@
           }
         }
       },
+      "IssuerType": {
+        "type": "string",
+        "enum": [
+          "Individual",
+          "Organization"
+        ]
+      },
       "KeyValuePair": {
         "type": "object",
         "required": [
@@ -7489,20 +7494,19 @@
         "type": "object",
         "description": "UpdateDataProcessingAgreement : Update data processing agreement details.",
         "required": [
-          "version",
-          "body",
-          "attachmentUrl"
+          "name",
+          "issuerType",
+          "agreementUrl"
         ],
         "properties": {
-          "version": {
+          "name": {
             "type": "string",
-            "description": "Agreement version."
+            "description": "Agreement version.\nAgreement body content."
           },
-          "body": {
-            "type": "string",
-            "description": "Agreement body content."
+          "issuerType": {
+            "$ref": "#/components/schemas/IssuerType"
           },
-          "attachmentUrl": {
+          "agreementUrl": {
             "type": "string",
             "description": "Agreement attachment file URL."
           }

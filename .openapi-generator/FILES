@@ -78,6 +78,7 @@ models/individual-consent-request-template-details-data-life.ts
 models/individual-consent-request-template-details-request-life.ts
 models/individual-consent-request-template-details.ts
 models/issued-document.ts
+models/issuer-type.ts
 models/key-value-pair.ts
 models/life.ts
 models/medical-record-field.ts

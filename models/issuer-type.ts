@@ -13,33 +13,19 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { IssuerType } from './issuer-type';
 
 /**
- * CreateDataProcessingAgreement : Create data processing agreement details.
+ * 
  * @export
- * @interface CreateDataProcessingAgreement
+ * @enum {string}
  */
-export interface CreateDataProcessingAgreement {
-    /**
-     * Agreement version. Agreement body content.
-     * @type {string}
-     * @memberof CreateDataProcessingAgreement
-     */
-    'name': string;
-    /**
-     * 
-     * @type {IssuerType}
-     * @memberof CreateDataProcessingAgreement
-     */
-    'issuerType': IssuerType;
-    /**
-     * Agreement attachment file URL.
-     * @type {string}
-     * @memberof CreateDataProcessingAgreement
-     */
-    'agreementUrl': string;
-}
+
+export const IssuerType = {
+    Individual: 'Individual',
+    Organization: 'Organization'
+} as const;
+
+export type IssuerType = typeof IssuerType[keyof typeof IssuerType];
+
+
 

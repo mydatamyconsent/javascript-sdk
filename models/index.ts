@@ -64,6 +64,7 @@ export * from './individual-consent-request-template-details-data-frequency';
 export * from './individual-consent-request-template-details-data-life';
 export * from './individual-consent-request-template-details-request-life';
 export * from './issued-document';
+export * from './issuer-type';
 export * from './key-value-pair';
 export * from './life';
 export * from './medical-record-field';
