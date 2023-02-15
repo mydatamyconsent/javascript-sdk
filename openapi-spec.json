@@ -115,7 +115,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -194,7 +194,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -271,7 +271,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -392,7 +392,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -471,7 +471,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -550,7 +550,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -673,7 +673,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -752,7 +752,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -834,7 +834,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -923,7 +923,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1022,7 +1022,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1101,7 +1101,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1183,7 +1183,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1272,7 +1272,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1413,7 +1413,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1504,7 +1504,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1627,7 +1627,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1706,7 +1706,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1783,7 +1783,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1881,7 +1881,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -1972,7 +1972,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2051,7 +2051,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2128,7 +2128,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2249,7 +2249,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2328,7 +2328,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2407,7 +2407,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2530,7 +2530,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2609,7 +2609,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2691,7 +2691,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2780,7 +2780,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2879,7 +2879,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -2961,7 +2961,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3050,7 +3050,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3191,7 +3191,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3282,7 +3282,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3405,7 +3405,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3484,7 +3484,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3561,7 +3561,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3659,7 +3659,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3750,7 +3750,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3785,81 +3785,6 @@
           {
             "OAuth2ClientCredentials": [
               "DataProcessingAgreements:Read"
-            ]
-          }
-        ]
-      },
-      "post": {
-        "tags": [
-          "DataProcessingAgreements"
-        ],
-        "summary": "Create a data processing agreement.",
-        "requestBody": {
-          "content": {
-            "application/json; charset=utf-8": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateDataProcessingAgreement"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/DataProcessingAgreement"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "OAuth2ClientCredentials": [
-              "DataProcessingAgreements:Write"
             ]
           }
         ]
@@ -3904,7 +3829,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -3939,93 +3864,6 @@
           {
             "OAuth2ClientCredentials": [
               "DataProcessingAgreements:Read"
-            ]
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "DataProcessingAgreements"
-        ],
-        "summary": "Update data processing agreement.",
-        "parameters": [
-          {
-            "name": "id",
-            "schema": {
-              "type": "string"
-            },
-            "in": "path",
-            "required": true,
-            "deprecated": false,
-            "explode": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json; charset=utf-8": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateDataProcessingAgreement"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/DataProcessingAgreement"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "OAuth2ClientCredentials": [
-              "DataProcessingAgreements:Write"
             ]
           }
         ]
@@ -4068,7 +3906,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -4147,7 +3985,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -4248,7 +4086,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -4327,7 +4165,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -4404,7 +4242,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -4481,7 +4319,7 @@
               }
             }
           },
-          "403": {
+          "401": {
             "description": "",
             "content": {
               "application/json; charset=utf-8": {
@@ -5164,28 +5002,6 @@
           },
           "receiver": {
             "$ref": "#/components/schemas/ConsentRequestReceiver"
-          }
-        }
-      },
-      "CreateDataProcessingAgreement": {
-        "type": "object",
-        "description": "CreateDataProcessingAgreement : Create data processing agreement details.",
-        "required": [
-          "name",
-          "issuerType",
-          "agreementUrl"
-        ],
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Agreement version.\nAgreement body content."
-          },
-          "issuerType": {
-            "$ref": "#/components/schemas/IssuerType"
-          },
-          "agreementUrl": {
-            "type": "string",
-            "description": "Agreement attachment file URL."
           }
         }
       },
@@ -7487,28 +7303,6 @@
             "items": {
               "$ref": "#/components/schemas/Identifier"
             }
-          }
-        }
-      },
-      "UpdateDataProcessingAgreement": {
-        "type": "object",
-        "description": "UpdateDataProcessingAgreement : Update data processing agreement details.",
-        "required": [
-          "name",
-          "issuerType",
-          "agreementUrl"
-        ],
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Agreement version.\nAgreement body content."
-          },
-          "issuerType": {
-            "$ref": "#/components/schemas/IssuerType"
-          },
-          "agreementUrl": {
-            "type": "string",
-            "description": "Agreement attachment file URL."
           }
         }
       },

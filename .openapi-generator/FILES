@@ -27,7 +27,6 @@ models/consented-financial-account.ts
 models/consented-identifier.ts
 models/consented-medical-record.ts
 models/create-consent-request.ts
-models/create-data-processing-agreement.ts
 models/data-consent-status.ts
 models/data-processing-agreement.ts
 models/data-protection-officer.ts
@@ -115,7 +114,6 @@ models/sip.ts
 models/supported-document-type.ts
 models/supported-entity-type.ts
 models/supported-identifier.ts
-models/update-data-processing-agreement.ts
 models/upload-document-response.ts
 models/uri-details.ts
 package.json
