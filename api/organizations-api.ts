@@ -492,7 +492,6 @@ export const OrganizationsApiAxiosParamCreator = function (configuration?: Confi
          * @summary Get organization consented financial account transactions.
          * @param {string} consentId 
          * @param {string} accountId 
-         * @param {string} [filters] 
          * @param {string} [fromDateTime] 
          * @param {string} [toDateTime] 
          * @param {number} [pageNo] 
@@ -500,7 +499,7 @@ export const OrganizationsApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet: async (consentId: string, accountId: string, filters?: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet: async (consentId: string, accountId: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'consentId' is not null or undefined
             assertParamExists('v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet', 'consentId', consentId)
             // verify required parameter 'accountId' is not null or undefined
@@ -523,24 +522,24 @@ export const OrganizationsApiAxiosParamCreator = function (configuration?: Confi
             // oauth required
             await setOAuthToObject(localVarHeaderParameter, "OAuth2ClientCredentials", ["Organizations:Consents:Read"], configuration)
 
-            if (filters !== undefined) {
-                localVarQueryParameter['_filters'] = filters;
-            }
-
             if (fromDateTime !== undefined) {
-                localVarQueryParameter['_from_date_time'] = fromDateTime;
+                localVarQueryParameter['from_date_time'] = (fromDateTime as any instanceof Date) ?
+                    (fromDateTime as any).toISOString() :
+                    fromDateTime;
             }
 
             if (toDateTime !== undefined) {
-                localVarQueryParameter['_to_date_time'] = toDateTime;
+                localVarQueryParameter['to_date_time'] = (toDateTime as any instanceof Date) ?
+                    (toDateTime as any).toISOString() :
+                    toDateTime;
             }
 
             if (pageNo !== undefined) {
-                localVarQueryParameter['_page_no'] = pageNo;
+                localVarQueryParameter['page_no'] = pageNo;
             }
 
             if (pageSize !== undefined) {
-                localVarQueryParameter['_page_size'] = pageSize;
+                localVarQueryParameter['page_size'] = pageSize;
             }
 
 
@@ -1062,7 +1061,6 @@ export const OrganizationsApiFp = function(configuration?: Configuration) {
          * @summary Get organization consented financial account transactions.
          * @param {string} consentId 
          * @param {string} accountId 
-         * @param {string} [filters] 
          * @param {string} [fromDateTime] 
          * @param {string} [toDateTime] 
          * @param {number} [pageNo] 
@@ -1070,8 +1068,8 @@ export const OrganizationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaginatedListOfFinancialAccountTransactions>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId, accountId, filters, fromDateTime, toDateTime, pageNo, pageSize, options);
+        async v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId: string, accountId: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaginatedListOfFinancialAccountTransactions>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId, accountId, fromDateTime, toDateTime, pageNo, pageSize, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -1295,7 +1293,6 @@ export const OrganizationsApiFactory = function (configuration?: Configuration, 
          * @summary Get organization consented financial account transactions.
          * @param {string} consentId 
          * @param {string} accountId 
-         * @param {string} [filters] 
          * @param {string} [fromDateTime] 
          * @param {string} [toDateTime] 
          * @param {number} [pageNo] 
@@ -1303,8 +1300,8 @@ export const OrganizationsApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<PaginatedListOfFinancialAccountTransactions> {
-            return localVarFp.v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId, accountId, filters, fromDateTime, toDateTime, pageNo, pageSize, options).then((request) => request(axios, basePath));
+        v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId: string, accountId: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: any): AxiosPromise<PaginatedListOfFinancialAccountTransactions> {
+            return localVarFp.v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId, accountId, fromDateTime, toDateTime, pageNo, pageSize, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1539,7 +1536,6 @@ export class OrganizationsApi extends BaseAPI {
      * @summary Get organization consented financial account transactions.
      * @param {string} consentId 
      * @param {string} accountId 
-     * @param {string} [filters] 
      * @param {string} [fromDateTime] 
      * @param {string} [toDateTime] 
      * @param {number} [pageNo] 
@@ -1548,8 +1544,8 @@ export class OrganizationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof OrganizationsApi
      */
-    public v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId: string, accountId: string, filters?: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: AxiosRequestConfig) {
-        return OrganizationsApiFp(this.configuration).v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId, accountId, filters, fromDateTime, toDateTime, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
+    public v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId: string, accountId: string, fromDateTime?: string, toDateTime?: string, pageNo?: number, pageSize?: number, options?: AxiosRequestConfig) {
+        return OrganizationsApiFp(this.configuration).v1OrganizationsConsentsConsentIdFinancialAccountsAccountIdTransactionsGet(consentId, accountId, fromDateTime, toDateTime, pageNo, pageSize, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

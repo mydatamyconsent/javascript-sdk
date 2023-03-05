@@ -17,15 +17,14 @@
 /**
  * 
  * @export
- * @enum {string}
+ * @interface FinancialAccountTransactionTermDepositTransactionAllOf
  */
-
-export const MutualFundSchemePlan = {
-    Direct: 'Direct',
-    Regular: 'Regular'
-} as const;
-
-export type MutualFundSchemePlan = typeof MutualFundSchemePlan[keyof typeof MutualFundSchemePlan];
-
-
+export interface FinancialAccountTransactionTermDepositTransactionAllOf {
+    /**
+     * 
+     * @type {string}
+     * @memberof FinancialAccountTransactionTermDepositTransactionAllOf
+     */
+    'type': string;
+}
 

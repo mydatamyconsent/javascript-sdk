@@ -13,14 +13,23 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { SipTransactionType } from './sip-transaction-type';
 
 /**
- * @type FinancialAccountTransactionSipTransaction
+ * 
  * @export
+ * @enum {string}
  */
-export type FinancialAccountTransactionSipTransaction = FinancialAccountTransactionSipTransactionAllOf & SipTransaction;
+
+export const TermDepositTransactionMode = {
+    Cash: 'Cash',
+    Atm: 'Atm',
+    CardPayment: 'CardPayment',
+    Upi: 'Upi',
+    Ft: 'Ft',
+    Others: 'Others'
+} as const;
+
+export type TermDepositTransactionMode = typeof TermDepositTransactionMode[keyof typeof TermDepositTransactionMode];
+
 
 

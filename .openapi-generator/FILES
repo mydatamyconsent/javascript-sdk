@@ -45,6 +45,7 @@ models/document-receiver.ts
 models/document-sub-category-type.ts
 models/document-type.ts
 models/equity-transaction.ts
+models/equity-transactions-type.ts
 models/equity.ts
 models/fhir-bundleany.ts
 models/financial-account-category-type.ts
@@ -64,6 +65,8 @@ models/financial-account-transaction-mutual-fund-transaction.ts
 models/financial-account-transaction-period.ts
 models/financial-account-transaction-sip-transaction-all-of.ts
 models/financial-account-transaction-sip-transaction.ts
+models/financial-account-transaction-term-deposit-transaction-all-of.ts
+models/financial-account-transaction-term-deposit-transaction.ts
 models/financial-account-transaction.ts
 models/financial-account.ts
 models/holder.ts
@@ -82,12 +85,6 @@ models/key-value-pair.ts
 models/life.ts
 models/medical-record-field.ts
 models/model-error.ts
-models/mutual-fund-fund-type.ts
-models/mutual-fund-holding-mode.ts
-models/mutual-fund-scheme-category.ts
-models/mutual-fund-scheme-option.ts
-models/mutual-fund-scheme-plan.ts
-models/mutual-fund-scheme-type.ts
 models/mutual-fund-transaction-type.ts
 models/mutual-fund-transaction.ts
 models/mutual-fund.ts
@@ -109,11 +106,15 @@ models/push-uri-response.ts
 models/selected-financial-account-type.ts
 models/sip-investment-information.ts
 models/sip-plan-information.ts
+models/sip-transaction-type.ts
 models/sip-transaction.ts
 models/sip.ts
 models/supported-document-type.ts
 models/supported-entity-type.ts
 models/supported-identifier.ts
+models/term-deposit-transaction-mode.ts
+models/term-deposit-transaction-type.ts
+models/term-deposit-transaction.ts
 models/upload-document-response.ts
 models/uri-details.ts
 package.json

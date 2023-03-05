@@ -24,22 +24,13 @@ import { FinancialAccountTransactionMutualFundTransaction } from './financial-ac
 import { FinancialAccountTransactionSipTransaction } from './financial-account-transaction-sip-transaction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MutualFundFundType } from './mutual-fund-fund-type';
+import { FinancialAccountTransactionTermDepositTransaction } from './financial-account-transaction-term-deposit-transaction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MutualFundHoldingMode } from './mutual-fund-holding-mode';
+import { TermDepositTransactionMode } from './term-deposit-transaction-mode';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MutualFundSchemeCategory } from './mutual-fund-scheme-category';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MutualFundSchemeOption } from './mutual-fund-scheme-option';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MutualFundSchemePlan } from './mutual-fund-scheme-plan';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MutualFundSchemeType } from './mutual-fund-scheme-type';
+import { TermDepositTransactionType } from './term-deposit-transaction-type';
 
 /**
  * 
@@ -61,135 +52,45 @@ export interface FinancialAccountTransaction {
     'id': string;
     /**
      * 
-     * @type {string}
+     * @type {number}
      * @memberof FinancialAccountTransaction
      */
-    'amc': string;
+    'amount': number;
     /**
      * 
      * @type {string}
      * @memberof FinancialAccountTransaction
      */
-    'registrar': string;
+    'currency_code': string;
+    /**
+     * 
+     * @type {TermDepositTransactionType}
+     * @memberof FinancialAccountTransaction
+     */
+    'txn_type': TermDepositTransactionType;
     /**
      * 
      * @type {string}
      * @memberof FinancialAccountTransaction
      */
-    'scheme_code': string;
-    /**
-     * 
-     * @type {MutualFundSchemePlan}
-     * @memberof FinancialAccountTransaction
-     */
-    'scheme_plan': MutualFundSchemePlan;
+    'units': string;
     /**
      * 
      * @type {string}
      * @memberof FinancialAccountTransaction
      */
-    'isin': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'amfi_code': string;
-    /**
-     * 
-     * @type {MutualFundFundType}
-     * @memberof FinancialAccountTransaction
-     */
-    'fund_type': MutualFundFundType;
-    /**
-     * 
-     * @type {MutualFundSchemeOption}
-     * @memberof FinancialAccountTransaction
-     */
-    'scheme_option': MutualFundSchemeOption;
-    /**
-     * 
-     * @type {MutualFundSchemeType}
-     * @memberof FinancialAccountTransaction
-     */
-    'scheme_types': MutualFundSchemeType;
-    /**
-     * 
-     * @type {MutualFundSchemeCategory}
-     * @memberof FinancialAccountTransaction
-     */
-    'scheme_category': MutualFundSchemeCategory;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'ucc': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'amount': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'closing_units': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'lien_units': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'nav': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'nav_date': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'order_date': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'execution_date': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'lockin_flag': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FinancialAccountTransaction
-     */
-    'lockin_days': string;
-    /**
-     * 
-     * @type {MutualFundHoldingMode}
-     * @memberof FinancialAccountTransaction
-     */
-    'mode': MutualFundHoldingMode;
+    'transacted_at_utc': string;
     /**
      * 
      * @type {string}
      * @memberof FinancialAccountTransaction
      */
     'narration': string;
+    /**
+     * 
+     * @type {TermDepositTransactionMode}
+     * @memberof FinancialAccountTransaction
+     */
+    'mode': TermDepositTransactionMode;
 }
 

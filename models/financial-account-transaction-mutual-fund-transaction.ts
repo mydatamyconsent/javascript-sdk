@@ -15,24 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MutualFundFundType } from './mutual-fund-fund-type';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MutualFundHoldingMode } from './mutual-fund-holding-mode';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MutualFundSchemeCategory } from './mutual-fund-scheme-category';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MutualFundSchemeOption } from './mutual-fund-scheme-option';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MutualFundSchemePlan } from './mutual-fund-scheme-plan';
-// May contain unused imports in some cases
-// @ts-ignore
-import { MutualFundSchemeType } from './mutual-fund-scheme-type';
-// May contain unused imports in some cases
-// @ts-ignore
 import { MutualFundTransactionType } from './mutual-fund-transaction-type';
 
 /**

@@ -20,12 +20,13 @@
  * @enum {string}
  */
 
-export const MutualFundHoldingMode = {
-    Demat: 'Demat',
-    Physical: 'Physical'
+export const SipTransactionType = {
+    Buy: 'Buy',
+    Sell: 'Sell',
+    Others: 'Others'
 } as const;
 
-export type MutualFundHoldingMode = typeof MutualFundHoldingMode[keyof typeof MutualFundHoldingMode];
+export type SipTransactionType = typeof SipTransactionType[keyof typeof SipTransactionType];
 
 
 

@@ -13,22 +13,17 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { TermDepositTransactionMode } from './term-deposit-transaction-mode';
+// May contain unused imports in some cases
+// @ts-ignore
+import { TermDepositTransactionType } from './term-deposit-transaction-type';
 
 /**
- * 
+ * @type FinancialAccountTransactionTermDepositTransaction
  * @export
- * @enum {string}
  */
-
-export const MutualFundSchemeType = {
-    EquitySchemes: 'EquitySchemes',
-    DebtSchemes: 'DebtSchemes',
-    HybridSchemes: 'HybridSchemes',
-    SolutionOrientedSchemes: 'SolutionOrientedSchemes',
-    OtherSchemes: 'OtherSchemes'
-} as const;
-
-export type MutualFundSchemeType = typeof MutualFundSchemeType[keyof typeof MutualFundSchemeType];
-
+export type FinancialAccountTransactionTermDepositTransaction = FinancialAccountTransactionTermDepositTransactionAllOf & TermDepositTransaction;
 
 

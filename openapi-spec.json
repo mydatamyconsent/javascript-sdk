@@ -1340,9 +1340,10 @@
             "explode": true
           },
           {
-            "name": "_filters",
+            "name": "from_date_time",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "date-time"
             },
             "in": "query",
             "required": false,
@@ -1350,9 +1351,10 @@
             "explode": true
           },
           {
-            "name": "_from_date_time",
+            "name": "to_date_time",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "date-time"
             },
             "in": "query",
             "required": false,
@@ -1360,17 +1362,7 @@
             "explode": true
           },
           {
-            "name": "_to_date_time",
-            "schema": {
-              "type": "string"
-            },
-            "in": "query",
-            "required": false,
-            "deprecated": false,
-            "explode": true
-          },
-          {
-            "name": "_page_no",
+            "name": "page_no",
             "schema": {
               "type": "integer",
               "format": "uint64"
@@ -1381,7 +1373,7 @@
             "explode": true
           },
           {
-            "name": "_page_size",
+            "name": "page_size",
             "schema": {
               "type": "integer",
               "format": "uint64"
@@ -3118,9 +3110,10 @@
             "explode": true
           },
           {
-            "name": "_filters",
+            "name": "from_date_time",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "date-time"
             },
             "in": "query",
             "required": false,
@@ -3128,9 +3121,10 @@
             "explode": true
           },
           {
-            "name": "_from_date_time",
+            "name": "to_date_time",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "date-time"
             },
             "in": "query",
             "required": false,
@@ -3138,17 +3132,7 @@
             "explode": true
           },
           {
-            "name": "_to_date_time",
-            "schema": {
-              "type": "string"
-            },
-            "in": "query",
-            "required": false,
-            "deprecated": false,
-            "explode": true
-          },
-          {
-            "name": "_page_no",
+            "name": "page_no",
             "schema": {
               "type": "integer",
               "format": "uint64"
@@ -3159,7 +3143,7 @@
             "explode": true
           },
           {
-            "name": "_page_size",
+            "name": "page_size",
             "schema": {
               "type": "integer",
               "format": "uint64"
@@ -5574,13 +5558,46 @@
       "EquityTransaction": {
         "type": "object",
         "required": [
-          "id"
+          "id",
+          "amount",
+          "currency_code",
+          "txn_type",
+          "units",
+          "transacted_at_utc"
         ],
         "properties": {
           "id": {
             "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "txn_type": {
+            "$ref": "#/components/schemas/EquityTransactionsType"
+          },
+          "units": {
+            "type": "string"
+          },
+          "transacted_at_utc": {
+            "type": "string",
+            "format": "date-time"
           }
         }
+      },
+      "EquityTransactionsType": {
+        "type": "string",
+        "enum": [
+          "Buy",
+          "Sell",
+          "Bonus",
+          "Split",
+          "Dividend",
+          "Rights",
+          "Others"
+        ]
       },
       "Error": {
         "type": "object",
@@ -5736,6 +5753,9 @@
           },
           {
             "$ref": "#/components/schemas/FinancialAccountTransaction_SipTransaction"
+          },
+          {
+            "$ref": "#/components/schemas/FinancialAccountTransaction_TermDepositTransaction"
           }
         ],
         "discriminator": {
@@ -5743,7 +5763,8 @@
           "mapping": {
             "EquityTransaction": "#/components/schemas/FinancialAccountTransaction_EquityTransaction",
             "MutualFundTransaction": "#/components/schemas/FinancialAccountTransaction_MutualFundTransaction",
-            "SipTransaction": "#/components/schemas/FinancialAccountTransaction_SipTransaction"
+            "SipTransaction": "#/components/schemas/FinancialAccountTransaction_SipTransaction",
+            "TermDepositTransaction": "#/components/schemas/FinancialAccountTransaction_TermDepositTransaction"
           }
         }
       },
@@ -5819,6 +5840,25 @@
           },
           {
             "$ref": "#/components/schemas/SipTransaction"
+          }
+        ]
+      },
+      "FinancialAccountTransaction_TermDepositTransaction": {
+        "allOf": [
+          {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "TermDepositTransaction"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/TermDepositTransaction"
           }
         ]
       },
@@ -6349,194 +6389,35 @@
           }
         }
       },
-      "MutualFundFundType": {
-        "type": "string",
-        "enum": [
-          "Equity",
-          "Debt",
-          "Hybrid",
-          "SolutionOrientedSchemes",
-          "Others"
-        ]
-      },
-      "MutualFundHoldingMode": {
-        "type": "string",
-        "enum": [
-          "Demat",
-          "Physical"
-        ]
-      },
-      "MutualFundSchemeCategory": {
-        "type": "string",
-        "enum": [
-          "MultiCapFund",
-          "LargeCapFund",
-          "LargeAndMidCapFund",
-          "MidcapFund",
-          "SmallCapFund",
-          "DividendYieldFund",
-          "ValueFund",
-          "ContraFund",
-          "FocusedFund",
-          "SectoralOrThematic",
-          "Elss",
-          "OvernightFund",
-          "LiquidFund",
-          "UltraShortDurationFund",
-          "LowDurationFund",
-          "MoneyMarketFund",
-          "ShortDurationFund",
-          "MediumDurationFund",
-          "MediumToLongDurationFund",
-          "LongDurationFund",
-          "DynamicBond",
-          "CorporateBondFund",
-          "CreditRiskFund",
-          "BankingAndPsuFund",
-          "GiltFund",
-          "GiltFundWith10YearConstantDuration",
-          "FloaterFund",
-          "ConservativeHybridFund",
-          "BalancedHybridFund",
-          "AggressiveHybridFund",
-          "DynamicAssetAllocationOrBalancedAdvantage",
-          "MultiAssetAllocation",
-          "ArbitrageFund",
-          "EquitySavings",
-          "RetirementFund",
-          "ChildrensFund",
-          "IndexFundsOrEtfs",
-          "FofsOverseasOrDomestic"
-        ]
-      },
-      "MutualFundSchemeOption": {
-        "type": "string",
-        "enum": [
-          "Reinvest",
-          "Payout",
-          "GrowthType"
-        ]
-      },
-      "MutualFundSchemePlan": {
-        "type": "string",
-        "enum": [
-          "Direct",
-          "Regular"
-        ]
-      },
-      "MutualFundSchemeType": {
-        "type": "string",
-        "enum": [
-          "EquitySchemes",
-          "DebtSchemes",
-          "HybridSchemes",
-          "SolutionOrientedSchemes",
-          "OtherSchemes"
-        ]
-      },
       "MutualFundTransaction": {
         "type": "object",
         "required": [
           "id",
-          "amc",
-          "registrar",
-          "scheme_code",
-          "scheme_plan",
-          "isin",
-          "amfi_code",
-          "fund_type",
-          "scheme_option",
-          "scheme_types",
-          "scheme_category",
-          "ucc",
           "amount",
-          "closing_units",
-          "lien_units",
-          "nav",
-          "nav_date",
-          "type",
-          "order_date",
-          "execution_date",
-          "lockin_flag",
-          "lockin_days",
-          "mode",
-          "narration"
+          "currency_code",
+          "txn_type",
+          "units",
+          "transacted_at_utc"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "amc": {
-            "type": "string"
-          },
-          "registrar": {
-            "type": "string"
-          },
-          "scheme_code": {
-            "type": "string"
-          },
-          "scheme_plan": {
-            "$ref": "#/components/schemas/MutualFundSchemePlan"
-          },
-          "isin": {
-            "type": "string"
-          },
-          "amfi_code": {
-            "type": "string"
-          },
-          "fund_type": {
-            "$ref": "#/components/schemas/MutualFundFundType"
-          },
-          "scheme_option": {
-            "$ref": "#/components/schemas/MutualFundSchemeOption"
-          },
-          "scheme_types": {
-            "$ref": "#/components/schemas/MutualFundSchemeType"
-          },
-          "scheme_category": {
-            "$ref": "#/components/schemas/MutualFundSchemeCategory"
-          },
-          "ucc": {
-            "type": "string"
-          },
           "amount": {
             "type": "string"
           },
-          "closing_units": {
+          "currency_code": {
             "type": "string"
           },
-          "lien_units": {
-            "type": "string"
-          },
-          "nav": {
-            "type": "string"
-          },
-          "nav_date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "type": {
+          "txn_type": {
             "$ref": "#/components/schemas/MutualFundTransactionType"
           },
-          "order_date": {
+          "units": {
+            "type": "string"
+          },
+          "transacted_at_utc": {
             "type": "string",
             "format": "date-time"
-          },
-          "execution_date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "lockin_flag": {
-            "type": "string"
-          },
-          "lockin_days": {
-            "type": "string"
-          },
-          "mode": {
-            "$ref": "#/components/schemas/MutualFundHoldingMode"
-          },
-          "narration": {
-            "type": "string"
           }
         }
       },
@@ -7241,13 +7122,39 @@
       "SipTransaction": {
         "type": "object",
         "required": [
-          "id"
+          "id",
+          "amount",
+          "currency_code",
+          "txn_type",
+          "transacted_at_utc"
         ],
         "properties": {
           "id": {
             "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "txn_type": {
+            "$ref": "#/components/schemas/SipTransactionType"
+          },
+          "transacted_at_utc": {
+            "type": "string",
+            "format": "date-time"
           }
         }
+      },
+      "SipTransactionType": {
+        "type": "string",
+        "enum": [
+          "Buy",
+          "Sell",
+          "Others"
+        ]
       },
       "SupportedDocumentType": {
         "type": "object",
@@ -7305,6 +7212,65 @@
             }
           }
         }
+      },
+      "TermDepositTransaction": {
+        "type": "object",
+        "required": [
+          "id",
+          "amount",
+          "currency_code",
+          "narration",
+          "txn_type",
+          "mode",
+          "transacted_at_utc"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "narration": {
+            "type": "string"
+          },
+          "txn_type": {
+            "$ref": "#/components/schemas/TermDepositTransactionType"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/TermDepositTransactionMode"
+          },
+          "transacted_at_utc": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "TermDepositTransactionMode": {
+        "type": "string",
+        "enum": [
+          "Cash",
+          "Atm",
+          "CardPayment",
+          "Upi",
+          "Ft",
+          "Others"
+        ]
+      },
+      "TermDepositTransactionType": {
+        "type": "string",
+        "enum": [
+          "Opening",
+          "Interest",
+          "Tds",
+          "Installment",
+          "Closing",
+          "Others"
+        ]
       },
       "UploadDocumentResponse": {
         "type": "object",

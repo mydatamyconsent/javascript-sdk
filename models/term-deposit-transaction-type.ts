@@ -20,13 +20,16 @@
  * @enum {string}
  */
 
-export const MutualFundSchemeOption = {
-    Reinvest: 'Reinvest',
-    Payout: 'Payout',
-    GrowthType: 'GrowthType'
+export const TermDepositTransactionType = {
+    Opening: 'Opening',
+    Interest: 'Interest',
+    Tds: 'Tds',
+    Installment: 'Installment',
+    Closing: 'Closing',
+    Others: 'Others'
 } as const;
 
-export type MutualFundSchemeOption = typeof MutualFundSchemeOption[keyof typeof MutualFundSchemeOption];
+export type TermDepositTransactionType = typeof TermDepositTransactionType[keyof typeof TermDepositTransactionType];
 
 
 

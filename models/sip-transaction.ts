@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { SipTransactionType } from './sip-transaction-type';
 
 /**
  * 
@@ -26,5 +29,29 @@ export interface SipTransaction {
      * @memberof SipTransaction
      */
     'id': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof SipTransaction
+     */
+    'amount': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipTransaction
+     */
+    'currency_code': string;
+    /**
+     * 
+     * @type {SipTransactionType}
+     * @memberof SipTransaction
+     */
+    'txn_type': SipTransactionType;
+    /**
+     * 
+     * @type {string}
+     * @memberof SipTransaction
+     */
+    'transacted_at_utc': string;
 }
 

@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { EquityTransactionsType } from './equity-transactions-type';
 
 /**
  * 
@@ -26,5 +29,35 @@ export interface EquityTransaction {
      * @memberof EquityTransaction
      */
     'id': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EquityTransaction
+     */
+    'amount': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EquityTransaction
+     */
+    'currency_code': string;
+    /**
+     * 
+     * @type {EquityTransactionsType}
+     * @memberof EquityTransaction
+     */
+    'txn_type': EquityTransactionsType;
+    /**
+     * 
+     * @type {string}
+     * @memberof EquityTransaction
+     */
+    'units': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EquityTransaction
+     */
+    'transacted_at_utc': string;
 }
 

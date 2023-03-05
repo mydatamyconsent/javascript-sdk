@@ -15,48 +15,57 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MutualFundTransactionType } from './mutual-fund-transaction-type';
+import { TermDepositTransactionMode } from './term-deposit-transaction-mode';
+// May contain unused imports in some cases
+// @ts-ignore
+import { TermDepositTransactionType } from './term-deposit-transaction-type';
 
 /**
  * 
  * @export
- * @interface MutualFundTransaction
+ * @interface TermDepositTransaction
  */
-export interface MutualFundTransaction {
+export interface TermDepositTransaction {
     /**
      * 
      * @type {string}
-     * @memberof MutualFundTransaction
+     * @memberof TermDepositTransaction
      */
     'id': string;
     /**
      * 
-     * @type {string}
-     * @memberof MutualFundTransaction
+     * @type {number}
+     * @memberof TermDepositTransaction
      */
-    'amount': string;
+    'amount': number;
     /**
      * 
      * @type {string}
-     * @memberof MutualFundTransaction
+     * @memberof TermDepositTransaction
      */
     'currency_code': string;
     /**
      * 
-     * @type {MutualFundTransactionType}
-     * @memberof MutualFundTransaction
+     * @type {string}
+     * @memberof TermDepositTransaction
      */
-    'txn_type': MutualFundTransactionType;
+    'narration': string;
+    /**
+     * 
+     * @type {TermDepositTransactionType}
+     * @memberof TermDepositTransaction
+     */
+    'txn_type': TermDepositTransactionType;
+    /**
+     * 
+     * @type {TermDepositTransactionMode}
+     * @memberof TermDepositTransaction
+     */
+    'mode': TermDepositTransactionMode;
     /**
      * 
      * @type {string}
-     * @memberof MutualFundTransaction
-     */
-    'units': string;
-    /**
-     * 
-     * @type {string}
-     * @memberof MutualFundTransaction
+     * @memberof TermDepositTransaction
      */
     'transacted_at_utc': string;
 }
