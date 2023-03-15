@@ -24,6 +24,9 @@ import { FinancialAccountMutualFund } from './financial-account-mutual-fund';
 import { FinancialAccountSip } from './financial-account-sip';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FinancialAccountTermDeposit } from './financial-account-term-deposit';
+// May contain unused imports in some cases
+// @ts-ignore
 import { Holder } from './holder';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,6 +34,12 @@ import { SipInvestmentInformation } from './sip-investment-information';
 // May contain unused imports in some cases
 // @ts-ignore
 import { SipPlanInformation } from './sip-plan-information';
+// May contain unused imports in some cases
+// @ts-ignore
+import { TermDepositAccountDetails } from './term-deposit-account-details';
+// May contain unused imports in some cases
+// @ts-ignore
+import { TermDepositAccountType } from './term-deposit-account-type';
 
 /**
  * 
@@ -176,5 +185,29 @@ export interface FinancialAccount {
      * @memberof FinancialAccount
      */
     'investment_info': SipInvestmentInformation;
+    /**
+     * 
+     * @type {string}
+     * @memberof FinancialAccount
+     */
+    'account_number': string;
+    /**
+     * 
+     * @type {TermDepositAccountType}
+     * @memberof FinancialAccount
+     */
+    'account_type': TermDepositAccountType;
+    /**
+     * 
+     * @type {string}
+     * @memberof FinancialAccount
+     */
+    'issuer_logo_url': string;
+    /**
+     * 
+     * @type {TermDepositAccountDetails}
+     * @memberof FinancialAccount
+     */
+    'account_details': TermDepositAccountDetails;
 }
 

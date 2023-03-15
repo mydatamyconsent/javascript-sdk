@@ -58,6 +58,8 @@ models/financial-account-mutual-fund.ts
 models/financial-account-sip-all-of.ts
 models/financial-account-sip.ts
 models/financial-account-sub-category-type.ts
+models/financial-account-term-deposit-all-of.ts
+models/financial-account-term-deposit.ts
 models/financial-account-transaction-equity-transaction-all-of.ts
 models/financial-account-transaction-equity-transaction.ts
 models/financial-account-transaction-mutual-fund-transaction-all-of.ts
@@ -112,9 +114,17 @@ models/sip.ts
 models/supported-document-type.ts
 models/supported-entity-type.ts
 models/supported-identifier.ts
+models/term-deposit-account-details.ts
+models/term-deposit-account-type.ts
+models/term-deposit-bank-information.ts
+models/term-deposit-compounding-frequency.ts
+models/term-deposit-information.ts
+models/term-deposit-interest-computation.ts
+models/term-deposit-interest-payout-type.ts
 models/term-deposit-transaction-mode.ts
 models/term-deposit-transaction-type.ts
 models/term-deposit-transaction.ts
+models/term-deposit.ts
 models/upload-document-response.ts
 models/uri-details.ts
 package.json

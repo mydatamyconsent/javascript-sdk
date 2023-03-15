@@ -5650,6 +5650,9 @@
           },
           {
             "$ref": "#/components/schemas/FinancialAccount_Sip"
+          },
+          {
+            "$ref": "#/components/schemas/FinancialAccount_TermDeposit"
           }
         ],
         "discriminator": {
@@ -5657,7 +5660,8 @@
           "mapping": {
             "Equity": "#/components/schemas/FinancialAccount_Equity",
             "MutualFund": "#/components/schemas/FinancialAccount_MutualFund",
-            "Sip": "#/components/schemas/FinancialAccount_Sip"
+            "Sip": "#/components/schemas/FinancialAccount_Sip",
+            "TermDeposit": "#/components/schemas/FinancialAccount_TermDeposit"
           }
         }
       },
@@ -5916,6 +5920,25 @@
           },
           {
             "$ref": "#/components/schemas/Sip"
+          }
+        ]
+      },
+      "FinancialAccount_TermDeposit": {
+        "allOf": [
+          {
+            "type": "object",
+            "required": [
+              "type"
+            ],
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "TermDeposit"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/TermDeposit"
           }
         ]
       },
@@ -7212,6 +7235,200 @@
             }
           }
         }
+      },
+      "TermDeposit": {
+        "type": "object",
+        "required": [
+          "account_number",
+          "account_type",
+          "issuer_name",
+          "issuer_logo_url",
+          "current_value",
+          "currency_code",
+          "account_details"
+        ],
+        "properties": {
+          "account_number": {
+            "type": "string"
+          },
+          "account_type": {
+            "$ref": "#/components/schemas/TermDepositAccountType"
+          },
+          "issuer_name": {
+            "type": "string"
+          },
+          "issuer_logo_url": {
+            "type": "string"
+          },
+          "current_value": {
+            "type": "number",
+            "format": "double"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "account_details": {
+            "$ref": "#/components/schemas/TermDepositAccountDetails"
+          }
+        }
+      },
+      "TermDepositAccountDetails": {
+        "type": "object",
+        "required": [
+          "info",
+          "holder",
+          "bank"
+        ],
+        "properties": {
+          "info": {
+            "$ref": "#/components/schemas/TermDepositInformation"
+          },
+          "holder": {
+            "$ref": "#/components/schemas/Holder"
+          },
+          "bank": {
+            "$ref": "#/components/schemas/TermDepositBankInformation"
+          }
+        }
+      },
+      "TermDepositAccountType": {
+        "type": "string",
+        "enum": [
+          "Fixed",
+          "Sweep",
+          "Recurring",
+          "Sweep1",
+          "Flexible",
+          "TaxSaving",
+          "Fcnr",
+          "Others"
+        ]
+      },
+      "TermDepositBankInformation": {
+        "type": "object",
+        "required": [
+          "bank_name",
+          "branch",
+          "ifsc"
+        ],
+        "properties": {
+          "bank_name": {
+            "type": "string"
+          },
+          "branch": {
+            "type": "string"
+          },
+          "ifsc": {
+            "type": "string"
+          }
+        }
+      },
+      "TermDepositCompoundingFrequency": {
+        "type": "string",
+        "enum": [
+          "Monthly",
+          "Quarterly",
+          "HalfYearly",
+          "Yearly"
+        ]
+      },
+      "TermDepositInformation": {
+        "type": "object",
+        "required": [
+          "deposit_type",
+          "description",
+          "currency_code",
+          "principal_amount",
+          "interest_rate",
+          "interest_payout",
+          "interest_computation",
+          "compounding_frequency",
+          "interest_periodic_payout_amount",
+          "interest_on_maturity",
+          "deposit_opening_date",
+          "maturity_date",
+          "maturity_amount",
+          "tenure_days",
+          "tenure_months",
+          "tenure_years"
+        ],
+        "properties": {
+          "deposit_type": {
+            "$ref": "#/components/schemas/TermDepositAccountType"
+          },
+          "description": {
+            "type": "string"
+          },
+          "currency_code": {
+            "type": "string"
+          },
+          "principal_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "interest_rate": {
+            "type": "number",
+            "format": "float"
+          },
+          "interest_payout": {
+            "$ref": "#/components/schemas/TermDepositInterestPayoutType"
+          },
+          "interest_computation": {
+            "$ref": "#/components/schemas/TermDepositInterestComputation"
+          },
+          "compounding_frequency": {
+            "$ref": "#/components/schemas/TermDepositCompoundingFrequency"
+          },
+          "interest_periodic_payout_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "interest_on_maturity": {
+            "type": "number",
+            "format": "double"
+          },
+          "deposit_opening_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "maturity_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "maturity_amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "tenure_days": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenure_months": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenure_years": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "TermDepositInterestComputation": {
+        "type": "string",
+        "enum": [
+          "Simple",
+          "Compound"
+        ]
+      },
+      "TermDepositInterestPayoutType": {
+        "type": "string",
+        "enum": [
+          "Monthly",
+          "Quarterly",
+          "HalfYearly",
+          "Yearly",
+          "OnMaturity"
+        ]
       },
       "TermDepositTransaction": {
         "type": "object",
